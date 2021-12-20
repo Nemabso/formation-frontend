@@ -1,0 +1,29 @@
+.nav-item {
+  color: black;
+}
+
+.nav-item:hover {
+  color: #C0392B;
+  font-size: 17px;
+}
+
+.itemCover a:active {
+  color: rgb(223, 224, 233);
+}
+
+.customNav {
+  background-color: #ffffff;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.itemCover {
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 4px;
+}
