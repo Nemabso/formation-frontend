@@ -1,4 +1,4 @@
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE, SET_IS_AUTH } from '../Actions/signupActions';
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from '../actions/signupActions';
 
 // init state for signup
 const initState = {
@@ -23,11 +23,11 @@ const signupReducer = (state = initState, action) => {
                 signupData: action.payload,
                 errMsg: "",
             }
-        case SET_IS_AUTH:
-            return {
-                ...state,
-                isAuth: false,
-            };
+        // case SET_IS_AUTH:
+        //     return {
+        //         ...state,
+        //         isAuth: false,
+        //     };
         case SIGNUP_FAILURE:
             return {
                 isLoading: false,

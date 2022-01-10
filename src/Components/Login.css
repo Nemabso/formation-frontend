@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Righteous&display=swap");
+
+.page-login {
+    position: absolute;
+    background-image: url("../assets/images/menu.jpg");
+    width: 100vw;
+    height: 85vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 8% auto;
+    width: 35vw;
+    min-height: 50vh;
+    /* border: 2px solid #f1ffe0; */
+    border-radius: 20px;
+    padding: 20px;
+    background: linear-gradient(45deg, rgba(212, 205, 230, 0.8), rgba(224, 218, 182, 0.8));
+    transform: translateY(10%);
+    /* box-shadow: 0 5px 20px 2px whitesmoke; */
+    transition: all 200ms ease-out;
+}
+
+.login:hover {
+    transform: scale(1.05) translateY(10%);
+}
+
+.login-heading {
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: whitesmoke;
+    color: rgb(2, 56, 69);
+    text-align: center;
+    border: 2px solid rgb(2, 56, 69);
+    border-radius: 20px;
+    font-family: "Righteous", cursive;
+    letter-spacing: 1px;
+}
+
+.login-input {
+    background: transparent;
+    padding: 10px;
+    margin: 10px auto;
+    width: 100%;
+    color: whitesmoke;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    transition: all 200ms ease-out;
+}
+
+.login-input:focus {
+    transform: scale(1.05);
+}
+
+.submit-button {
+    display: block;
+    width: 40%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 45px;
+    background-color: #F0F0FF;
+    color: black;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    font-family: sans-serif;
+}
+
+.submit-button:hover {
+    transform: scale(1.05);
+    background-color: #f1ffe7;
+    color: rgb(20, 148, 141);
+    border: solid #F0F0FF;
+}
+
+/* .login-signup {
+    color: whitesmoke;
+}
+
+.login-signup>* {
+    padding: 5px;
+    background-color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(2, 56, 69);
+    border: 2px solid black;
+    border-radius: 12px;
+} */
+
+@media (max-width: 768px) {
+    .login {
+        width: 50%;
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 400px) {
+    .login {
+        width: 80%;
+    }
+}

@@ -1,6 +1,7 @@
 import { baseURL } from "../constants/constants";
 // import AsyncStorage from "@react-native-community/async-storage";
 import axios from "axios";
+// import { useNavigate } from "react-router-dom";
 //import swal from "sweetalert";
 //import { tokenConfig } from "./AuthActions";
 
@@ -8,58 +9,38 @@ import axios from "axios";
 export const SIGNUP_REQUEST = "SIGNUP_REQUEST";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
-export const SET_IS_AUTH = "SET_IS_AUTH";
+// export const SET_IS_AUTH = "SET_IS_AUTH";
 
 // action creators
-export const signupRequest = () => {
-    return {
-        type: SIGNUP_REQUEST,
-    };
-};
-export const signupSuccess = (signupData) => {
-    return {
-        type: SIGNUP_SUCCESS,
-        payload: signupData,
-    };
-};
-export const signupFailure = (errMsg) => {
-    return {
-        type: SIGNUP_FAILURE,
-        payload: errMsg,
-    };
-};
-export const setIsAuth = () => {
-    return {
-        type: SET_IS_AUTH,
-    };
-};
+export const signupRequest = () => { return { type: SIGNUP_REQUEST } };
+export const signupSuccess = (signupData) => { return { type: SIGNUP_SUCCESS, payload: signupData } };
+export const signupFailure = (errMsg) => { return { type: SIGNUP_FAILURE, payload: errMsg } };
+// export const setIsAuth = () => { return { type: SET_IS_AUTH } };
 // async impure action creator enabled by redux-thunk
 export const signup = (signupData) => {
+    // const navigate = useNavigate();
     return (dispatch) => {
+        // console.log("return dispatch signupAction.js", dispatch);
         dispatch(signupRequest());
+        console.log("signupRequest est envoyé !", signupData);
         axios({
-            method: "post", url: "/register", baseURL: baseURL, data: {
-                name: signupData.name,
+            method: "post", baseURL: baseURL, url: "/signup", data: {
+                firstName: signupData.firstName,
+                lastName: signupData.lastName,
                 email: signupData.email,
                 password: signupData.password,
+                confirmPassword: signupData.confirmPassword
             },
             //headers: {
             // "auth-token": AsyncStorage.getItem("token"),
             //},
         }).then((res) => {
-            if (res.data.value) {
-                dispatch(signupSuccess(signupData));
-            } else {
-                dispatch(signupFailure(res.data.message));
-            }
-        }).catch((err) => {
-            dispatch(signupFailure(err));
-        });
+            console.log("res 36:actionsignup", res);
+            dispatch(signupSuccess(signupData))
+            // navigate("/")
+            console.log("res data value est arrivé !")
+        }).catch((err) => { dispatch(signupFailure(err)) })
     };
 };
 
-export const setisauth = () => {
-    return (dispatch) => {
-        dispatch(setIsAuth());
-    };
-};
+// export const setisauth = () => { return (dispatch) => { dispatch(setIsAuth()) } };

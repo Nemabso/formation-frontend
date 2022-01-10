@@ -27,3 +27,28 @@ a {
   margin-right: 15px;
   padding: 4px;
 }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 158px;
+  z-index: 1;
+}
+
+.dropdown a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.itemCover:hover .dropdown {
+  display: grid;
+}
+
+.itemCover:hover .menu-button {
+  background-color: transparent;
+}
+
+.dropdown a {
+  color: #000;
+}

@@ -1,31 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-// import Welcome from "./Components/Welcome";
-import Navigation from "./Components/Navigation";
-// import TrainerSpace from "./Components/TrainerSpace";
-import Registering from "./Components/Registering";
-// import Listformations from "./Components/Listformations";
-import Contact from './Components/contactForm'
-// import AddFormation from "./Components/AddFormation";
+import Registering from "./components/Registering";
+import Error404 from "./components/Error404";
 import Home from "./pages/home";
-
-
-function App() {
+import Admin from "./pages/Admin";
+import Navbar from "./components/Navigation";
+import Login from "./components/Login";
+import { hasAuthenticated } from "./services/AuthApi";
+import Auth from "./context/Auth";
+export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(hasAuthenticated())
+  // console.log("isAuthenti app js !", isAuthenticated);
   return (
-    <div>
+    <Auth.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <BrowserRouter>
-        <Navigation />
+        <Navbar />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/espace-formateur" element={<Registering />} />
-          <Route exact path="/contact" element={<Contact />} />
-          {/* <Route exact path="/listformations" element={ } /> */}
-          {/* <Route exact path="/addformation" element={ } /> */}
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/home/comptes" element={<Registering />} />
+          {/* <Route path="/home/contact" element={<Contact />} /> */}
+          {(!isAuthenticated &&
+            <Route exact path="/home/login" element={<Login />} />
+          )}
+          {(isAuthenticated &&
+            <Route exact path="/home/login/admin" element={<Admin />} />
+          )}
+          <Route path="*" element={<Error404 />}></Route>
         </Routes>
       </BrowserRouter>
-    </div>
-  )
+    </Auth.Provider>
+  );
 }
 
-export default App;

@@ -1,218 +1,25 @@
-@media screen and (min-width: 1000px) {
-  body {
-    background-color: #ffffff;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Pushster&display=swap');
 
-  .center0 {
-    margin-top: 70px;
-    background-color: #F2F4F4;
-    padding: 50px;
-  }
-
-  .loginDiv {
-    margin: 15px;
-    padding: 30px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 2px 2px #aaaaaa;
-    background-color: #ffffff;
-  }
-
-  .clientSpace {
-    text-align: left;
-    font-weight: bold;
-    font-size: 28px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 30px;
-    color: #7B241C;
-  }
-
-  .alreadyReg {
-    text-align: left;
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 40px;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #566573;
-  }
-
-  .above {
-    text-align: left;
-    font-size: 14px;
-    font-weight: bold;
-
-    margin-bottom: 4px;
-    margin-left: 10%;
-  }
-
-  .inputAccount {
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    resize: vertical;
-    margin-top: 0px;
-    margin-bottom: 30px;
-  }
-
-  .inputAccount:focus {
-    outline: none !important;
-    border: 1px solid #000000;
-  }
-
-  .inputAccount:hover {
-    outline: none !important;
-    border: 1px solid #000000;
-  }
-
-  .logIn {
-    background-color: #922B21;
-    border-radius: 30px;
-    width: 36%;
-    margin-left: 32%;
-    margin-right: 32%;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: sans-serif;
-    color: #ffffff;
-    padding: 7px;
-    margin-bottom: 20px;
-    outline: none !important;
-  }
-
-  .loginDiv a {
-    text-decoration: none;
-  }
-
-  .logIn:hover {
-    border: 1px solid #242323;
-    background-color: #A93226;
-  }
-
-  .passForg {
-    margin-left: 10%;
-    text-align: left;
-    font-size: 14px;
-    color: #000000;
-    font-weight: bold;
-    text-decoration: underline;
-    margin-bottom: 40px;
-  }
-
-  .divEnd {
-    background-color: #ffffff;
-  }
+label {
+  font-size: .9rem;
 }
 
-@media screen and (max-width: 1000px) {
-  body {
-    background-color: #ffffff;
-  }
+input.form-control, input.form-control:focus {
+  background: #F0F0FF;
+}
 
-  .center0 {
-    margin-top: 60px;
-    background-color: #F2F4F4;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+.error {
+  position: absolute;
+  color: red;
+  font-size: .8rem;
+}
 
-  .loginDiv {
-    margin-top: 20px;
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 1px 1px 2px 2px #aaaaaa;
-    background-color: #ffffff;
-
-  }
-
-  .clientSpace {
-
-    text-align: left;
-    font-weight: bold;
-    font-size: 24px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 30px;
-    color: #7B241C;
-
-  }
-
-  .alreadyReg {
-    text-align: left;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 40px;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #566573;
-  }
-
-  .above {
-    text-align: left;
-    font-size: 14px;
-    font-weight: bold;
-
-    margin-bottom: 4px;
-    margin-left: 10%;
-  }
-
-  .inputAccount {
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    resize: vertical;
-    margin-top: 0px;
-    margin-bottom: 30px;
-  }
-
-  .inputAccount:focus {
-    outline: none !important;
-    border: 1px solid #000000;
-  }
-
-  .inputAccount:hover {
-    outline: none !important;
-    border: 1px solid #000000;
-  }
-
-  .logIn {
-    background-color: #922B21;
-    border-radius: 30px;
-    width: 46%;
-    margin-left: 27%;
-    margin-right: 27%;
-
-
-    font-size: 16px;
-    font-weight: bold;
-    font-family: sans-serif;
-    color: #ffffff;
-    padding: 7px;
-    margin-bottom: 20px;
-    outline: none !important;
-
-
-  }
-
-  .loginDiv a {
-    text-decoration: none;
-  }
-
-  .logIn:hover {
-    border: 1px solid #242323;
-    background-color: #A93226;
-  }
-
-
-
-  .divEnd {
-    background-color: #ffffff;
-  }
+.modal-signup {
+  text-align: center;
+  margin-top: 19%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  font-family: 'Merienda', cursive;
+  border: solid;
 }

@@ -8,7 +8,7 @@ import imgUn from '../assets/images/chef1.jpg';
 import imgdeux from '../assets/images/herbs.jpg';
 import imgtrois from '../assets/images/resturant.jpg';
 import '../Styles/home.css'
-import Footer from '../Components/Footer';
+import Footer from '../components/Footer';
 
 
 
@@ -53,13 +53,12 @@ export default function home() {
                             <Col sm={6} className="col11" >
                                 <div className="home-video">
                                     <div className="video" style={{ position: "relative", paddingBottom: "56.25%" /* 16:9 */, paddingTop: 35, height: 0 }}>
-                                        <iframe
+                                        {/* <iframe
                                             style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", }}
                                             src="https://www.youtube.com/embed/BOwd8nsDh5Y" title="YouTube video player"
-                                            frameborder="0"
+                                            frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen
-                                        ></iframe>
+                                        ></iframe> */}
                                     </div>
                                 </div>
                             </Col>
