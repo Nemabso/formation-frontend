@@ -1,0 +1,12 @@
+.profa-page {
+    position: absolute;
+    /* background-image: url("../assets/images/menu.jpg"); */
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+}

@@ -4,6 +4,7 @@ import "./index.css"; //💚
 import App from "./App"; //💚
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from "./reportWebVitals"; //💚
+import { AuthenticationProvider } from "./context/Auth";
 // import { history } from "./history";
 // import { Router } from "react-router-dom";
 
@@ -36,13 +37,15 @@ import reportWebVitals from "./reportWebVitals"; //💚
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    {/* <PersistGate loading={null} persistor={persistor}> */}
-    {/* <Router history={history}> */}
-    <App />
-    {/* </Router>, */}
-    {/* </PersistGate> */}
-    {/* </Provider> */}
+    <AuthenticationProvider>
+      {/* <Provider store={store}> */}
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+      {/* <Router history={history}> */}
+      <App />
+      {/* </Router>, */}
+      {/* </PersistGate> */}
+      {/* </Provider> */}
+    </AuthenticationProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

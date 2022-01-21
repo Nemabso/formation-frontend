@@ -1,7 +1,5 @@
-import { addItem, removeItem, getItem } from "./LocaleStorage"
+import { removeItem, getItem } from "./LocaleStorage"
 import jwtDecode from "jwt-decode";
-import axios from "axios";
-const baseURL = "http://localhost:5000";
 
 
 export function hasAuthenticated() {
@@ -15,18 +13,20 @@ export function hasAuthenticated() {
     return result;
 };
 
-export function logedin(user) {
-    return axios({ method: "post", baseURL: baseURL, url: "/login", data: { email: user.email, password: user.password } })
-        .then((res) => res.data.token)
-        .then(token => {
-            addItem("miniblogToken", token);
+// export function logedin(user) {
+//     return axios({ method: "post", baseURL: baseURL, url: "/login", data: { email: user.email, password: user.password } })
+//         .then((res) => res.data.token)
+//         .then(token => {
+//             addItem("miniblogToken", token);
 
-            return true;
-        })
-}
+//             return true;
+//         })
+// }
 
 export function logout() {
     removeItem("miniblogToken")
+    removeItem("userName")
+    removeItem("userId")
 }
 
 function tokenIsValid(token) {

@@ -1,17 +1,20 @@
 import React, { useContext } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/logo2.svg";
-import Auth from "../context/Auth";
+import { AuthContext } from "../context/Auth";
 import { logout } from "../services/AuthApi";
 import "../Styles/Navigation.css";
 import { useNavigate } from "react-router-dom";
-export default function Navigation() {
-    const { isAuthenticated, setIsAuthenticated } = useContext(Auth);
+export default function Navigation({ setUserID }) {
+    const [isAuthenticated, setIsAuthenticated, userBack, setUserBack] = useContext(AuthContext);
     const navigate = useNavigate();
+    console.log("userBack : ", userBack);
 
     const handleLogout = () => {
         logout();
         setIsAuthenticated(false);
+        setUserID("");
+        setUserBack(null);
         navigate(`/home/login`)
     }
     // console.log("isAutenticated Navbar", isAuthenticated);
@@ -47,7 +50,7 @@ export default function Navigation() {
                                     <div className="dropdown">
                                         {/* <a href="/home/login">Admin</a> */}
                                         <a href="/home/login">Formateur</a>
-                                        <a href="###">Eleve</a>
+                                        <a href="/home/eleveLogin">Eleve</a>
                                     </div>
                                 </li>
                             )) || (

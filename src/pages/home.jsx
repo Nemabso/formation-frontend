@@ -16,12 +16,6 @@ export default function home() {
     return (
         <div>
 
-            {/* <section className="col-12">
-                <video className="backplan" loop muted autoPlay >
-                    <source src={vid} />
-                </video>
-            </section> */}
-            {/* section 1 */}
             <section>
                 <Carousel>
                     <Carousel.Item interval={3000} >

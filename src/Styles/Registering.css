@@ -4,7 +4,7 @@ label {
   font-size: .9rem;
 }
 
-input.form-control, input.form-control:focus {
+input.form-control, select.form-control, input.form-control:focus {
   background: #F0F0FF;
 }
 

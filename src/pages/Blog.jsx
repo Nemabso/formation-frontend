@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ProfA() {
+export default function Blog() {
     return (
         <div>
-            <h1>Prof A</h1>
+            <h1>Here is Blog page</h1>
         </div>
     )
 }
