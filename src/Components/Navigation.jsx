@@ -34,7 +34,7 @@ export default function Navigation({ setUserID }) {
                             </li>
 
                             <li className="itemCover">
-                                <a href="/home" className="nav-item">NOS FORMATIONS</a>
+                                <a href="/home/nosformation" className="nav-item">NOS FORMATIONS</a>
                             </li>
 
                             <li className="itemCover">

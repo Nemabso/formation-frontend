@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FilesCard from '../../components/FilesCard';
 import "./profA.css";
 // const baseURL = "http://localhost:5000";
@@ -12,8 +12,11 @@ export default function ProfA({ userID }) {
     const [image, setImage] = useState([])
     const [description, setDescription] = useState("");
     const [title, setTitle] = useState("");
-    const coursHandle = (e) => { setCours(e.target.files) }
-    // console.log("image :", image);
+    const coursHandle = (e) => {
+        setCours(e.target.files);
+        console.log("selected file", cours);
+    }
+    console.log("image :", image);
     console.log("userId", userId);
 
     const onsubmit = async (e) => {
@@ -30,11 +33,21 @@ export default function ProfA({ userID }) {
         }
         await axios.post("http://localhost:5000/upload", formData)
             .then((res) => {
-                console.log("successfully file post", res);
-                setImage(res.data)
+                console.log("successfully file post", res.data);
+                window.location.reload();
             })
             .catch((err) => console.log("error with file post", err))
     }
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/upload/${userId}`).then((res) => {
+            console.log("res de get :", res);
+            setImage(res.data)
+        }).catch((err) => {
+            console.log("error get files :", err);
+            console.error(err)
+        })
+    }, [])
     return (
         <>
             {/* <div className='text-center'> */}
@@ -61,7 +74,7 @@ export default function ProfA({ userID }) {
                     </div>
                 </form>
             </div>
-            <FilesCard file={image} description={description} title={title} />
+            <FilesCard file={image} />
         </>
     )
 }

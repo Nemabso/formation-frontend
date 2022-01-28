@@ -1,0 +1,27 @@
+div.document-container {
+    height: 165px;
+    width: 174px;
+    padding: 0%;
+}
+
+.pg-viewer-wrapper .document-container {
+    padding: 0%;
+    width: auto;
+}
+
+.pg-viewer-wrapper {
+    overflow: hidden;
+    width: inherit;
+    border-radius: 25px;
+    border: outset;
+}
+
+.embed-files {
+    width: inherit;
+    border-radius: 25px;
+    border: outset;
+}
+
+.card {
+    border-radius: 25px;
+}

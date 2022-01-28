@@ -9,6 +9,7 @@ import Navbar from "./components/Navigation";
 import Login from "./components/Login";
 import { AuthContext } from "./context/Auth";
 import EleveLog from "./components/EleveLog";
+import NosFormation from "./pages/NosFormation";
 export default function App() {
   const [isAuthenticated, setIsAuthenticated, role] = useContext(AuthContext);
   // console.log("Here is app js !", isAuthenticated, "role is", role);
@@ -23,6 +24,7 @@ export default function App() {
         <Route exact path="/home/comptes" element={<Registering />} />
         <Route path="/home/contact" element={<ProfA userID={userID} setUserID={setUserID} />} />
         <Route exact path="/home/eleveLogin" element={<EleveLog />} />
+        <Route exact path="/home/nosformation" element={<NosFormation />} />
         {(!isAuthenticated &&
           <Route exact path="/home/login" element={<Login userID={userID} setUserID={setUserID} />} />
         )}
