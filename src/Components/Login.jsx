@@ -4,14 +4,13 @@ import axios from "axios";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/Auth";
-import { addItem } from "../services/LocaleStorage";
 const baseURL = "http://localhost:5000";
 
-
 export default function Login({ setUserID }) {
-    const [isAuthenticated, setIsAuthenticated, userBack, setUserBack] = useContext(AuthContext);
-    // const [userBack, setUserBack] = useState("");
-    console.log("isAuthenti login :", isAuthenticated, "userBack :", userBack);
+    const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
+
+
+    console.log("isAuthenti login :", isAuthenticated, "role login :", role);
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
     const [massege, setMassege] = useState("")
@@ -22,28 +21,30 @@ export default function Login({ setUserID }) {
         setUser({ ...user, [name]: value })
     }
 
+    function addItem(localStorageName, newItem) {
+        return window.localStorage.setItem(localStorageName, newItem)
+    }
+
     const onSubmit = async (e) => {
         e.preventDefault();
-
         try {
-            await axios({ method: "post", baseURL: baseURL, url: "/login", data: { email: user.email, password: user.password } })
+            await axios({ method: "post", baseURL: baseURL, url: "/user/login", data: { email: user.email, password: user.password } })
                 .then((res) => {
                     // console.log("res data :", res.data);
-                    addItem("miniblogToken", res.data.token);
-                    addItem("userName", res.data.name);
-                    addItem("userId", res.data.id);
-                    setUserID(res.data.id);
-                    setUserBack(res.data.user);
+                    const { user, token } = res.data;
+                    setRole(user.role);
+                    setUserID(user._id);
+                    addItem("miniblogToken", token);
+                    addItem("userName", user.lastName);
+                    addItem("userId", user._id);
                     setIsAuthenticated(true);
-                    if (res.data.role === "admin") {
-                        return navigate("/home/admin")
+                    if (user.role === "admin") {
+                        return navigate("/admin")
                     }
-                    if (res.data.role === "formateur") {
-                        return navigate("/home/profa")
+                    if (user.role === "formateur") {
+                        return navigate("/profa")
                     }
                 })
-            // console.log("result Login Page", result);
-            // setIsAuthenticated(result)
         } catch ({ response }) {
             console.log("here is response !", response.data)
             setShowModal(true);
@@ -51,14 +52,10 @@ export default function Login({ setUserID }) {
         }
     };
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:5000")
-    // }, [])
 
     return (
         <div className="page-login img-fluid">
             <div className="login">
-                {/* <h1 className="login-heading">Login</h1> */}
                 <Modal className="modal-signup rounded-pill bg-light col-5"
                     ariaHideApp={false} isOpen={showModal} onRequestClose={() => setShowModal(false)}>
                     <h1>{massege}</h1>

@@ -5,7 +5,6 @@ import axios from "axios";
 import chefCarton from "../assets/images/chefCarton.png";
 import "../Styles/Registering.css"
 // import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
 import Modal from "react-modal";
 const baseURL = "http://localhost:5000";
 
@@ -45,7 +44,7 @@ export default function Registering() {
     function handleSignup(signupData) {
         // console.log("from handlesubmit", signupData);
         axios({
-            method: "post", baseURL: baseURL, url: "/signup", data: {
+            method: "post", baseURL: baseURL, url: "/user/signup", data: {
                 role: signupData.role,
                 lastName: signupData.lastName,
                 email: signupData.email,
@@ -119,7 +118,6 @@ export default function Registering() {
                 <h1>{message}</h1>
                 <button onClick={() => setShowModal(false)} className="btn btn-secondary" >Close</button>
             </Modal>
-            <Footer />
         </>
     );
 }

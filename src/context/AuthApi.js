@@ -1,6 +1,12 @@
-import { removeItem, getItem } from "./LocaleStorage"
 import jwtDecode from "jwt-decode";
 
+function removeItem(itemToRemove) {
+    return window.localStorage.removeItem(itemToRemove)
+}
+
+function getItem(item) {
+    return window.localStorage.getItem(item)
+}
 
 export function hasAuthenticated() {
     const token = getItem("miniblogToken");
@@ -13,20 +19,11 @@ export function hasAuthenticated() {
     return result;
 };
 
-// export function logedin(user) {
-//     return axios({ method: "post", baseURL: baseURL, url: "/login", data: { email: user.email, password: user.password } })
-//         .then((res) => res.data.token)
-//         .then(token => {
-//             addItem("miniblogToken", token);
-
-//             return true;
-//         })
-// }
-
 export function logout() {
     removeItem("miniblogToken")
     removeItem("userName")
-    removeItem("userId")
+    removeItem("userId");
+    removeItem("eleveCode")
 }
 
 function tokenIsValid(token) {

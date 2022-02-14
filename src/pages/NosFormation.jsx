@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import img1 from "../assets/images/coocking.jpg";
-import pdfile from "../assets/images/file.pdf"
+// import pdfile from "../assets/images/file.pdf"
 import "./nosFormation.css";
+import './nousContact.css'
 import Modal from "react-modal";
 
 
@@ -31,7 +32,7 @@ export default function NosFormation() {
 
 
     return (
-        <div>
+        <div className="wrapper">
             {/* <!-- Image Zoom HTML --> */}
             {/* <img className='myImg' ref={modal} src={img1} alt="premier img" width="500" height="300" onClick={() => openImag()} /> */}
             {/* <!-- The Modal --> */}
@@ -45,13 +46,27 @@ export default function NosFormation() {
                 <embed className='modal-imag mx-auto d-block img-fluid' src={img1} alt="premier img" style={{ width: "200vw", height: "50vh" }} />
                 <button className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
             </Modal> */}
-            <embed className='myImg' ref={modal} src={pdfile} alt="premier img" width="200" height="100" onClick={() => openImag()} />
+            {/* <iframe className='myImg' allowFullScreen src={pdfile} alt="premier img" width="200" height="100" onClick={() => openImag()} /> */}
+            {/* <img className='myImg' allowFullScreen src={img1} alt="premier img" width="200" height="100" onClick={() => openImag()} /> */}
             <Modal className="modal-signup rounded bg-light col-5" role='document'
                 ariaHideApp={false} isOpen={showModal} onRequestClose={() => setShowModal(false)}>
-                <embed className='modal-imag mx-auto d-block img-fluid' src={pdfile} alt="premier img" style={{ width: "200vw", height: "50vh" }} />
+                <img className='modal-imag mx-auto d-block img-fluid' src={img1} alt="premier img" style={{ width: "200vw", height: "50vh" }} />
                 <button className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
             </Modal>
 
+            <ul className="bg-bubbles">
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+                <span className='kubb'></span>
+            </ul>
         </div>
+
     )
 }
