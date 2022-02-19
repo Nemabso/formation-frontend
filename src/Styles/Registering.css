@@ -13,13 +13,3 @@ input.form-control, select.form-control, input.form-control:focus {
   color: red;
   font-size: .8rem;
 }
-
-.modal-signup {
-  text-align: center;
-  margin-top: 19%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  font-family: 'Merienda', cursive;
-  border: solid;
-}

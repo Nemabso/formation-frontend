@@ -1,23 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FileViewer from "react-file-viewer";
-import { BsTrashFill, BsShareFill } from "react-icons/bs";
+import { BsTrashFill, BsShareFill, BsArrowsFullscreen } from "react-icons/bs";
+import { Document, Page, pdfjs } from "react-pdf";
+
 import "./fileCard.css";
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
+import Modal from 'react-bootstrap/Modal';
+import ModalHeader from 'react-bootstrap/esm/ModalHeader';
+
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
+
 // import { ModalBody, ModalTitle } from 'react-bootstrap';
 // import ModalHeader from 'react-bootstrap/esm/ModalHeader';
 
-export default function FilesCard({ file, ondeletHandle, partager }) {
+export default function FilesCard({ file, ondeletHandle, partagersalleA, partagersalleB }) {
     const [showModal, setShowModal] = useState(false);
+    const [modalpdfShow, setModalpdfShow] = useState(false);
 
     const [fullscreen, setFullscreen] = useState(true);
+    const [viwefile, setViwefile] = useState("");
 
 
-    // const [numPages, setNumPages] = useState(null);
-    // const [pageNumber, setPageNumber] = useState(1);
+    const [numPages, setNumPages] = useState(null);
 
-    // function onDocumentLoadSuccess({ numPages }) {
-    //     setNumPages(numPages);
-    // }
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
 
     // function changePage(offset) {
     //     setPageNumber(prevPageNumber => prevPageNumber + offset);
@@ -33,8 +42,12 @@ export default function FilesCard({ file, ondeletHandle, partager }) {
     function openImag(breakpoint) {
         console.log("has clicked !");
         setFullscreen(breakpoint);
-        setShowModal(true)
+        setModalpdfShow(true)
     }
+
+    useEffect(() => {
+        pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+    }, []);
 
     // console.log("file de cards", file);
     // file.map(elem => console.log("elem => :::", elem))
@@ -47,7 +60,7 @@ export default function FilesCard({ file, ondeletHandle, partager }) {
 
     return (
         <>
-            <div className="card col-sm-6 col-md-3 col-xl-2 mt-5 " style={{ width: "18rem" }} >
+            <div className="card col-sm-6 col-md-3 col-xl-2 mt-4" style={{ width: "18rem" }} >
                 {file.images.map((elem, j) => {
                     if (typeof elem === "string" && `${elem.split(".").slice(-1)}` === "docx") {
                         return (
@@ -60,9 +73,18 @@ export default function FilesCard({ file, ondeletHandle, partager }) {
                                 <source src={`http://localhost:5000${elem}`} />
                             </video>)
                     }
+                    if (`${elem.split(".").slice(-1)}` === "pdf") {
+                        return (
+                            <div key={j}>
+                                <embed onClick={() => openImag(true)} className='embed-files' src={`http://localhost:5000${elem}`} />
+                                <span onClick={() => { setViwefile(`http://localhost:5000${elem}`); openImag(true) }} className="btn fscreen-span" ><BsArrowsFullscreen /></span>
+                            </div>
+                        )
+                    }
                     else {
                         return (
-                            <embed onClick={() => openImag(true)} className='embed-files' src={`http://localhost:5000${elem}`} key={j} />)
+                            <Zoom key={j}><embed className='embed-files' src={`http://localhost:5000${elem}`} /></Zoom>
+                        )
                     }
                 })}
                 <div className="card-body">
@@ -71,14 +93,37 @@ export default function FilesCard({ file, ondeletHandle, partager }) {
                 </div>
                 <div className='d-flex justify-content-evenly p-2'>
                     <span onClick={() => { if (window.confirm("vous allez supprimez ce item ?")) ondeletHandle(file._id) }} className="btn"><BsTrashFill /></span>
-                    <button onClick={() => { setShowModal(true) }} className="btn"><BsShareFill /></button>
+                    <button onClick={() => { setShowModal(true); setFullscreen(true) }} className="btn"><BsShareFill /></button>
                 </div>
             </div>
-            <Modal className="modal-signup rounded bg-light col-5" role='document'
-                ariaHideApp={false} isOpen={showModal} onRequestClose={() => setShowModal(false)}>
+            <Modal fullscreen={fullscreen}
+                show={showModal} onHide={() => setShowModal(false)}>
+                <ModalHeader closeButton />
                 <h2>Partager avec :</h2>
-                <button className="btn btn-info" onClick={() => { partager(file._id); setShowModal(false) }}>{file.salonA ? "enlever le partage avec salle A" : "partager avec salleA"}</button>
-                <button className="btn btn-warning" onClick={() => setShowModal(false)}>{file.salonB ? "enlever le partage avec salle B" : "partager avec salleB"}</button>
+                <button className="btn btn-info" onClick={() => { partagersalleA(file._id); setShowModal(false) }}>{file.salonA ? "enlever le partage avec salle A" : "partager avec salleA"}</button>
+                <button className="btn btn-warning" onClick={() => { partagersalleB(file._id); setShowModal(false) }}>{file.salonB ? "enlever le partage avec salle B" : "partager avec salleB"}</button>
+            </Modal>
+
+            <Modal fullscreen={fullscreen}
+                show={modalpdfShow} onHide={() => setModalpdfShow(false)}>
+                <ModalHeader closeButton />
+                {/* <ModalTitle className='text-center'> premier cours</ModalTitle>
+                </ModalHeader> */}
+                {/* <ModalBody className='mx-auto'> */}
+                <Document file={viwefile} onLoadSuccess={onDocumentLoadSuccess} >
+                    {Array.from(
+                        new Array(numPages), (el, index) => (
+                            <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+                        )
+                    )}
+
+                </Document>
+                {/* <div className='text-center mb-5'>
+                        <p>Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}</p>
+                        <button className='btn bg-primary' disabled={pageNumber <= 1} onClick={previousPage}> Previous</button>
+                        <button className='btn bg-primary ms-3' disabled={pageNumber >= numPages} onClick={nextPage}> Next </button>
+                    </div> */}
+                {/* </ModalBody> */}
             </Modal>
         </>
     )

@@ -1,0 +1,102 @@
+Modal.modal-signup {
+    text-align: center;
+    margin-top: 19%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    font-family: 'Merienda', cursive;
+    border: solid;
+}
+
+canvas {
+    margin: auto;
+    width: 73vw !important;
+    height: 130vh !important;
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: fit-content;
+    height: auto;
+    /* max-width: 75%; */
+}
+
+/* Caption of Modal Image */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, .caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.out {
+    animation-name: zoom-out;
+    animation-duration: 0.6s;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+
+    canvas {
+        margin: auto;
+        width: 100vw !important;
+        height: 90vh !important;
+    }
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(1)
+    }
+
+    to {
+        -webkit-transform: scale(2)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.4)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@-webkit-keyframes zoom-out {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(0)
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(0)
+    }
+}

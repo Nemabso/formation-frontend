@@ -95,11 +95,11 @@ export default function Registering() {
                                 <ErrorMessage name="email" component="div" className="error" />
                                 <Field id="Email" name="email" type="email" placeholder="..." className={`form-control shadow-none`} />
 
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password">Mot de passe</label>
                                 <ErrorMessage name="password" component="div" className="error" />
                                 <Field id="password" name="password" type="password" placeholder="..." className={`form-control shadow-none`} />
 
-                                <label htmlFor="Confirm Password">Confirm Password</label>
+                                <label htmlFor="Confirm Password">Confirmez votre Mot de passe</label>
                                 <ErrorMessage name="confirmPassword" component="div" className="error" />
                                 <Field id="Confirm Password" name="confirmPassword" type="password" placeholder="..." className={`form-control shadow-none`} />
 

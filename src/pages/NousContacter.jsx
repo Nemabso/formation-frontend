@@ -11,6 +11,7 @@ export default function NousContacter() {
     const arrOfImages = [
         img1, img2, img3, img4
     ];
+    console.log("image array nous contacter", arrOfImages);
     const [indexOfImages, setIndexOfImages] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const openModalAndSetIndex = (index) => {
@@ -19,9 +20,7 @@ export default function NousContacter() {
         return;
     };
     return (
-        <div className="App">
-            <h1>Image Slide Show With Zoom In/Out feature</h1>
-
+        <div >
             {arrOfImages.map((image, index) => (
                 <img
                     key={image}
@@ -32,32 +31,32 @@ export default function NousContacter() {
                 />
             ))}
 
-            <div>
+            {/* <div>
                 <button type="button" onClick={() => setShowModal(true)}>
                     Show Lightbox
                 </button>
-            </div>
+            </div> */}
 
             {showModal && (
                 <Lightbox
                     mainSrc={arrOfImages[indexOfImages]}
-                    nextSrc={arrOfImages[(indexOfImages + 1) % arrOfImages.length]}
-                    prevSrc={
-                        arrOfImages[
-                        (indexOfImages + arrOfImages.length - 1) % arrOfImages.length
-                        ]
-                    }
+                    // nextSrc={arrOfImages[(indexOfImages + 1) % arrOfImages.length]}
+                    // prevSrc={
+                    //     arrOfImages[
+                    //     (indexOfImages + arrOfImages.length - 1) % arrOfImages.length
+                    //     ]
+                    // }
                     onCloseRequest={() => setShowModal(false)}
-                    onMovePrevRequest={() =>
-                        setIndexOfImages(
-                            (indexOfImages + arrOfImages.length - 1) % arrOfImages.length
-                        )
-                    }
-                    onMoveNextRequest={() =>
-                        setIndexOfImages(
-                            (indexOfImages + arrOfImages.length + 1) % arrOfImages.length
-                        )
-                    }
+                // onMovePrevRequest={() =>
+                //     setIndexOfImages(
+                //         (indexOfImages + arrOfImages.length - 1) % arrOfImages.length
+                //     )
+                // }
+                // onMoveNextRequest={() =>
+                //     setIndexOfImages(
+                //         (indexOfImages + arrOfImages.length + 1) % arrOfImages.length
+                //     )
+                // }
                 />
             )}
         </div>

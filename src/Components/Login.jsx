@@ -21,8 +21,8 @@ export default function Login({ setUserID }) {
         setUser({ ...user, [name]: value })
     }
 
-    function addItem(localStorageName, newItem) {
-        return window.localStorage.setItem(localStorageName, newItem)
+    function addItem(sessionName, newItem) {
+        return window.sessionStorage.setItem(sessionName, newItem)
     }
 
     const onSubmit = async (e) => {

@@ -22,22 +22,6 @@
     background-attachment: fixed;
 }
 
-.addfiles {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 3% auto;
-    width: 35vw;
-    /* min-height: 50vh; */
-    /* border: 2px solid #f1ffe0; */
-    border-radius: 20px;
-    padding: 25px;
-    background: linear-gradient(45deg, rgba(95, 124, 204, 0.8), rgba(224, 218, 182, 0.8));
-    /* box-shadow: 0 5px 20px 2px whitesmoke; */
-    transition: all 200ms ease-out;
-    animation: fade-in 1s ease-in-out;
-}
 
 .login {
     display: flex;

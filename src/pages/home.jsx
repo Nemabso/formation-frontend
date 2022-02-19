@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 // import { Link } from 'react-router-dom';
@@ -9,10 +9,28 @@ import imgdeux from '../assets/images/herbs.jpg';
 import imgtrois from '../assets/images/resturant.jpg';
 import '../Styles/home.css'
 import Footer from '../components/Footer';
+import axios from 'axios';
+import { AuthContext } from '../context/Auth';
 
 
 
-export default function home() {
+export default function home({ userID, setUserID }) {
+    const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
+
+    const userId = userID ? userID : sessionStorage.getItem("userId");
+    useEffect(() => {
+        if (userId) {
+            axios.get(`http://localhost:5000/user/login/${userId}`).then((res) => {
+                console.log("user get homeJSX::::", res.data);
+                const { user } = res.data;
+                setUserID(user._id);
+                setRole(user.role);
+            }).catch((err) => {
+                console.log("error get files :", err);
+                console.error(err)
+            })
+        }
+    }, [userId])
     return (
         <div>
 
@@ -50,7 +68,7 @@ export default function home() {
                                         {/* <iframe
                                             style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", }}
                                             src="https://www.youtube.com/embed/BOwd8nsDh5Y" title="YouTube video player"
-                                            frameBorder="0"
+                                            frameBorder="0" allowFullScreen
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         ></iframe> */}
                                     </div>

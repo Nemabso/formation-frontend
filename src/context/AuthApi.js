@@ -1,11 +1,11 @@
 import jwtDecode from "jwt-decode";
 
 function removeItem(itemToRemove) {
-    return window.localStorage.removeItem(itemToRemove)
+    return window.sessionStorage.removeItem(itemToRemove)
 }
 
 function getItem(item) {
-    return window.localStorage.getItem(item)
+    return window.sessionStorage.getItem(item)
 }
 
 export function hasAuthenticated() {

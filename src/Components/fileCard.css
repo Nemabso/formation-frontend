@@ -17,11 +17,24 @@ div.document-container {
 }
 
 .embed-files {
-    width: inherit;
+    height: 30vh;
+    width: -webkit-fill-available;
     border-radius: 25px;
     border: outset;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.embed-files:hover {
+    box-shadow: 0 0 10px 10px black;
 }
 
 .card {
     border-radius: 25px;
+}
+
+span.fscreen-span {
+    position: absolute;
+    right: 1vw;
+    top: 31vh;
 }

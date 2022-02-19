@@ -1,21 +1,21 @@
 import axios from 'axios';
 import React, { useState, useEffect, useRef } from 'react';
 // import { AuthContext } from '../../context/Auth';
-// import Modal from "react-modal";
+import Modal from "react-modal";
 
 import FilesCard from '../../components/FilesCard';
 import "./profA.css";
 
-export default function ProfA({ userID }) {
+export default function ProfA({ userID, setUserID }) {
     // const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
 
-    const userName = localStorage.getItem("userName");
-    const userId = userID ? userID : localStorage.getItem("userId");
+    const userName = sessionStorage.getItem("userName");
+    const userId = userID ? userID : sessionStorage.getItem("userId");
     const [cours, setCours] = useState([]);
     const [images, setImages] = useState([]);
 
-    // const [massege, setMassege] = useState("");
-    // const [showModal, setShowModal] = useState(false);
+    const [massege, setMassege] = useState("");
+    const [showModal, setShowModal] = useState(false);
     // const [reponse, setReponse] = useState(false);
 
     const salleBcodeRef = useRef();
@@ -41,7 +41,14 @@ export default function ProfA({ userID }) {
             console.log("success code send", res);
             setRefresh((prev) => !prev)
 
-        }).catch((err) => console.error("error codes post", err))
+        }).catch((err) => {
+            setShowModal(true);
+            setMassege("Le mot de pass de salle A et B ne doivent pas être identique !");
+            setTimeout(() => {
+                setRefresh((prev) => !prev);
+            }, 3000);
+            console.error("error codes post", err)
+        })
     }
     // console.log("image :", image);
     // console.log("userId", userId);
@@ -80,10 +87,17 @@ export default function ProfA({ userID }) {
         // }
     }
 
-    const togglePartage = async (id) => {
+    const togglePartageA = async (id) => {
         const formD = { userId: userId, formaId: id };
         await axios.put("http://localhost:5000/formation/formation-a", formD).then((res) => {
-            console.log("formation partage ::", res);
+            console.log("formation partage A::", res);
+            setRefresh((prev) => !prev)
+        }).catch((err) => console.error(err));
+    }
+    const togglePartageB = async (id) => {
+        const formD = { userId: userId, formaId: id };
+        await axios.put("http://localhost:5000/formation/salon-b", formD).then((res) => {
+            console.log("formation partage B::", res);
             setRefresh((prev) => !prev)
         }).catch((err) => console.error(err));
     }
@@ -95,6 +109,7 @@ export default function ProfA({ userID }) {
                 console.log("formation :", cours, "user get prof a", user);
                 setImages(cours);
                 // setRole(user.role);
+                setUserID(user._id);
                 setCodeSalleA(user.eleveCodeA);
                 setCodeSalleB(user.eleveCodeB);
             }).catch((err) => {
@@ -107,8 +122,8 @@ export default function ProfA({ userID }) {
         <>
             <h1 className='text-center mt-4'>Bienvenue {userName}</h1>
             <section className='d-flex flex-wrap'>
-                <div className='addfiles'>
-                    <form onSubmit={onsubmit} encType="multipart/form-data" >
+                <div className='addfiles m-auto '>
+                    <form className='p-2' onSubmit={onsubmit} encType="multipart/form-data" >
                         <div className="mb-3">
                             <label htmlFor="titleform" className="form-label">Title</label>
                             <input onChange={(e) => setTitle(e.target.value)} className="form-control" id="titleform" placeholder="Title" ></input>
@@ -146,16 +161,17 @@ export default function ProfA({ userID }) {
                 {!images.length ? null : images.map((elem, index) => {
                     return (
                         <div key={index} >
-                            <FilesCard file={elem} partager={togglePartage} ondeletHandle={ondeletHandle} />
+                            <FilesCard file={elem} partagersalleA={togglePartageA} partagersalleB={togglePartageB} ondeletHandle={ondeletHandle} />
                         </div>
                     )
                 })}
-                {/* <Modal className="modal-signup rounded bg-light col-5"
+                <Modal className="modal-signup rounded bg-light col-5"
                     ariaHideApp={false} isOpen={showModal} onRequestClose={() => setShowModal(false)}>
                     <h1>{massege}</h1>
-                    <button className="btn btn-danger me-4" onClick={() => { setReponse(true); setShowModal(false) }}>Oui</button>
-                    <button className="btn btn-secondary" onClick={() => { setReponse(false); setShowModal(false) }}>Non</button>
-                </Modal> */}
+                    <button className="btn btn-secondary" onClick={() => setShowModal(false)}>fermer</button>
+                </Modal>
+                {/* <button className="btn btn-danger me-4" onClick={() => { setReponse(true); setShowModal(false) }}>Oui</button>
+                    <button className="btn btn-secondary" onClick={() => { setReponse(false); setShowModal(false) }}>Non</button> */}
             </section>
         </>
     )

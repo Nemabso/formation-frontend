@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import img1 from "../assets/images/coocking.jpg";
 // import pdfile from "../assets/images/file.pdf"
 import "./nosFormation.css";
-import './nousContact.css'
+import './nousContact.css' // seulement pour background !  
 import Modal from "react-modal";
 
 
@@ -34,7 +34,7 @@ export default function NosFormation() {
     return (
         <div className="wrapper">
             {/* <!-- Image Zoom HTML --> */}
-            {/* <img className='myImg' ref={modal} src={img1} alt="premier img" width="500" height="300" onClick={() => openImag()} /> */}
+            <img className='myImg' ref={modal} src={img1} alt="premier img" width="500" height="300" onClick={() => openImag()} />
             {/* <!-- The Modal --> */}
             {/* <div id="myModal" className="modal">
                 <img className="modal-content" id="img01" />
