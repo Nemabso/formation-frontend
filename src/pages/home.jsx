@@ -13,7 +13,6 @@ import axios from 'axios';
 import { AuthContext } from '../context/Auth';
 
 
-
 export default function home({ userID, setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
 
@@ -34,22 +33,22 @@ export default function home({ userID, setUserID }) {
     return (
         <div>
 
-            <section>
+            <section className='p-4'>
                 <Carousel>
                     <Carousel.Item interval={3000} >
-                        <img src={imgUn} className="home-slids" alt="premier block" />
+                        <img src={imgUn} className="home-slids img-fluid" alt="premier block" />
                         <Carousel.Caption>
                             <h3>premier</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={3000}>
-                        <img src={imgdeux} className="home-slids" alt="deuxieme block" />
+                        <img src={imgdeux} className="home-slids img-fluid" alt="deuxieme block" />
                         <Carousel.Caption>
                             <h3>Deuxieme</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={3000}>
-                        <img src={imgtrois} className="home-slids" alt="Troixieme block" />
+                        <img src={imgtrois} className="home-slids img-fluid rounded" alt="Troixieme block" />
                         <Carousel.Caption>
                             <h3>Troixieme</h3>
                         </Carousel.Caption>
@@ -88,14 +87,34 @@ export default function home({ userID, setUserID }) {
 
                 </div>
             </section>
-            <section className='sec-company p-4'>
-                <h4 className='text-center'>Ils nous fait confiance</h4>
-                <div className='d-flex flex-wrap justify-content-evenly p-4'>
-                    <img className='company-markes' src="/images/basilic.jpg" alt="basilic" />
-                    <img className='company-markes' src="/images/originalfood.jpg" alt="originalfood" />
-                    <img className='company-markes' src="/images/ninkasi.jpg" alt="nankasi" />
+            <section className='p-4'>
+                <div className='sec-company p-4'>
+                    <h4 className='text-center'>Ils nous fait confiance</h4>
+                    <div className='text-center'>
+                        <Carousel fade>
+                            <Carousel.Item interval={3000} >
+                                <img className='company-markes img-fluid' src="/images/basilic1.svg" alt="basilic" />
+                            </Carousel.Item>
+
+                            <Carousel.Item interval={3000}>
+                                <img className='company-markes img-fluid' src="/images/ninkasi.svg" alt="nankasi" />
+                            </Carousel.Item>
+
+                            <Carousel.Item interval={3000}>
+                                <img className='company-markes img-fluid' src="/images/originalfood.svg" alt="originalfood" />
+                            </Carousel.Item>
+                        </Carousel>
+                    </div>
                 </div>
             </section>
+            {/* <section className='sec-company p-4'>
+                
+                <div className='d-flex flex-wrap justify-content-evenly p-4'>
+                    <img className='company-markes img-fluid' src="/images/basilic1.svg" alt="basilic" />
+                    <img className='company-markes img-fluid' src="/images/ninkasi.svg" alt="nankasi" />
+                    <img className='company-markes img-fluid' src="/images/originalfood.svg" alt="originalfood" />
+                </div>
+            </section> */}
             <section>
                 <Footer />
             </section>

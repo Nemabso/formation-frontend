@@ -29,7 +29,7 @@ export default function Navigation({ setUserID }) {
             <Navbar collapseOnSelect expand="lg" className="customNav bg-light p-3" >
                 <Container className="cont">
                     <Navbar.Brand >
-                        <img src="/logo512.png" style={{ width: 85, height: 65 }} alt="logo"></img>
+                        <img src="/images/logosite.svg" style={{ width: 85, height: 65 }} alt="logo"></img>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
 

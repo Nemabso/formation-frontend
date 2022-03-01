@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
-import logo from "../assets/logoSite.jpeg";
+// import logo from "../assets/logoSite.jpeg";
 import '../Styles/footer.css'
 import { BsGeoAlt, BsFillEnvelopeFill } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
@@ -12,7 +12,7 @@ export default function Footer() {
                 <Row className="cont41">
                     <Col xs={12} sm={6} md={3} >
                         <div className="col4">
-                            <img src={"/logo512.png"} className="logo" alt="logo"></img>
+                            <img src="/images/logosite.svg" className="logo" alt="logo"></img>
                         </div>
                     </Col>
 

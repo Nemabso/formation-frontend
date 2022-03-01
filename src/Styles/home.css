@@ -9,22 +9,28 @@ body {
     height: 90vh;
 } */
 
-.home-slids {
+/* .home-slids {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 93vw;
     height: 100vh;
-}
+} */
 
 .sec-company {
+    margin: auto;
     background: linear-gradient(45deg, rgb(38 159 159 / 80%), rgba(209 204 172 / 80%));
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 40%; */
 }
 
 .company-markes {
-    width: 20vw;
-    height: 20vh;
-    border-radius: 25px;
+    width: 59vw;
+    height: 35vh;
+    /* border-radius: 25px; */
 }
 
 .home-text {
@@ -32,7 +38,7 @@ body {
     margin-top: auto;
 }
 
-@media screen and (max-width: 580px) {
+/* @media screen and (max-width: 580px) {
     .home-slids {
         display: block;
         margin-left: auto;
@@ -41,4 +47,4 @@ body {
         height: 50vh;
     }
 
-}
+} */
