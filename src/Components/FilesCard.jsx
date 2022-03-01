@@ -7,6 +7,7 @@ import "./fileCard.css";
 // import Modal from 'react-modal';
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/esm/ModalHeader';
+import ModalFooter from 'react-bootstrap/ModalFooter';
 
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
@@ -60,7 +61,7 @@ export default function FilesCard({ file, ondeletHandle, partagersalleA, partage
 
     return (
         <>
-            <div className="card col-sm-6 col-md-3 col-xl-2 mt-4" style={{ width: "18rem" }} >
+            <div className="card col-sm-6 col-md-3 col-xl-2 mb-4" style={{ width: "18rem" }} >
                 {file.images.map((elem, j) => {
                     if (typeof elem === "string" && `${elem.split(".").slice(-1)}` === "docx") {
                         return (
@@ -76,7 +77,7 @@ export default function FilesCard({ file, ondeletHandle, partagersalleA, partage
                     if (`${elem.split(".").slice(-1)}` === "pdf") {
                         return (
                             <div key={j}>
-                                <embed onClick={() => openImag(true)} className='embed-files' src={`http://localhost:5000${elem}`} />
+                                <embed onClick={() => openImag(true)} className='embed-files' src={`http://localhost:5000${elem}` ? `http://localhost:5000${elem}` : "/images/filepdf.png"} />
                                 <span onClick={() => { setViwefile(`http://localhost:5000${elem}`); openImag(true) }} className="btn fscreen-span" ><BsArrowsFullscreen /></span>
                             </div>
                         )
@@ -96,12 +97,18 @@ export default function FilesCard({ file, ondeletHandle, partagersalleA, partage
                     <button onClick={() => { setShowModal(true); setFullscreen(true) }} className="btn"><BsShareFill /></button>
                 </div>
             </div>
-            <Modal fullscreen={fullscreen}
+            <Modal className='partage-modal' fullscreen={fullscreen}
                 show={showModal} onHide={() => setShowModal(false)}>
                 <ModalHeader closeButton />
-                <h2>Partager avec :</h2>
-                <button className="btn btn-info" onClick={() => { partagersalleA(file._id); setShowModal(false) }}>{file.salonA ? "enlever le partage avec salle A" : "partager avec salleA"}</button>
-                <button className="btn btn-warning" onClick={() => { partagersalleB(file._id); setShowModal(false) }}>{file.salonB ? "enlever le partage avec salle B" : "partager avec salleB"}</button>
+                <div className='p-3'>
+                    <h2>Partager avec :</h2>
+                    <ModalFooter className='d-flex flex-wrap justify-content-center'>
+                        <button className="btn btn-info" onClick={() => { partagersalleA(file._id); setShowModal(false) }}>
+                            {file.salonA ? "enlever le partage avec salle A" : "partager avec salleA"}</button>
+                        <button className="btn btn-warning" onClick={() => { partagersalleB(file._id); setShowModal(false) }}>
+                            {file.salonB ? "enlever le partage avec salle B" : "partager avec salleB"}</button>
+                    </ModalFooter>
+                </div>
             </Modal>
 
             <Modal fullscreen={fullscreen}

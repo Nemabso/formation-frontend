@@ -1,0 +1,38 @@
+.notif-counter {
+    font-size: 14px;
+    display: flex;
+    background-color: #ff4d00;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+}
+
+.notif-comptes {
+    font-size: 14px;
+    display: flex;
+    background-color: #c8ef85;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    right: 25px;
+}
+
+.notif-message {
+    /* padding: 20px; */
+    /* background-color: #0dcaf0; */
+    position: absolute;
+    /* border-radius: 50%; */
+    right: 10px;
+    top: 70px;
+}

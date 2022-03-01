@@ -25,16 +25,22 @@ div.document-container {
     transition: all 0.6s ease;
 }
 
-.embed-files:hover {
-    box-shadow: 0 0 10px 10px black;
+.card:hover {
+    box-shadow: 0 0 10px 10px rgb(94, 92, 92);
 }
 
 .card {
     border-radius: 25px;
+    background-color: #EAF1F5;
 }
 
 span.fscreen-span {
     position: absolute;
     right: 1vw;
     top: 31vh;
+}
+
+.partage-modal {
+    height: auto;
+    top: 25%;
 }

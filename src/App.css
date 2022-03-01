@@ -1,6 +1,7 @@
-Modal.modal-signup {
+.modal-signup {
     text-align: center;
-    margin-top: 19%;
+    width: fit-content;
+    margin-top: 25%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
@@ -10,8 +11,8 @@ Modal.modal-signup {
 
 canvas {
     margin: auto;
-    width: 73vw !important;
-    height: 130vh !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* Modal Content (image) */
@@ -31,8 +32,13 @@ canvas {
     max-width: 700px;
     text-align: center;
     color: #ccc;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     height: 150px;
+}
+
+.modal-fullscreen .modal-content {
+    height: auto;
+    top: 15%;
 }
 
 /* Add Animation */
@@ -56,8 +62,8 @@ canvas {
 
     canvas {
         margin: auto;
-        width: 100vw !important;
-        height: 90vh !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 }
 

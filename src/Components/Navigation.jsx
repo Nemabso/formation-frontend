@@ -45,7 +45,7 @@ export default function Navigation({ setUserID }) {
                                     </li>
 
                                     <li className="itemCover">
-                                        <Link to="/comptes" className="nav-item">BLOG</Link>
+                                        <Link to="/comptes" className="nav-item">AVIS</Link>
                                     </li>
 
                                     <li className="itemCover">
@@ -67,13 +67,20 @@ export default function Navigation({ setUserID }) {
                             ))}
                             {(salleB && (<button className="btn btn-danger mt-3" onClick={logOutEleve} >Déconnexion</button>))}
                             {(salleA && (<button className="btn btn-danger mt-3" onClick={logOutEleve} >Déconnexion</button>))}
-                            {(role && (
+                            {(role === "formateur" && (
                                 <li className="itemCover">
-                                    {(role === "admin" && (<Link className="nav-item menu-button" to="/admin ">ADMIN</Link>))}
-                                    {(role === "formateur" && (<Link className="nav-item menu-button" to="/profa">FORMATEUR</Link>))}
-                                    <div className="dropdown rounded">
+                                    {(role === "formateur" && (<Link className="nav-item menu-button" to="/profa">MON COMPTE</Link>))}
+                                    <div className="dropdown rounded" style={{ backgroundColor: "#9c9fa1ad" }}>
                                         <Link to="/sallea" >Salle A</Link>
                                         <Link to="/salleb" >Salle B</Link>
+                                        <button className="btn btn-danger mt-3" onClick={handleLogout} >Déconnexion</button>
+                                    </div>
+                                </li>
+                            ))}
+                            {(role === "admin" && (
+                                <li className="itemCover">
+                                    {(role === "admin" && (<Link className="nav-item menu-button" to="/admin ">ADMIN</Link>))}
+                                    <div className="dropdown rounded">
                                         <button className="btn btn-danger mt-3" onClick={handleLogout} >Déconnexion</button>
                                     </div>
                                 </li>

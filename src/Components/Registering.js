@@ -35,7 +35,7 @@ export default function Registering() {
             .min(6, 'Le mot de passe doit être au moins 6 caractères')
             // .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
             //     'Votre mot de pass Doit contenir 6 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial')
-            .required('Mot de passe requis'),
+            .required('6 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial'),
         confirmPassword: Yup.string()
             .oneOf([Yup.ref('password'), null], 'Le mot de passe doit correspondre')
             .required('Confirmer le mot de passe est requis'),
@@ -70,15 +70,15 @@ export default function Registering() {
                 initialValues={initialValues}
                 validationSchema={validate}
                 onSubmit={(signupData, { resetForm }) => {
-                    console.log("from formik", signupData);
+                    // console.log("from formik", signupData);
                     handleSignup(signupData)
                     resetForm();
                 }}
             >
                 {formik => (
 
-                    <div className="container my-5 row ms-auto me-auto">
-                        <h1 className="my-2 font-weight-bold text-center">Création du compte pour des Profs ou Admin !</h1>
+                    <div className="container row p-4 pt-0 m-auto">
+                        <h3 className="p-2 text-center pt-0">Création du compte pour des Profs ou Admin !</h3>
                         <div className="col-md-6">
                             <Form>
                                 <label htmlFor="last Name">Nom et prèsnom</label>

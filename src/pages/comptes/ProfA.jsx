@@ -31,23 +31,36 @@ export default function ProfA({ userID, setUserID }) {
         setCours(e.target.files);
     }
 
-    const handleCode = async () => {
+    const handleCodeA = async () => {
         setCodeSalleA(salleAcodeRef.current.value);
-        setCodeSalleB(salleBcodeRef.current.value);
         salleAcodeRef.current.value = "";
-        salleBcodeRef.current.value = "";
-        const codeData = { codeA: codeSalleA, codeB: codeSalleB, userId: userId }
-        await axios.post("http://localhost:5000/user/profCode", codeData).then((res) => {
+        const codeData = { codeA: codeSalleA, userId: userId }
+        await axios.post("http://localhost:5000/user/profCodea", codeData).then((res) => {
             console.log("success code send", res);
             setRefresh((prev) => !prev)
-
-        }).catch((err) => {
+        }).catch(({ response }) => {
             setShowModal(true);
-            setMassege("Le mot de pass de salle A et B ne doivent pas être identique !");
+            setMassege(response.data.message);
             setTimeout(() => {
                 setRefresh((prev) => !prev);
             }, 3000);
-            console.error("error codes post", err)
+            console.log("error codes post", response);
+        })
+    }
+    const handleCodeB = async () => {
+        setCodeSalleB(salleBcodeRef.current.value);
+        salleBcodeRef.current.value = "";
+        const codeData = { codeB: codeSalleB, userId: userId }
+        await axios.post("http://localhost:5000/user/profCodesalleb", codeData).then((res) => {
+            console.log("success code send", res);
+            setRefresh((prev) => !prev)
+        }).catch(({ response }) => {
+            setShowModal(true);
+            setMassege(response.data.message);
+            setTimeout(() => {
+                setRefresh((prev) => !prev);
+            }, 3000);
+            console.log("error codes post", response);
         })
     }
     // console.log("image :", image);
@@ -119,10 +132,10 @@ export default function ProfA({ userID, setUserID }) {
         }
     }, [userId, refresh])
     return (
-        <>
-            <h1 className='text-center mt-4'>Bienvenue {userName}</h1>
-            <section className='d-flex flex-wrap'>
-                <div className='addfiles m-auto '>
+        <div className='back-page-profs'>
+            <h1 className='p-4 text-light'>Bienvenue {userName}</h1>
+            <section className='d-flex flex-wrap '>
+                <div className='addfiles m-auto mb-4'>
                     <form className='p-2' onSubmit={onsubmit} encType="multipart/form-data" >
                         <div className="mb-3">
                             <label htmlFor="titleform" className="form-label">Title</label>
@@ -143,21 +156,21 @@ export default function ProfA({ userID, setUserID }) {
                         </div>
                     </form>
                 </div>
-                <div className='codebox text-center m-auto'>
+                <div className='codebox text-center m-auto mb-4'>
                     <h3 className='p-2'>Gérer le code pour les élèves </h3>
                     <div className='d-flex flex-wrap input-group p-3 '>
                         <input ref={salleAcodeRef} onChange={(e) => setCodeSalleA(e.target.value)} type="text" placeholder='Création de mot de passe ...' className='form-control' />
-                        <button onClick={() => handleCode()} className='btn bg-light mx-2'>Ok</button>
+                        <button onClick={() => handleCodeA()} className='inputbtn-code'>Ok</button>
                     </div>
                     {(codeSalleA && (<div className='d-flex justify-content-evenly align-items-center' ><p>Salle A : </p> <h2>{codeSalleA}</h2></div>))}
                     <div className='d-flex flex-wrap input-group p-3 '>
                         <input ref={salleBcodeRef} onChange={(e) => setCodeSalleB(e.target.value)} type="text" placeholder='Création de mot de passe ...' className='form-control' />
-                        <button onClick={() => handleCode()} className='btn bg-light mx-2'>Ok</button>
+                        <button onClick={() => handleCodeB()} className='inputbtn-code'>Ok</button>
                     </div>
                     {(codeSalleB && (<div className='d-flex justify-content-evenly align-items-center' ><p>Salle B : </p><h2>{codeSalleB}</h2></div>))}
                 </div>
             </section>
-            <section className='d-flex flex-wrap justify-content-evenly align-items-start mb-5'>
+            <section className='d-flex flex-wrap justify-content-evenly align-items-start'>
                 {!images.length ? null : images.map((elem, index) => {
                     return (
                         <div key={index} >
@@ -165,7 +178,7 @@ export default function ProfA({ userID, setUserID }) {
                         </div>
                     )
                 })}
-                <Modal className="modal-signup rounded bg-light col-5"
+                <Modal className="modal-signup rounded bg-light"
                     ariaHideApp={false} isOpen={showModal} onRequestClose={() => setShowModal(false)}>
                     <h1>{massege}</h1>
                     <button className="btn btn-secondary" onClick={() => setShowModal(false)}>fermer</button>
@@ -173,6 +186,6 @@ export default function ProfA({ userID, setUserID }) {
                 {/* <button className="btn btn-danger me-4" onClick={() => { setReponse(true); setShowModal(false) }}>Oui</button>
                     <button className="btn btn-secondary" onClick={() => { setReponse(false); setShowModal(false) }}>Non</button> */}
             </section>
-        </>
+        </div>
     )
 }

@@ -49,10 +49,10 @@ export default function EleveLog() {
                 sessionStorage.setItem("salonBID", res.data.salonB);
                 return navigate("/salleb");
             }
-        }).catch((err) => {
+        }).catch(({ response }) => {
+            console.log("res de back", response);
             setShowModal(true);
-            setMassege("Le mot de pass n'est pas correct !")
-            console.error(err)
+            setMassege(response.data.message);
         })
         // if (!matchA || !matchB) {
         //     setShowModal(true);
@@ -72,7 +72,7 @@ export default function EleveLog() {
             <div className="login">
                 <Modal className="modal-signup rounded-pill bg-light col-5" ariaHideApp={false} isOpen={showModal} onRequestClose={() => setShowModal(false)}>
                     <h1>{massege}</h1>
-                    <button className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
+                    <button className="btn btn-secondary" onClick={() => setShowModal(false)}>fermer</button>
                 </Modal>
                 <form onSubmit={onSubmit} className='form-figure' encType="multipart/form-data" >
                     <input className="login-input" required autoComplete="off" name="password" placeholder="Password ..." type="text" onChange={(e) => setCode(e.target.value)} />

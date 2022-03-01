@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Registering from "./components/Registering";
 import "react-image-lightbox/style.css";
 import Error404 from "./components/Error404";
 import Home from "./pages/home";
@@ -15,6 +14,7 @@ import NousContacter from "./pages/NousContacter";
 import SalleA from "./pages/comptes/SalleA";
 import SalleB from "./pages/comptes/SalleB";
 import "./App.css"
+import Blog from "./pages/Blog";
 export default function App() {
   const [isAuthenticated, setIsAuthenticated, role] = useContext(AuthContext);
   // console.log("Here is app js !", isAuthenticated, "role is", role);
@@ -26,7 +26,7 @@ export default function App() {
       <Navbar userID={userID} setUserID={setUserID} />
       <Routes>
         <Route exact path="/" element={<Home userID={userID} setUserID={setUserID} />} />
-        <Route exact path="/comptes" element={<Registering />} />
+        <Route exact path="/comptes" element={<Blog />} />
 
         <Route path="/contact" element={<NousContacter userID={userID} setUserID={setUserID} />} />
         <Route exact path="/eleveLogin" element={<EleveLog />} />

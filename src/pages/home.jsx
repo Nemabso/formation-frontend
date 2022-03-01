@@ -80,7 +80,7 @@ export default function home({ userID, setUserID }) {
                                     <p>Une offre de formation 100% sur mesure</p>
                                     <p>Vous êtes intéressé par la restauration ?</p>
                                     <p>EUREKA vous accompagne et vous conseille dans vos projets de formation.</p>
-                                    <a href="###"><div>En savoir plus</div></a>
+                                    {/* <a href="###"><div>En savoir plus</div></a> */}
                                 </div>
                             </Col>
                         </Row>
@@ -88,7 +88,14 @@ export default function home({ userID, setUserID }) {
 
                 </div>
             </section>
-            {/* section 3 */}
+            <section className='sec-company p-4'>
+                <h4 className='text-center'>Ils nous fait confiance</h4>
+                <div className='d-flex flex-wrap justify-content-evenly p-4'>
+                    <img className='company-markes' src="/images/basilic.jpg" alt="basilic" />
+                    <img className='company-markes' src="/images/originalfood.jpg" alt="originalfood" />
+                    <img className='company-markes' src="/images/ninkasi.jpg" alt="nankasi" />
+                </div>
+            </section>
             <section>
                 <Footer />
             </section>

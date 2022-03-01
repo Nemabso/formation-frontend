@@ -54,8 +54,8 @@ export default function SalleB({ userID }) {
     }, []);
 
     return (
-        <>
-            <h1 className='mt-3 ms-3'>Salle B</h1>
+        <div className='page-salon-b'>
+            <h1 className='p-4 text-light'>Salle B</h1>
             <div className='d-flex flex-wrap justify-content-evenly align-items-start mb-4'>
                 {favorites.map((item, index) => (
                     <div key={index} className="card position-relative mt-4" style={{ width: "18rem" }}>
@@ -115,6 +115,6 @@ export default function SalleB({ userID }) {
                     </div> */}
                 {/* </ModalBody> */}
             </Modal>
-        </>
+        </div>
     );
 }
