@@ -48,7 +48,7 @@ export default function SalleA({ userID }) {
                 console.error(err)
             })
         }
-    }, []);
+    }, [profID]);
     return (
         <div className='page-salon-a'>
             <h1 className='p-4 text-light'>Salle A</h1>

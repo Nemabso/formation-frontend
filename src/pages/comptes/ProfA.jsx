@@ -130,7 +130,7 @@ export default function ProfA({ userID, setUserID }) {
                 console.error(err)
             })
         }
-    }, [userId, refresh])
+    }, [userId, setUserID, refresh])
     return (
         <div className='back-page-profs'>
             <h1 className='p-4 text-light'>Bienvenue {userName}</h1>
@@ -159,12 +159,12 @@ export default function ProfA({ userID, setUserID }) {
                 <div className='codebox text-center m-auto mb-4'>
                     <h3 className='p-2'>Gérer le code pour les élèves </h3>
                     <div className='d-flex flex-wrap input-group p-3 '>
-                        <input ref={salleAcodeRef} onChange={(e) => setCodeSalleA(e.target.value)} type="text" placeholder='Création de mot de passe ...' className='form-control' />
+                        <input ref={salleAcodeRef} onChange={(e) => setCodeSalleA(e.target.value)} type="text" placeholder='Mot de passe pour salle A...' className='form-control' />
                         <button onClick={() => handleCodeA()} className='inputbtn-code'>Ok</button>
                     </div>
                     {(codeSalleA && (<div className='d-flex justify-content-evenly align-items-center' ><p>Salle A : </p> <h2>{codeSalleA}</h2></div>))}
                     <div className='d-flex flex-wrap input-group p-3 '>
-                        <input ref={salleBcodeRef} onChange={(e) => setCodeSalleB(e.target.value)} type="text" placeholder='Création de mot de passe ...' className='form-control' />
+                        <input ref={salleBcodeRef} onChange={(e) => setCodeSalleB(e.target.value)} type="text" placeholder='Mot de passe pour salle B ...' className='form-control' />
                         <button onClick={() => handleCodeB()} className='inputbtn-code'>Ok</button>
                     </div>
                     {(codeSalleB && (<div className='d-flex justify-content-evenly align-items-center' ><p>Salle B : </p><h2>{codeSalleB}</h2></div>))}

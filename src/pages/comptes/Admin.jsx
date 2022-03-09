@@ -65,7 +65,12 @@ export default function Admin() {
     }
 
     const deleteComptes = (id) => {
-        console.log("id delete", id);
+        axios.delete(`http://localhost:5000/user/comptedelete/${id}`).then(() => {
+            console.log("compte a ete supprime !");
+            setRefresh((prev) => !prev);
+        }).catch(({ response }) => {
+            console.log("response de delete comptes", response);
+        })
     }
 
     useEffect(() => {
@@ -79,7 +84,7 @@ export default function Admin() {
             <header className='d-flex align-items-center justify-content-between'>
                 <div className='position-relative p-3'>
                     <button onClick={() => { setShowModal(true); setFullscreen(true) }} className='btn mt-2 ms-2'><BsFillChatSquareDotsFill
-                        onMouseEnter={() => setHoverMessage("Avis reçu !")} onMouseLeave={() => setHoverMessage("")} size={40} />
+                        onMouseEnter={() => setHoverMessage("Avis reçus !")} onMouseLeave={() => setHoverMessage("")} size={40} />
                     </button>
                     <span className='notif-counter'>{counter} </span>
                     <span className='notif-message'> {hoverMessage}</span>
@@ -115,7 +120,7 @@ export default function Admin() {
                                     })}
                                 </div>
                                 <div className='d-flex justify-content-between'>
-                                    <button onClick={() => { if (window.confirm("vous allez acceptez ce avis ?")) handleAccepte(avis._id) }} className='btn me-3' style={{ backgroundColor: "#abea81" }} >accepter</button>
+                                    {(avis.recently === true) && <button onClick={() => { if (window.confirm("vous allez acceptez ce avis ?")) handleAccepte(avis._id) }} className='btn me-3' style={{ backgroundColor: "#abea81" }} >accepter</button>}
                                     <button onClick={() => { if (window.confirm("vous allez refuser ce avis ?")) handleDelete(avis.email) }} className='btn btn-danger'>refuser</button>
                                 </div>
                             </div>

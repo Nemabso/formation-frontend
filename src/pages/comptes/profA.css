@@ -1,5 +1,5 @@
 .back-page-profs {
-    background: url("/images/green.jpg") no-repeat fixed center top transparent;
+    background: url("../imag/green.jpg") no-repeat fixed center top transparent;
     min-height: 85vh;
 }
 
@@ -67,11 +67,11 @@ h1, h2, h3 {
 }
 
 .page-salon-a {
-    background: url("/images/wood.jpg") no-repeat fixed;
+    background: url("../imag/wood.jpg") no-repeat fixed;
     min-height: 85vh;
 }
 
 .page-salon-b {
-    background: url("/images/wood.jpg") no-repeat fixed;
+    background: url("../imag/wood.jpg") no-repeat fixed;
     min-height: 85vh;
 }

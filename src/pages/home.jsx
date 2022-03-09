@@ -13,7 +13,7 @@ import axios from 'axios';
 import { AuthContext } from '../context/Auth';
 
 
-export default function home({ userID, setUserID }) {
+export default function Home({ userID, setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
 
     const userId = userID ? userID : sessionStorage.getItem("userId");
@@ -29,7 +29,7 @@ export default function home({ userID, setUserID }) {
                 console.error(err)
             })
         }
-    }, [userId])
+    }, [userId, setUserID, setRole])
     return (
         <div>
 
@@ -58,7 +58,7 @@ export default function home({ userID, setUserID }) {
             </section>
             {/* section 2 */}
             <section className='p-4'>
-                <div className="sect1">
+                <div>
                     <Container>
                         <Row>
                             <Col sm={6} className="col11" >
@@ -92,15 +92,15 @@ export default function home({ userID, setUserID }) {
                     <h4 className='text-center'>Ils nous fait confiance</h4>
                     <div className='text-center'>
                         <Carousel fade>
-                            <Carousel.Item interval={3000} >
+                            <Carousel.Item interval={2000} >
                                 <img className='company-markes img-fluid' src="/images/basilic1.svg" alt="basilic" />
                             </Carousel.Item>
 
-                            <Carousel.Item interval={3000}>
+                            <Carousel.Item interval={2000}>
                                 <img className='company-markes img-fluid' src="/images/ninkasi.svg" alt="nankasi" />
                             </Carousel.Item>
 
-                            <Carousel.Item interval={3000}>
+                            <Carousel.Item interval={2000}>
                                 <img className='company-markes img-fluid' src="/images/originalfood.svg" alt="originalfood" />
                             </Carousel.Item>
                         </Carousel>

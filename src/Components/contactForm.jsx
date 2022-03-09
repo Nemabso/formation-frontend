@@ -9,83 +9,89 @@ export default function ContactForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let nameS = document.getElementById("name");
-        let emailS = document.getElementById("email");
-        let messageS = document.getElementById("message");
-        let formMess = document.querySelector(".form-message");
 
-        const isEmail = () => {
-            let isMail = document.getElementById("not-mail");
-            let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        console.log(name, email, message, company, phone);
 
-            if (email.match(regex)) {
-                isMail.style.display = "none";
-                return true;
-            } else {
-                isMail.style.display = "block";
-                isMail.style.animation = "dongle 1s";
-                setTimeout(() => { isMail.style.animation = "none" }, 1000);
-                return false;
-            }
-        };
+        // const isEmail = () => {
+        //     let isMail = document.getElementById("not-mail");
+        //     let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-        if (name && isEmail() && message) {
-            const templateId = "template_aofmtvBG";
-            nameS.classList.remove("red");
-            emailS.classList.remove("red");
-            messageS.classList.remove("red");
-            sendFeedback(templateId, { name, company, phone, email, message });
-        } else {
-            formMess.innerHTML = "Merci de remplir correctement les champs requis *";
-            formMess.style.background = "rgb(253, 87, 87)";
-            formMess.style.opacity = "1";
-            if (!name) { nameS.classList.add("error") }
-            if (!email) { emailS.classList.add("error") }
-            if (!message) { messageS.classList.add("error") }
-        }
+        //     if (email.match(regex)) {
+        //         isMail.style.display = "none";
+        //         return true;
+        //     } else {
+        //         isMail.style.display = "block";
+        //         isMail.style.animation = "dongle 1s";
+        //         setTimeout(() => { isMail.style.animation = "none" }, 1000);
+        //         return false;
+        //     }
+        // };
+
+        // if (name && isEmail() && message) {
+        //     const templateId = "template_aofmtvBG";
+        //     nameS.classList.remove("red");
+        //     emailS.classList.remove("red");
+        //     messageS.classList.remove("red");
+        //     sendFeedback(templateId, { name, company, phone, email, message });
+        // } else {
+        //     formMess.innerHTML = "Merci de remplir correctement les champs requis *";
+        //     formMess.style.background = "rgb(253, 87, 87)";
+        //     formMess.style.opacity = "1";
+        //     if (!name) { nameS.classList.add("error") }
+        //     if (!email) { emailS.classList.add("error") }
+        //     if (!message) { messageS.classList.add("error") }
+        // }
     };
 
-    const sendFeedback = (templateId, variables) => {
-        let formMess = document.querySelector(".form-message");
+    // const sendFeedback = (templateId, variables) => {
+    //     let formMess = document.querySelector(".form-message");
 
-        window.emailjs.send("gmail", templateId, variables)
-            .then((res) => {
-                formMess.innerHTML = "Message envoyé ! Nous vous recontacterons dès que possible.";
-                formMess.style.background = "#00c1ec";
-                formMess.style.opacity = "1";
-                document.getElementById("name").classList.remove("error");
-                document.getElementById("email").classList.remove("error");
-                document.getElementById("message").classList.remove("error");
-                setName("");
-                setCompany("");
-                setPhone("");
-                setEmail("");
-                setMessage("");
-                setTimeout(() => { formMess.style.opacity = "0" }, 3000);
-            })
-            .catch((err) => (formMess.innerHTML = "Une erreur s'est produite, veuillez réessayer."));
-    };
+    //     window.emailjs.send("gmail", templateId, variables)
+    //         .then((res) => {
+    //             formMess.innerHTML = "Message envoyé ! Nous vous recontacterons dès que possible. Merci !";
+    //             formMess.style.background = "#00c1ec";
+    //             formMess.style.opacity = "1";
+    //             document.getElementById("name").classList.remove("error");
+    //             document.getElementById("email").classList.remove("error");
+    //             document.getElementById("message").classList.remove("error");
+    //             setName("");
+    //             setCompany("");
+    //             setPhone("");
+    //             setEmail("");
+    //             setMessage("");
+    //             setTimeout(() => { formMess.style.opacity = "0" }, 3000);
+    //         })
+    //         .catch((err) => (formMess.innerHTML = "Une erreur s'est produite, veuillez réessayer."));
+    // };
 
     return (
-        <>
-            <form className="contact-form">
-                <h2>contactez-nous</h2>
-                <div className="form-content">
-                    <input type="text" id="name" name="name" required onChange={(e) => setName(e.target.value)} placeholder="nom *" value={name} />
-                    <input type="text" id="company" name="company" onChange={(e) => setCompany(e.target.value)} placeholder="société" value={company} />
-                    <input type="text" id="phone" name="phone" onChange={(e) => setPhone(e.target.value)} placeholder="téléphone" value={phone} />
-                    <div className="email-content">
-                        <label id="not-mail">Email non valide</label>
-                        <input type="mail" id="email" name="email" required onChange={(e) => setEmail(e.target.value)}
-                            placeholder="email *" value={email} />
-                    </div>
-                    <textarea id="message" name="message" onChange={(e) => setMessage(e.target.value)} placeholder="message *"
-                        value={message}
+        <form className="contact-form" onSubmit={handleSubmit} encType="multipart/form-data">
+            <div className="form-content p-2" style={{ width: "35vw" }}>
+                <div>
+                    <label htmlFor="name" className="form-label">Prènom et Nom</label>
+                    <input type="text" id="name" name="name" className="form-control" required onChange={(e) => setName(e.target.value)} placeholder="Prènom et Nom *" />
+                </div>
+                <div>
+                    <label htmlFor="company" className="form-label">société</label>
+                    <input type="text" id="company" name="company" className="form-control" onChange={(e) => setCompany(e.target.value)} placeholder="société" />
+                </div>
+                <div>
+                    <label htmlFor="phone" className="form-label">Phone</label>
+                    <input type="text" id="phone" name="phone" className="form-control" onChange={(e) => setPhone(e.target.value)} placeholder="téléphone" />
+                </div>
+                <div className="email-content">
+                    <label htmlFor="email" className="form-label">Email</label>
+                    <input type="email" id="email" name="email" className="form-control" required onChange={(e) => setEmail(e.target.value)}
+                        placeholder="email *" />
+                </div>
+                <div>
+                    <label htmlFor="message" className="form-label">Message</label>
+                    <textarea id="message" name="message" className="form-control" onChange={(e) => setMessage(e.target.value)} placeholder="message *"
                         required />
                 </div>
-                <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Envoyer</button>
-                <div className="form-message"></div>
-            </form>
-        </>
-    );
+                <button className="btn btn-primary mt-2" type="submit">Envoyer</button>
+            </div>
+            <div className="form-message"></div>
+        </form>
+    )
 };

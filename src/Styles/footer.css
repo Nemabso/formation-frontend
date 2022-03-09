@@ -6,14 +6,13 @@
     padding-left: 10px;
 }
 
-.logo {
+.footer-icon {
+    height: 80px;
     width: 40%;
+    cursor: pointer;
 }
 
-.cont41 {
-    padding-left: 35px;
-    padding-right: 35px;
-    padding-top: 10px;
-    padding-bottom: 0px;
-    padding: 20px;
+.footer-icon:hover {
+    transform: scale(1.5);
+    transition: all 0.5s ease;
 }

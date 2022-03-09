@@ -77,7 +77,7 @@ export default function Registering() {
             >
                 {formik => (
 
-                    <div className="container row p-4 pt-0 m-auto">
+                    <div className="container row p-4 pt-0 m-auto" style={{ minHeight: "71vh" }}>
                         <h3 className="p-2 text-center pt-0">Création du compte pour des Profs ou Admin !</h3>
                         <div className="col-md-6">
                             <Form>
@@ -107,8 +107,8 @@ export default function Registering() {
                                 <button className="btn btn-warning mt-3 ml-3 mx-3" type="reset">Reset</button>
                             </Form>
                         </div>
-                        <div className="col-md-6 mt-auto mb-auto">
-                            <img className="img-fluid w-100" src={chefCarton} alt="chefimag" />
+                        <div className="col-md-6 m-auto p-2">
+                            <img className="img-fluid" src={chefCarton} alt="chefimag" />
                         </div>
                     </div>
                 )}

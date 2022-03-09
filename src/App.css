@@ -37,6 +37,7 @@ canvas {
 }
 
 .modal-fullscreen .modal-content {
+    min-width: 50%;
     height: auto;
     top: 15%;
 }

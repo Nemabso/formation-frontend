@@ -11,8 +11,8 @@
   font-size: 17px;
 }
 
-.itemCover a:active {
-  color: rgb(223, 224, 233);
+.nav-item:active {
+  color: rgb(56, 73, 221);
 }
 
 .customNav {
@@ -55,4 +55,10 @@ a {
 
 .dropdown a {
   color: #000;
+  border-radius: 5px;
+}
+
+.dropdown a:hover {
+  transform: scale(1.5);
+  transition: all 0.5s ease-out;
 }

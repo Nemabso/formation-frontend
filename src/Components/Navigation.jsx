@@ -49,6 +49,9 @@ export default function Navigation({ setUserID }) {
                                     </li>
 
                                     <li className="itemCover">
+                                        <Link to="/quisommesnous" className="nav-item">QUI SOMMES NOUS</Link>
+                                    </li>
+                                    <li className="itemCover">
                                         <Link to="/contact" className="nav-item">NOUS CONTACTER</Link>
                                     </li>
                                 </>
@@ -58,7 +61,7 @@ export default function Navigation({ setUserID }) {
                                 <>
                                     <li className="itemCover">
                                         <span className="nav-item menu-button">COMPTES</span>
-                                        <div className="dropdown">
+                                        <div className="dropdown rounded">
                                             <Link to="/login">Formateur</Link>
                                             <Link to="/eleveLogin">Eleve</Link>
                                         </div>

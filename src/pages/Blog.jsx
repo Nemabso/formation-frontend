@@ -31,6 +31,7 @@ export default function Blog() {
             setMassege(response.data.message);
             setShowModal(true);
         })
+        e.target.reset();
     }
 
     useEffect(() => {
@@ -49,14 +50,14 @@ export default function Blog() {
         <>
             {/* <h1 className='p-4'>Blog page</h1> */}
             {getAvis && getAvis.map((avis, index) => (
-                <article key={index} className='d-flex  justify-content-center p-3'>
-                    <div className="border border-primary " style={{ width: "38rem" }}>
-                        <div className="card-header bg-transparent border-success"></div>
-                        <div className="card-body text-success">
+                <article key={index} className='d-flex bg-secondary justify-content-center p-3 '>
+                    <div className="border border-light " style={{ width: "38rem" }}>
+                        <div className="card-header bg-transparent border-light"></div>
+                        <div className="card-body text-light">
                             <h5 className="card-title">{avis.nom}</h5>
                             <p className="card-text">{avis.descriptions}</p>
                         </div>
-                        <div className="card-footer bg-transparent border-success">{[...Array(5)].map((star, i) => {
+                        <div className="card-footer bg-transparent border-light">{[...Array(5)].map((star, i) => {
                             const ratingValue = i + 1;
                             return (<FaStar size={20} key={i} color={ratingValue <= (avis.ratAvis) ? "#ffc107" : "#e4e5e9"} />)
                         })} </div>
@@ -64,7 +65,7 @@ export default function Blog() {
                 </article>
             ))}
 
-            <div className='p-4'>
+            <div className='p-4 bg-secondary'>
                 <form onSubmit={submitHandle} className='container col-sm-6 col-md-6 col-lg-6 col-xl-6 border  rounded bg-light'>
                     <div className='p-4'>
                         <div className="mb-3">

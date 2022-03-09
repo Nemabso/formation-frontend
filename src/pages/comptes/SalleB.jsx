@@ -51,7 +51,7 @@ export default function SalleB({ userID }) {
                 console.error(err)
             })
         }
-    }, []);
+    }, [profID]);
 
     return (
         <div className='page-salon-b'>

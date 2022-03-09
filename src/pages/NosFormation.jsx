@@ -1,8 +1,6 @@
 import React from 'react'
 import Footer from '../components/Footer';
 import "./nosFormation.css";
-import './nousContact.css' // seulement pour background !  
-
 
 export default function NosFormation() {
 
