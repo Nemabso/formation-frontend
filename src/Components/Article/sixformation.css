@@ -1,0 +1,41 @@
+.six-article-forma {
+    background: url("./articleimages/logoback.png") center no-repeat;
+    background-size: 70% 63%;
+    min-height: 100vh;
+}
+
+.six-sections-forma {
+    min-height: 80vh;
+    background: #f9fafbd6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.sixforma-title {
+    background-color: #B8D6F6;
+    padding: 50px;
+    text-align: center;
+    border-radius: 0px 0px 50px 50px;
+}
+
+.sixform-titre {
+    display: flex;
+    justify-content: center;
+    border-radius: 55px;
+    background-color: #ECF0F3;
+    width: 180px;
+    padding: 20px;
+    /* margin-left: 20px; */
+    align-items: center;
+    box-shadow: inset 5px 4px 8px 0px #00000033;
+}
+
+.sixform-secs {
+    display: flex;
+    padding: 23px;
+    width: 400px;
+    flex-direction: column;
+    justify-content: space-between;
+}

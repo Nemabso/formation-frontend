@@ -1,0 +1,37 @@
+.trois-imag {
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+}
+
+.troisieme-article {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.trois-vertical {
+    border-left: 2px solid #0000002e;
+    height: 450px;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* display: inline-block; */
+}
+
+.tois-sec-left {
+    display: flex;
+    gap: 13px;
+    border-radius: 50px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.trois-sec-right {
+    padding: 20px;
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

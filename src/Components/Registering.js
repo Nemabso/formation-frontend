@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from "axios";
 import chefCarton from "../assets/images/chefCarton.png";
-import "../Styles/Registering.css"
+import "./Registering.css"
 // import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 const baseURL = "http://localhost:5000";

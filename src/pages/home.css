@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.backgroung-hompage {
+    background: url("../assets/home.png") center no-repeat;
+    background-size: 100% auto;
+}
+
+.homesite-logo {
+    width: 180px;
+    height: 150px;
+    padding: 18px;
+}
+
+.filter-home {
+    background: #f9fafbbd;
+}
+
+.carousel-indicators {
+    display: none;
+}
+
+.etre-rappele {
+    gap: 20px;
+    display: flex;
+    border-radius: 55px;
+    background-color: #ECF0F3;
+    width: fit-content;
+    padding: 20px;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 3%;
+    /* margin-top: 5%; */
+    box-shadow: inset -5px 6px 20px 0px #00000033;
+}
+
+.circle {
+    content: "";
+    background-color: #EBEDF1;
+    padding: 35px;
+    border-radius: 50%;
+    box-shadow: -9px 8px 15px 3px #00000045, 1px -1px 17px 3px #fff;
+}
+
+a.circle:hover {
+    background-color: rgb(214, 231, 231);
+    transform: scale(1.1);
+    transition: all 1s ease-out;
+}
+
+.check-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.home-info {
+    border-radius: 55px;
+    border: none;
+    padding: 20px;
+    background-color: #EBEDF1;
+    box-shadow: -9px 8px 15px 3px #00000045, 1px -1px 17px 3px #fff, inset 0px 0px 11px 0px #000000a6;
+}
+
+button.home-info:hover {
+    transform: scale(1.2);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.home-parag {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+div.home-parag p {
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+
+/* video */
+/* .backplan {
+    width: 90vw;
+    height: 90vh;
+} */
+
+/* .home-slids {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 93vw;
+    height: 100vh;
+} */
+
+.sec-company {
+    margin: auto;
+    background: linear-gradient(45deg, #B8D6F6, rgba(129, 180, 238, 0.8));
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 40%; */
+}
+
+.company-markes {
+    width: 59vw;
+    height: 35vh;
+    /* border-radius: 25px; */
+}
+
+.home-text {
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+@media screen and (max-width: 588px) {
+    .check-info {
+        display: block;
+        justify-content: flex-start;
+    }
+
+}

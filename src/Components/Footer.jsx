@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 // import logo from "../assets/logoSite.jpeg";
-import '../Styles/footer.css';
+import './footer.css';
 import { BsGeoAlt, BsFillEnvelopeFill } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
 import Modal from 'react-bootstrap/Modal';
@@ -53,7 +53,7 @@ export default function Footer() {
 
                         <Col sm={6} md={3}>
                             <div className="p-2">
-                                <Link to={'/quisommesnous'}>Qui sommes nous ?</Link>
+                                <Link to={'/nosformation'}>Nos formations</Link>
                                 {/* <p>Blog</p> */}
                                 {/* <p className='mt-3'>Former et recruter</p> */}
                             </div>

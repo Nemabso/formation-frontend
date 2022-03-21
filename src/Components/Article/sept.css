@@ -1,0 +1,48 @@
+.sept-article {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sept-down-text {
+    align-items: center;
+    padding: 20px;
+}
+
+.sept-tire {
+    width: 46px;
+    background-color: #ECF0F3;
+    padding: 9px;
+    border-radius: 20px;
+    box-shadow: inset 2px 2px 5px 0px #00000070, inset -3px -3px 4px 1px #fffffffa;
+}
+
+.sept-up-photo {
+    width: 282px;
+    height: 158px;
+}
+
+.sept-down-photo {
+    width: 252px;
+    height: 158px;
+}
+
+.sept-sec-left {
+    background: #B8D6F6;
+    width: 485px;
+    /* height: 450px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sept-sec-right {
+    padding: 20px;
+    width: 703px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}

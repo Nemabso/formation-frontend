@@ -4,10 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 // import { Link } from 'react-router-dom';
 // import vid from '../video/premier.mp4';
 import { Container, Row, Col } from "react-bootstrap";
-import imgUn from '../assets/images/chef1.jpg';
-import imgdeux from '../assets/images/herbs.jpg';
-import imgtrois from '../assets/images/resturant.jpg';
-import '../Styles/home.css'
+import './home.css'
 import Footer from '../components/Footer';
 import axios from 'axios';
 import { AuthContext } from '../context/Auth';
@@ -15,6 +12,7 @@ import { AuthContext } from '../context/Auth';
 
 export default function Home({ userID, setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
+    console.log(isAuthenticated, setIsAuthenticated, role);
 
     const userId = userID ? userID : sessionStorage.getItem("userId");
     useEffect(() => {
@@ -31,32 +29,41 @@ export default function Home({ userID, setUserID }) {
         }
     }, [userId, setUserID, setRole])
     return (
-        <div>
+        <main>
 
-            <section className='p-4'>
-                <Carousel>
-                    <Carousel.Item interval={3000} >
-                        <img src={imgUn} className="home-slids img-fluid" alt="premier block" />
-                        <Carousel.Caption>
-                            <h3>premier</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item interval={3000}>
-                        <img src={imgdeux} className="home-slids img-fluid" alt="deuxieme block" />
-                        <Carousel.Caption>
-                            <h3>Deuxieme</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item interval={3000}>
-                        <img src={imgtrois} className="home-slids img-fluid rounded" alt="Troixieme block" />
-                        <Carousel.Caption>
-                            <h3>Troixieme</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-
-                </Carousel>
+            <section className='backgroung-hompage'>
+                <div className='p-4 text-center filter-home'>
+                    <h1 className='mt-5'>
+                        <b>Ensemble révèlons vos talents et <br /> construisons votre capital humain</b>
+                    </h1>
+                    <img src="./logo512.png" className='homesite-logo' alt="logo home page" />
+                    <h5 className='p-3'>
+                        SPECIALISTE DE LA FORMATION DANS LES SECTEURS DE LA RESTAURATION ET DE LA VENTE
+                    </h5>
+                    <div className='etre-rappele'>
+                        <a href='tel:votre numero' className='circle' />
+                        <h4>
+                            <b>Etre rappelé <br /> immédiatement</b>
+                        </h4>
+                    </div>
+                </div>
             </section>
-            {/* section 2 */}
+            {/* <hr style={{ backgroundColor: "red" }} /> */}
+
+            <section className='check-info'>
+                <div className='home-parag'>
+                    <div><button className='home-info' /></div>
+                    <p>Des formations sur mesure</p>
+                </div>
+                <div className='home-parag'>
+                    <div><button className='home-info' /></div>
+                    <p>Des professionelles métier</p>
+                </div>
+                <div className='home-parag'>
+                    <div><button className='home-info' /></div>
+                    <p>Une prise en charge du financement possible à 100%</p>
+                </div>
+            </section>
             <section className='p-4'>
                 <div>
                     <Container>
@@ -78,20 +85,19 @@ export default function Home({ userID, setUserID }) {
                                 <div className="text-center">
                                     <p>Une offre de formation 100% sur mesure</p>
                                     <p>Vous êtes intéressé par la restauration ?</p>
-                                    <p>EUREKA vous accompagne et vous conseille dans vos projets de formation.</p>
+                                    <p>IDOINE vous accompagne et vous conseille dans vos projets de formation.</p>
                                     {/* <a href="###"><div>En savoir plus</div></a> */}
                                 </div>
                             </Col>
                         </Row>
                     </Container>
-
                 </div>
             </section>
             <section className='p-4'>
                 <div className='sec-company p-4'>
-                    <h4 className='text-center'>Ils nous fait confiance</h4>
+                    <h4 className='text-center pb-3'>Ils nous font confiance</h4>
                     <div className='text-center'>
-                        <Carousel fade>
+                        <Carousel fade >
                             <Carousel.Item interval={2000} >
                                 <img className='company-markes img-fluid' src="/images/basilic1.svg" alt="basilic" />
                             </Carousel.Item>
@@ -102,6 +108,15 @@ export default function Home({ userID, setUserID }) {
 
                             <Carousel.Item interval={2000}>
                                 <img className='company-markes img-fluid' src="/images/originalfood.svg" alt="originalfood" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/buffalo-grill.png" alt="buffalo-grill" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/RossiBoisson.jpg" alt="RossiBoisson" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/MinoterieForest.svg" alt="Minoterie Forest" />
                             </Carousel.Item>
                         </Carousel>
                     </div>
@@ -118,7 +133,6 @@ export default function Home({ userID, setUserID }) {
             <section>
                 <Footer />
             </section>
-
-        </div>
+        </main>
     )
 }

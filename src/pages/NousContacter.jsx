@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Footer from "../components/Footer";
 import "./nousContact.css";
+import ReCAPTCHA from "react-google-recaptcha";
 // import backimage from "./imag/troiswall.jpg";
 import sidimag from "./imag/design.svg";
+import axios from "axios";
+import Modal from "react-modal";
 
 export default function NousContacter() {
     const [name, setName] = useState("");
@@ -11,11 +14,24 @@ export default function NousContacter() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const handleSubmit = (e) => {
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setmodalMessage] = useState("");
+
+    const reCaptcharef = useRef(null);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        // console.log(name, email, message, company, phone);
 
-        console.log(name, email, message, company, phone);
-
+        await axios.post("http://localhost:5000/user/contactus", {
+            name: name, company: company, phone: phone, email: email, message: message
+        }).then((res) => {
+            setmodalMessage(res.data);
+            setShowModal(true);
+        }).catch(({ response }) => {
+            console.log("contact us :", response);
+        })
+        e.target.reset();
     };
 
     return (
@@ -24,7 +40,7 @@ export default function NousContacter() {
                 <h1 className="p-3 text-light">Nous contacter</h1>
                 <div className="container row m-auto justify-content-evenly p-3 pb-5">
                     <div className="contactform col-md-6">
-                        <form className="p-2" onSubmit={handleSubmit} encType="multipart/form-data">
+                        <form className="p-2" onSubmit={handleSubmit} method="POST" encType="multipart/form-data">
                             <div>
                                 <label htmlFor="name" className="form-label">Prènom et Nom</label>
                                 <input type="text" id="name" name="name" className="form-control" required onChange={(e) => setName(e.target.value)} placeholder="Prènom et Nom *" />
@@ -47,6 +63,9 @@ export default function NousContacter() {
                                 <textarea id="message" name="message" className="form-control" onChange={(e) => setMessage(e.target.value)} placeholder="message *"
                                     required />
                             </div>
+                            <div className="form-group pt-3">
+                                <ReCAPTCHA sitekey="6Le7E94eAAAAANxRH_jg71-jZsRL19pr5vicwkaH" ref={reCaptcharef} />
+                            </div>
                             <button className="btn btn-primary mt-2" type="submit">Envoyer</button>
                         </form>
                     </div>
@@ -55,6 +74,10 @@ export default function NousContacter() {
                     </div>
                 </div>
             </div>
+            <Modal className="modal-signup rounded-pill bg-light col-4" ariaHideApp={false} onRequestClose={() => setShowModal(false)} isOpen={showModal} >
+                <h1>{modalMessage}</h1>
+                <button className="btn btn-secondary" onClick={() => setShowModal(false)}>fermer</button>
+            </Modal>
             <footer>
                 <Footer />
             </footer>

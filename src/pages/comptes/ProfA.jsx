@@ -84,6 +84,7 @@ export default function ProfA({ userID, setUserID }) {
                 // window.location.reload();
             })
             .catch((err) => console.log("error with file post", err))
+        e.target.reset();
     }
 
     const ondeletHandle = (id) => {

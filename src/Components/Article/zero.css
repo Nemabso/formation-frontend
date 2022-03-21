@@ -1,0 +1,94 @@
+.nosmiss-title {
+    border-radius: 55px;
+    background-color: #ECF0F3;
+    width: 250px;
+    padding: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 7px 7px 11px 0px #00000033, inset -7px -7px 6px 5px #fdfeff;
+    justify-content: center;
+
+}
+
+.zero-texts {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.article-zero {
+    min-height: 100vh;
+    position: relative;
+    height: auto;
+    border-radius: 55px;
+}
+
+.zero-sec {
+    display: flex;
+    min-height: 100vh;
+}
+
+.missionimag {
+    width: 279px;
+    height: 246px;
+    margin: auto;
+    border-radius: 29px;
+}
+
+.backmissionimag {
+    position: absolute;
+    display: flex;
+    border-radius: 55px;
+    background-color: #ECF0F3;
+    width: 287px;
+    padding: 20px;
+    /* margin: auto; */
+    /* align-items: center; */
+    box-shadow: inset -5px 6px 20px 0px #00000033;
+    right: 16%;
+    top: 28%;
+}
+
+.nosmiss-texto {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.zero-khali {
+    background: #B8D6F6;
+    position: relative;
+    width: 800px;
+    height: auto;
+    /* background: ; */
+    z-index: -1;
+    border-radius: 50px 0px 0px 50px;
+}
+
+
+@media screen and (max-width : 1000px) {
+    .backmissionimag {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 55px;
+        background-color: #ECF0F3;
+        width: 287px;
+        padding: 20px;
+        /* margin: auto; */
+        /* align-items: center; */
+        box-shadow: inset -5px 6px 20px 0px #00000033;
+        right: 15%;
+        top: 28%;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .zero-sec {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

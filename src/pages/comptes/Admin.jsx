@@ -121,7 +121,7 @@ export default function Admin() {
                                 </div>
                                 <div className='d-flex justify-content-between'>
                                     {(avis.recently === true) && <button onClick={() => { if (window.confirm("vous allez acceptez ce avis ?")) handleAccepte(avis._id) }} className='btn me-3' style={{ backgroundColor: "#abea81" }} >accepter</button>}
-                                    <button onClick={() => { if (window.confirm("vous allez refuser ce avis ?")) handleDelete(avis.email) }} className='btn btn-danger'>refuser</button>
+                                    <button onClick={() => { if (window.confirm("vous allez refuser ce avis ?")) handleDelete(avis.email) }} className='btn btn-danger'>{avis.recently === false ? "supprimer" : "refuser"}</button>
                                 </div>
                             </div>
                         </div>

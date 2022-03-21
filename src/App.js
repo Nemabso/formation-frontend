@@ -15,9 +15,11 @@ import SalleB from "./pages/comptes/SalleB";
 import "./App.css"
 import Blog from "./pages/Blog";
 import QuiSommesNous from "./pages/QuiSommesNous";
+import Financer from "./pages/Financer";
+import NosMissions from "./pages/NosMissions";
 export default function App() {
   const [isAuthenticated, setIsAuthenticated, role] = useContext(AuthContext);
-  // console.log("Here is app js !", isAuthenticated, "role is", role);
+  console.log(setIsAuthenticated);
 
   const [userID, setUserID] = useState("");
   // console.log("userID", userID);
@@ -33,6 +35,8 @@ export default function App() {
         <Route path="/quisommesnous" element={<QuiSommesNous />} />
         <Route exact path="/eleveLogin" element={<EleveLog />} />
         <Route exact path="/nosformation" element={<NosFormation />} />
+        <Route exact path="/financer" element={<Financer />} />
+        <Route exact path="/notremission" element={<NosMissions />} />
 
         <Route exact path="/sallea" element={<SalleA userID={userID} />} />
         <Route exact path="/salleb" element={<SalleB userID={userID} />} />
