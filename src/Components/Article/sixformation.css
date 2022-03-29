@@ -1,6 +1,7 @@
 .six-article-forma {
     background: url("./articleimages/logoback.png") center no-repeat;
-    background-size: 70% 63%;
+    background-size: 50% 50%;
+    background-position-y: 68%;
     min-height: 100vh;
 }
 

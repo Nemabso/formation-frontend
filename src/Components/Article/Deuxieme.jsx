@@ -1,17 +1,17 @@
 import React from 'react';
-import imagArticle from "./articleimages/article1.jpg";
+import imagArticle from "./articleimages/article1.png";
 import "./deuxieme.css";
 
 export default function deuxieme() {
     return (
         <article className='deuxiem-article'>
-            <section className='deux-sec-left'>
-                <div className='nosmiss-title' >
-                    <h2>Notre démarche pédagogique</h2>
+            <section className='deux-sec-left col-lg-6'>
+                <div className='deux-title' >
+                    <h2 className='text-center'>Notre démarche pédagogique</h2>
                 </div>
                 <img src={imagArticle} className='deux-imag' alt="pedagogique" />
             </section>
-            <section className='deux-sec-right'>
+            <section className='deux-sec-right col-lg-6'>
                 <div className='d-flex p-3 gap-4'>
                     <div>
                         <div className='deux-back-circle'>

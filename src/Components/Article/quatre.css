@@ -8,7 +8,7 @@
 .quatre-article {
     background: url("./articleimages/expertises.png") center no-repeat;
     background-size: 100% 100%;
-    min-height: 100vh;
+    min-height: 101vh;
 }
 
 .quatre-filtre-up {
@@ -17,5 +17,14 @@
 
 .quatre-filtre {
     background-color: #f9fafbb0;
-    min-height: 80vh;
+    min-height: 81vh;
+    padding: 40px;
+}
+
+.quatre-logo-svg {
+    width: 150px;
+}
+
+.quatre-logo-svg-cooking {
+    width: 115px;
 }

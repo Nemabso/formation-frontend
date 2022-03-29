@@ -13,10 +13,11 @@ import NousContacter from "./pages/NousContacter";
 import SalleA from "./pages/comptes/SalleA";
 import SalleB from "./pages/comptes/SalleB";
 import "./App.css"
-import Blog from "./pages/Blog";
-import QuiSommesNous from "./pages/QuiSommesNous";
+import Avis from "./pages/Avis";
+// import QuiSommesNous from "./pages/QuiSommesNous";
 import Financer from "./pages/Financer";
 import NosMissions from "./pages/NosMissions";
+import AvisClient from "./pages/AvisClient";
 export default function App() {
   const [isAuthenticated, setIsAuthenticated, role] = useContext(AuthContext);
   console.log(setIsAuthenticated);
@@ -29,10 +30,11 @@ export default function App() {
       <Navbar userID={userID} setUserID={setUserID} />
       <Routes>
         <Route exact path="/" element={<Home userID={userID} setUserID={setUserID} />} />
-        <Route exact path="/comptes" element={<Blog />} />
+        <Route exact path="/avisapprenantes" element={<Avis />} />
+        <Route exact path="/avisclient" element={<AvisClient />} />
 
         <Route path="/contact" element={<NousContacter userID={userID} setUserID={setUserID} />} />
-        <Route path="/quisommesnous" element={<QuiSommesNous />} />
+        {/* <Route path="/quisommesnous" element={<QuiSommesNous />} /> */}
         <Route exact path="/eleveLogin" element={<EleveLog />} />
         <Route exact path="/nosformation" element={<NosFormation />} />
         <Route exact path="/financer" element={<Financer />} />

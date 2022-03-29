@@ -80,26 +80,26 @@ export default function Blog() {
                     <div className='p-4'>
                         <div className="mb-3">
                             <label htmlFor="lname" className="form-label">Nom</label>
-                            <input type="text" className="form-control" name='nom' id="lname" onChange={handleChanges} placeholder="votre nom ..." required />
+                            <input type="text" className="form-control" name='nom' id="lname" onChange={handleChanges} placeholder="votre nom ...*" required />
                             {/* <div className="valid-feedback">
                             Looks good!
                         </div> */}
                         </div>
                         <div className="mb-3">
                             <label htmlFor="societe" className="form-label">Societé </label>
-                            <input type="text" className="form-control" name='societe' id="societe" required onChange={handleChanges} placeholder="Societé ..." />
+                            <input type="text" className="form-control" name='societe' id="societe" required onChange={handleChanges} placeholder="Societé ...*" />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="fonctionne" className="form-label">Fonctionne </label>
-                            <input type="text" className="form-control" name='fonctionne' id="fonctionne" required onChange={handleChanges} placeholder="Fonctionne ..." />
+                            <input type="text" className="form-control" name='fonctionne' id="fonctionne" required onChange={handleChanges} placeholder="Fonctionne ...*" />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="emailAddress" className="form-label">Address email </label>
-                            <input type="email" className="form-control" name='email' id="emailAddress" required onChange={handleChanges} placeholder="votre email ..." />
+                            <input type="email" className="form-control" name='email' id="emailAddress" required onChange={handleChanges} placeholder="votre email ...*" />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="textArea" className="form-label">Donner votre avis</label>
-                            <textarea className="form-control" name='descriptions' id="textArea" required onChange={handleChanges} rows="3" />
+                            <textarea className="form-control" spellCheck="true" name='descriptions' id="textArea" placeholder='votre avis...*' required onChange={handleChanges} rows="3" />
                         </div>
                         <div className='d-flex flex-wrap justify-content-between align-items-center'>
                             <div><StarRating rating={rating} setRating={setRating} /></div>

@@ -1,0 +1,73 @@
+.nosvaleur {
+    min-height: 101vh;
+    padding: 20px;
+}
+
+.nosval-title {
+    border-radius: 55px;
+    background-color: #ECF0F3;
+    width: 250px;
+    padding: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 7px 7px 11px 0px #00000033, inset -7px -7px 6px 5px #fdfeff;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nosval-vertical {
+    background: #0B346C;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: white;
+    height: 400px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.nosvalu-flesh {
+    display: flex;
+    position: relative;
+}
+
+.nosvalu-sec-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 60vh;
+    justify-content: center;
+}
+
+.nosval-flesh-imag {
+    width: 385px;
+    height: 367px;
+}
+
+.nosval-text {
+    position: absolute;
+    top: 44%;
+    left: 46%;
+}
+
+.nosval-text-b {
+    position: absolute;
+    top: 45%;
+    left: 51%;
+}
+
+.nosval-text-c {
+    position: absolute;
+    top: 45%;
+    left: 57%;
+}
+
+.novalu-text-down {
+    background: #0B346C;
+    width: 500px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    margin: auto;
+}

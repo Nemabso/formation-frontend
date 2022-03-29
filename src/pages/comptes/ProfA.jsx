@@ -148,7 +148,7 @@ export default function ProfA({ userID, setUserID }) {
 
                         <div className="mb-3">
                             <label htmlFor="validationTextarea" className="form-label">Description</label>
-                            <textarea onChange={(e) => setDescription(e.target.value)} className="form-control" id="validationTextarea" placeholder="Description" ></textarea>
+                            <textarea onChange={(e) => setDescription(e.target.value)} className="form-control" spellCheck="true" id="validationTextarea" placeholder="Description" ></textarea>
                         </div>
 
                         <div className="mb-3">

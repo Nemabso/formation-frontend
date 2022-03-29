@@ -1,3 +1,6 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -6,6 +9,22 @@ body {
 .backgroung-hompage {
     background: url("../assets/home.png") center no-repeat;
     background-size: 100% auto;
+}
+
+.home-cen-text {
+    font-family: 'Charm', cursive;
+    /* font-family: 'Oleo Script', cursive; */
+}
+
+.home-single-quote {
+    width: 25px;
+}
+
+.home-single-quote-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 6px;
 }
 
 .homesite-logo {
@@ -36,6 +55,7 @@ body {
     box-shadow: inset -5px 6px 20px 0px #00000033;
 }
 
+
 .circle {
     content: "";
     background-color: #EBEDF1;
@@ -57,15 +77,20 @@ a.circle:hover {
     padding: 20px;
 }
 
-.home-info {
-    border-radius: 55px;
-    border: none;
-    padding: 20px;
-    background-color: #EBEDF1;
-    box-shadow: -9px 8px 15px 3px #00000045, 1px -1px 17px 3px #fff, inset 0px 0px 11px 0px #000000a6;
+.home-back-circle {
+    border-radius: 50px;
+    background: #ECF0F3;
+    padding: 12px;
+    box-shadow: inset 2px 2px 5px 0px #00000042;
 }
 
-button.home-info:hover {
+.home-circle {
+    border-radius: 50px;
+    padding: 18px;
+    background: #08316B;
+}
+
+button.home-circle:hover {
     transform: scale(1.2);
     transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
@@ -107,7 +132,7 @@ div.home-parag p {
 }
 
 .company-markes {
-    width: 59vw;
+    width: 39vw;
     height: 35vh;
     /* border-radius: 25px; */
 }

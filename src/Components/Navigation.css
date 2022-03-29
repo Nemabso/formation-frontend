@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
+.nav-items-texts {
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-around;
+}
 
 .nav-item {
   color: black;
@@ -20,16 +25,16 @@ a.nav-item:active {
   color: rgb(238, 245, 238);
 }
 
-.customNav {
-  /* padding: 20px; */
-  background-color: #ffffff08;
-}
-
 a {
   text-decoration: none;
 }
 
+/* .compte-nav {
+  background: #B8D6F6;
+} */
+
 .itemCover {
+  list-style-type: none;
   text-align: center;
   margin-left: 15px;
   margin-right: 15px;

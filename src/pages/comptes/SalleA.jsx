@@ -28,7 +28,7 @@ export default function SalleA({ userID }) {
         setNumPages(numPages);
     }
     function openImag(breakpoint) {
-        console.log("click open !");
+        // console.log("click open !");
         setFullscreen(breakpoint);
         setShowModal(true)
     }

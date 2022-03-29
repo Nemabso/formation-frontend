@@ -5,11 +5,13 @@ import Premier from '../components/Article/Premier';
 import Deuxieme from '../components/Article/Deuxieme';
 import Troixieme from '../components/Article/Troixieme';
 import Zero from '../components/Article/Zero';
+import NosValeur from '../components/Article/NosValeur';
 
 export default function NosMissions() {
     return (
         <>
             <Zero />
+            <NosValeur />
             <Troixieme />
             <Premier />
             <Deuxieme />

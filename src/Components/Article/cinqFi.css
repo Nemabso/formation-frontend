@@ -1,12 +1,39 @@
+.cinqieme-article {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .financ-imag {
-    width: 340px;
-    height: 360px;
+    width: 345px;
+    height: 486px;
     border-radius: 50px;
     padding: 20px;
 }
 
+.back-logo-financer {
+    position: relative;
+    height: 40px;
+}
+
+.logo-financer {
+    position: absolute;
+    width: 200px;
+    bottom: -36%;
+}
+
 .cinq-sec-right {
     width: 350px;
+}
+
+.cinq-sec-left {
+    padding: 20px;
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
 }
 
 .finance-line {

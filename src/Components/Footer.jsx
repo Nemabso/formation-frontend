@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 // import logo from "../assets/logoSite.jpeg";
 import './footer.css';
-import { BsGeoAlt, BsFillEnvelopeFill } from "react-icons/bs";
+import { BsGeoAlt, BsFillEnvelopeFill, BsLinkedin } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/esm/ModalHeader';
@@ -29,7 +29,7 @@ export default function Footer() {
                         <Col sm={6} md={3} >
                             <div className="p-2">
                                 <p>Nous trouver :</p>
-                                <Row >
+                                <Row className='p-2'>
                                     <Col sm={4} xs={4}>
                                         <span role="button" onClick={() => { setShowModal(true); setFullscreen(true) }} className='text-primary'><BsGeoAlt /></span>
                                     </Col>
@@ -39,6 +39,17 @@ export default function Footer() {
                                     <Col sm={4} xs={4} >
                                         <a href="mailto:example@gmail.com?subject= subject !" className='text-primary'><BsFillEnvelopeFill /></a>
                                     </Col>
+                                </Row>
+                                <Row className='p-2'>
+                                    <Col sm={4} xs={4}>
+                                        <a href='###' ><BsLinkedin /></a>
+                                    </Col>
+                                    {/* <Col sm={4} xs={4}  >
+                                        <a href="tel:votre numero" className='text-primary'> <FiPhoneCall /></a>
+                                    </Col>
+                                    <Col sm={4} xs={4} >
+                                        <a href="mailto:example@gmail.com?subject= subject !" className='text-primary'><BsFillEnvelopeFill /></a>
+                                    </Col> */}
                                 </Row>
                             </div>
                         </Col>
@@ -52,11 +63,11 @@ export default function Footer() {
                         </Col>
 
                         <Col sm={6} md={3}>
-                            <div className="p-2">
-                                <Link to={'/nosformation'}>Nos formations</Link>
-                                {/* <p>Blog</p> */}
-                                {/* <p className='mt-3'>Former et recruter</p> */}
-                            </div>
+                            {/* <div className="d-block "> */}
+                            <Link className="d-block p-2" to={'/nosformation'}>Nos formations</Link>
+                            <Link className="d-block p-2" to={'/notremission'}>Notre mission</Link>
+                            <Link className="d-block p-2" to={'/financer'}>Financer votre formation</Link>
+                            {/* </div> */}
                         </Col>
                     </Row>
                 </Container>

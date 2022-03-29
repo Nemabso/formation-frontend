@@ -1,8 +1,10 @@
 .pre-upside {
     display: flex;
-    height: 185px;
+    justify-content: center;
+    height: 220px;
+    padding: 15px;
     background-color: #B8D6F6;
-    border-radius: 50px;
+    border-radius: 0px 0px 50px 50px;
 }
 
 .premier-article {
@@ -19,7 +21,7 @@
 
 .pre-icon-div {
     display: flex;
-    width: 190px;
+    width: 200px;
     flex-direction: column;
     align-items: center;
     gap: 15px;
@@ -31,11 +33,10 @@
     justify-content: space-evenly;
     flex-direction: row;
     padding-top: 11vh;
-    padding-bottom: 10vh;
+    /* padding-bottom: 10vh; */
     gap: 12px;
 }
 
 .quote-imag {
-    width: 145px;
-    margin-left: -35px;
+    width: 100px;
 }

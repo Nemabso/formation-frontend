@@ -64,11 +64,11 @@
 }
 
 .page-salon-a {
-    background: url("../imag/wood.jpg") no-repeat fixed;
-    min-height: 85vh;
+    background: url("../imag/prewall.jpg") no-repeat;
+    min-height: 100vh;
 }
 
 .page-salon-b {
-    background: url("../imag/wood.jpg") no-repeat fixed;
-    min-height: 85vh;
+    background: url("../imag/wallblanc.jpg") no-repeat;
+    min-height: 100vh;
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import imaFinance from "./articleimages/financer.jpg";
+import imaFinance from "./articleimages/financer.png";
+import logoFinance from "./articleimages/logofinance.png";
 import "./cinqFi.css";
 
 export default function CinqFinance() {
     return (
-        <article className='deuxiem-article'>
-            <section className='trois-sec-right'>
+        <article className='cinqieme-article'>
+            <section className='cinq-sec-left'>
                 <div className='p-3'>
                     <h4>Comment financer votre formation ?</h4>
                     <div className='finance-line' />
@@ -20,6 +21,9 @@ export default function CinqFinance() {
             <span className='d-none d-lg-block trois-vertical'></span>
             <section className='cinq-sec-right'>
                 <img src={imaFinance} className='financ-imag' alt="pedagogique" />
+                <div className='back-logo-financer'>
+                    <img src={logoFinance} className='logo-financer' alt="logo finance" />
+                </div>
                 <div className='d-flex'>
                     {/* <div className='p-3' ><RiSingleQuotesR size={150} color='#08316B' /></div> */}
                     <p className='p-3'>La certification a été délivrée au titre de la catégorie d'action suivante : ACTION DE FORMATION</p>

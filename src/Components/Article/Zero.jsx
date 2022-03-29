@@ -8,7 +8,7 @@ export default function Zero() {
             <section className='zero-sec'>
                 <div className='zero-texts'>
                     <div className='nosmiss-title'>
-                        <b><h3>Notre mission</h3></b>
+                        <h3>Notre mission</h3>
                     </div>
                     <div className='nosmiss-texto'>
                         <h4>

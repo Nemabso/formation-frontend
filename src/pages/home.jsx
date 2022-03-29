@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 // import { Link } from 'react-router-dom';
@@ -6,13 +6,23 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Container, Row, Col } from "react-bootstrap";
 import './home.css'
 import Footer from '../components/Footer';
+import Modal from "react-bootstrap/Modal";
+import ModalHeader from 'react-bootstrap/esm/ModalHeader';
+import quote from "./imag/quote.png";
+
 import axios from 'axios';
 import { AuthContext } from '../context/Auth';
-
+import Premier from '../components/Article/Premier';
+import Quatre from '../components/Article/Quatre';
+import CinqFinance from "../components/Article/CinqFinance";
 
 export default function Home({ userID, setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
-    console.log(isAuthenticated, setIsAuthenticated, role);
+    // console.log(isAuthenticated, setIsAuthenticated, role);
+    const [pagenummber, setPagenummber] = useState("")
+    const [fullscreen, setFullscreen] = useState(true);
+    const [showModal, setShowModal] = useState(false);
+    // console.log("page nummber", pagenummber);
 
     const userId = userID ? userID : sessionStorage.getItem("userId");
     useEffect(() => {
@@ -33,15 +43,17 @@ export default function Home({ userID, setUserID }) {
 
             <section className='backgroung-hompage'>
                 <div className='p-4 text-center filter-home'>
-                    <h1 className='mt-5'>
-                        <b>Ensemble révèlons vos talents et <br /> construisons votre capital humain</b>
-                    </h1>
+                    <div className='d-flex justify-content-center'>
+                        <div><img src={quote} className='home-single-quote' alt="single quote" /></div>
+                        <h1 className='home-cen-text'>Ensemble révèlons vos talents et <br /> construisons votre capital humain</h1>
+                        <div className='home-single-quote-right'><img src={quote} className='home-single-quote' alt="single quote" /></div>
+                    </div>
                     <img src="./logo512.png" className='homesite-logo' alt="logo home page" />
                     <h5 className='p-3'>
                         SPECIALISTE DE LA FORMATION DANS LES SECTEURS DE LA RESTAURATION ET DE LA VENTE
                     </h5>
                     <div className='etre-rappele'>
-                        <a href='tel:votre numero' className='circle' />
+                        <a href={'tel:+33688464682'} className='circle'><span className='d-none'>phone</span></a>
                         <h4>
                             <b>Etre rappelé <br /> immédiatement</b>
                         </h4>
@@ -52,15 +64,27 @@ export default function Home({ userID, setUserID }) {
 
             <section className='check-info'>
                 <div className='home-parag'>
-                    <div><button className='home-info' /></div>
+                    <div>
+                        <div className='home-back-circle'>
+                            <button onClick={() => { setPagenummber(1); setFullscreen(true); setShowModal(true) }} className='home-circle' />
+                        </div>
+                    </div>
                     <p>Des formations sur mesure</p>
                 </div>
                 <div className='home-parag'>
-                    <div><button className='home-info' /></div>
-                    <p>Des professionelles métier</p>
+                    <div>
+                        <div className='home-back-circle'>
+                            <button onClick={() => { setPagenummber(2); setFullscreen(true); setShowModal(true) }} className='home-circle' />
+                        </div>
+                    </div>
+                    <p>Des professionnels par métier</p>
                 </div>
                 <div className='home-parag'>
-                    <div><button className='home-info' /></div>
+                    <div>
+                        <div className='home-back-circle'>
+                            <button onClick={() => { setPagenummber(3); setFullscreen(true); setShowModal(true) }} className='home-circle' />
+                        </div>
+                    </div>
                     <p>Une prise en charge du financement possible à 100%</p>
                 </div>
             </section>
@@ -101,11 +125,9 @@ export default function Home({ userID, setUserID }) {
                             <Carousel.Item interval={2000} >
                                 <img className='company-markes img-fluid' src="/images/basilic1.svg" alt="basilic" />
                             </Carousel.Item>
-
                             <Carousel.Item interval={2000}>
                                 <img className='company-markes img-fluid' src="/images/ninkasi.svg" alt="nankasi" />
                             </Carousel.Item>
-
                             <Carousel.Item interval={2000}>
                                 <img className='company-markes img-fluid' src="/images/originalfood.svg" alt="originalfood" />
                             </Carousel.Item>
@@ -118,10 +140,34 @@ export default function Home({ userID, setUserID }) {
                             <Carousel.Item interval={2000}>
                                 <img className='company-markes img-fluid' src="/images/MinoterieForest.svg" alt="Minoterie Forest" />
                             </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/lagarotte.png" alt="lagarotte" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/phood.png" alt="phood" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/focaccia.png" alt="focaccia" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/sevens.png" alt="sevens" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/burger.png" alt="burger" />
+                            </Carousel.Item>
+                            <Carousel.Item interval={2000}>
+                                <img className='company-markes img-fluid' src="/images/Alice-restaurant.svg" alt="Alice-restaurant" />
+                            </Carousel.Item>
                         </Carousel>
                     </div>
                 </div>
             </section>
+            <Modal fullscreen={fullscreen} show={showModal} onHide={() => setShowModal(false)}>
+                <ModalHeader closeButton />
+                {pagenummber === 1 && <Premier />}
+                {pagenummber === 2 && <Quatre />}
+                {pagenummber === 3 && <CinqFinance />}
+            </Modal>
             {/* <section className='sec-company p-4'>
                 
                 <div className='d-flex flex-wrap justify-content-evenly p-4'>
@@ -130,9 +176,10 @@ export default function Home({ userID, setUserID }) {
                     <img className='company-markes img-fluid' src="/images/originalfood.svg" alt="originalfood" />
                 </div>
             </section> */}
-            <section>
+            <p className='d-none'>{role && setIsAuthenticated && isAuthenticated}</p>
+            <footer>
                 <Footer />
-            </section>
+            </footer>
         </main>
     )
 }

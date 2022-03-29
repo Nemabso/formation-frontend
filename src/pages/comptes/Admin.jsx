@@ -106,11 +106,14 @@ export default function Admin() {
                 {avisRecu && avisRecu.map((avis, index) => (
                     <article key={index} className='d-flex justify-content-center p-3'>
                         <div className="border border-secondary " style={{ width: "38rem" }}>
-                            <div className="card-header bg-transparent border-success"></div>
+                            {/* <div className="card-header bg-transparent border-success"></div> */}
                             <div className="card-body">
-                                <h5 className="card-title">{avis.nom}</h5>
-                                <p className="card-text text-success">{avis.email}</p>
-                                <p className="card-text">{avis.descriptions}</p>
+                                {/* <h5 className="card-title">{avis.nom}</h5> */}
+                                <p className="card-text text-success">Email : {avis.email}</p>
+                                <p className="card-text float-end pe-3">Fonctionne : {avis.fonctionne}</p>
+                                <p className="card-text">Societé : {avis.societe}</p>
+                                <p className='card-text float-end pe-3' >le {avis.createdOn.split("T").slice(0, 1)} par<b> {avis.nom}</b></p>
+                                <p className="card-text">Avis : {avis.descriptions}</p>
                             </div>
                             <div className="card-footer bg-transparent border-success d-flex justify-content-between align-items-center">
                                 <div>

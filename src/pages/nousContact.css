@@ -1,32 +1,47 @@
-/* .nouscontactpage {
-	background: url("./imag/boxlettre.jpg")fixed;
-	max-width: 100%;
-	min-height: 85vh;
-} */
+.nouscontactform {
+	/* background: url("./imag/prewall.jpg"); */
+	min-height: 100vh;
+}
+
+.formul-nous-contact {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 30px;
+}
+
 .contactform {
 	align-items: center;
 	border-radius: 20px;
 	padding: 15px;
-	background: linear-gradient(45deg, rgb(38 92 159 / 80%), rgba(209 204 172 / 80%));
+	background: linear-gradient(45deg, rgba(181, 208, 240, 0.8), rgba(135 190 234 / 80%));
 	box-shadow: 0 5px 20px 2px whitesmoke;
 	transition: all 200ms ease-out;
+	box-shadow: 0px 0px 20px 0px black;
 	-webkit-animation: fade-in 1s ease-in-out;
 	animation: fade-in 1s ease-in-out;
 }
 
-/* .nouscontactimag {
-	max-width: 100%;
-	min-height: 85vh;
-	position: relative;
-} */
-
-.nouscontactform {
-	background: url("./imag/prewall.jpg");
-	/* min-height: 85vh; */
-	/* position: absolute; */
-	/* top: 30vh; */
-	/* left: 7vw; */
+.khat-nous-contact {
+	width: 100px;
 }
+
+.nous-contact-side {
+	background: #B8D6F6;
+	box-shadow: 0px 0px 20px 0px black;
+	animation: fade-in 1s ease-in-out;
+	/* width: 450px; */
+	/* height: 300px; */
+	border-radius: 25px;
+}
+
+.inside-nous-contact {
+	padding: 20px;
+	background: azure;
+	border-radius: 20px;
+	box-shadow: inset 0px 0px 16px 0px #00000075;
+}
+
 
 /* @media screen and (max-width: 1220px) {
 	.nouscontactform {

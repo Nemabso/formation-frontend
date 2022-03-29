@@ -72,17 +72,8 @@
 @media screen and (max-width : 1000px) {
     .backmissionimag {
         position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        border-radius: 55px;
-        background-color: #ECF0F3;
-        width: 287px;
-        padding: 20px;
-        /* margin: auto; */
-        /* align-items: center; */
         box-shadow: inset -5px 6px 20px 0px #00000033;
-        right: 15%;
-        top: 28%;
+        right: 0%;
     }
 }
 
