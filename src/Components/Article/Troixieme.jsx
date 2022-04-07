@@ -5,26 +5,36 @@ import "./troixieme.css";
 
 export default function Troixieme() {
     return (
+        // du a changement d'avis de cliant a chaque fois left or right a été mis au contraire !
+
         <article className='troisieme-article'>
             <section className='tois-sec-left'>
                 <div className='d-flex align-items-end'>
-                    <div><img src={quote} className='trois-quote-imag' alt="single quote" /></div>
-                    <h1 className='p-3'>Motiver pour réussir</h1>
+                    <div><img src={quote} className='trois-quote-imag' width={80} height={90} title='single quote' loading='eager' alt="single quote" /></div>
+                    <h1 className='ps-3 fs-1'> Motiver pour réussir </h1>
                 </div>
-                <img src={teamimage} className='trois-imag' alt="pedagogique" />
+                <img src={teamimage} className='trois-imag' width={100} height={90} title='pedagogique' loading='eager' alt="pedagogique" />
             </section>
             <span className='d-none d-lg-block trois-vertical'></span>
             <section className='trois-sec-right'>
                 <div className='p-3'>
-                    <h4>
-                        Il nous parait essentiel de transmettre des compétences non seulement techniques mais relationelles aux apprenants<strong> en travaillant sur 3 axes : les valeurs interpersonnelles, la culture d'entreprise, la bienveillance.</strong>
-                    </h4>
+                    <h2 className='fs-3'>
+                        Il nous parait essentiel de transmettre des compétences non seulement techniques mais relationelles aux apprenants en travaillant sur 3 axes :
+                    </h2>
                 </div>
                 <div className='p-3'>
-                    <h4>
-                        L'objectif étant de :
-                    </h4>
-                    <h5><strong> Rendre confiants les apprenants en soulignant leurs points forts provoquer l"envie en donnant du sens aux missions</strong></h5>
+                    <p className='fs-3 fw-bold'>les valeurs interpersonnelles</p>
+                    <p className='fs-3 fw-bold'>la culture d'entreprise</p>
+                    <p className='fs-3 fw-bold'>la bienveillance</p>
+                </div>
+                <div className='p-3'>
+                    <h3><b> L'objectif étant de :</b></h3>
+                    <h3> Rendre confiants les apprenants en soulignant leurs points forts </h3>
+                </div>
+                <div className='p-3'>
+                    <h3>
+                        provoquer l'envie en donnant du sens aux missions
+                    </h3>
                 </div>
             </section>
         </article>

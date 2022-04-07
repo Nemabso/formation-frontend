@@ -29,10 +29,20 @@
 }
 
 .notif-message {
+    text-align: center;
     /* padding: 20px; */
-    /* background-color: #0dcaf0; */
+    background-color: #B8D6F6;
     position: absolute;
-    /* border-radius: 50%; */
+    border-radius: 25px;
     right: 10px;
     top: 75px;
+}
+
+.admin-pourcent-form {
+    display: grid;
+    justify-items: center;
+    padding: 20px;
+    gap: 10px;
+    width: 480px;
+    margin: auto;
 }

@@ -37,8 +37,9 @@
 }
 
 .finance-line {
+    width: 70%;
     border-radius: 50px;
-    background: #ECF0F3;
-    padding: 9px;
-    box-shadow: inset 2px 2px 5px 0px #00000042;
+    background: #ccd1d5;
+    padding: 2px;
+    /* box-shadow: inset 2px 2px 5px 0px #00000042; */
 }

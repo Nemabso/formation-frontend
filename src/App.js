@@ -18,9 +18,12 @@ import Avis from "./pages/Avis";
 import Financer from "./pages/Financer";
 import NosMissions from "./pages/NosMissions";
 import AvisClient from "./pages/AvisClient";
+import Partenaires from "./pages/Partenaires";
+import GestionCookies from "./pages/GestionCookies";
+import MontionLegales from "./pages/MontionLegales";
 export default function App() {
   const [isAuthenticated, setIsAuthenticated, role] = useContext(AuthContext);
-  console.log(setIsAuthenticated);
+  // console.log(setIsAuthenticated);
 
   const [userID, setUserID] = useState("");
   // console.log("userID", userID);
@@ -32,6 +35,7 @@ export default function App() {
         <Route exact path="/" element={<Home userID={userID} setUserID={setUserID} />} />
         <Route exact path="/avisapprenantes" element={<Avis />} />
         <Route exact path="/avisclient" element={<AvisClient />} />
+        <Route exact path="/partenaires" element={<Partenaires />} />
 
         <Route path="/contact" element={<NousContacter userID={userID} setUserID={setUserID} />} />
         {/* <Route path="/quisommesnous" element={<QuiSommesNous />} /> */}
@@ -39,6 +43,8 @@ export default function App() {
         <Route exact path="/nosformation" element={<NosFormation />} />
         <Route exact path="/financer" element={<Financer />} />
         <Route exact path="/notremission" element={<NosMissions />} />
+        <Route exact path="/gestioncookies" element={<GestionCookies />} />
+        <Route exact path="/mentionlegales" element={<MontionLegales />} />
 
         <Route exact path="/sallea" element={<SalleA userID={userID} />} />
         <Route exact path="/salleb" element={<SalleB userID={userID} />} />
@@ -48,7 +54,7 @@ export default function App() {
         )}
         {(isAuthenticated &&
           <>
-            {(role === "admin" && <Route exact path="/admin" element={<Admin />} />)}
+            {(role === "admin" && <Route exact path="/admin" element={<Admin userID={userID} />} />)}
             {(role === "formateur" && <Route exact path="/profa" element={<ProfA userID={userID} setUserID={setUserID} />} />)}
           </>
         )}

@@ -1,34 +1,43 @@
 import React from 'react';
 import "./zero.css";
 import imagmission from "./articleimages/mission.png";
+import quote from "./articleimages/quote.png";
 
 export default function Zero() {
     return (
         <article className='article-zero '>
             <section className='zero-sec'>
                 <div className='zero-texts'>
-                    <div className='nosmiss-title'>
-                        <h3>Notre mission</h3>
+                    <div className=''>
+                        <div>
+                            <img src={quote} className='premier-quote' width={100} height={100} alt="single quote" />
+                        </div>
+
+                        <div className='zero-up'>
+                            <h2>Notre Mission</h2>
+                            <div className='premier-underline' />
+                        </div>
+                        {/* <h2>Notre mission</h2> */}
                     </div>
                     <div className='nosmiss-texto'>
-                        <h4>
-                            Accompagner les entreprises,  du secteur de la restauration et du retail dans une démarche de structuration des compétences et de fidélisation des salariés.
-                        </h4>
-                        <h4>
-                            Assurer la formation des équipes  avant l’ouverture d’un établissement.
-                        </h4>
-                        <h4>
-                            Permettre la réussite de vos collaborateurs lors d’une évolution professionnelle et la prise de nouvelles responsabilités, en renforçant leurs compétences.
-                        </h4>
-                        <h4>
-                            Aider à faire face au turnover, aux difficultés de recrutement avec un soutient sur la France entière.
-                        </h4>
+                        <h2>
+                            Accompagner les entreprises,  dans une démarche de structuration des compétences et de fidélisation des salariés .
+                        </h2>
+                        <h3>
+                            Réveler les talents, permettre la réussite des salariés durant leur intégration ou à la prise de nouvelles fonctions.
+                        </h3>
+                        <h3>
+                            Construire les équipes à partir d’un socle de valeurs communes et renforcer la motivation lors des formations.
+                        </h3>
+                        <h3>
+                            Aider à faire face aux difficultés  de recrutement.
+                        </h3>
                     </div>
                 </div>
 
                 <div className='pb-3 m-auto'>
                     <div className='backmissionimag'>
-                        <img className=' missionimag' src={imagmission} alt="nos mission" />
+                        <img className=' missionimag' src={imagmission} width={100} height={90} loading='eager' title='nos missions' alt="nos missions" />
                     </div>
                 </div>
 

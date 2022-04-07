@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #B8D6F6;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #0B346C;
+}
+
 .modal-signup {
     text-align: center;
     width: fit-content;
@@ -18,8 +36,12 @@ input, textarea {
     caret-color: rgb(209, 58, 31);
 }
 
-h1, h2, h3 {
-    font-family: 'Oswald', sans-serif;
+p, h1, h2, h3, h4, h5, h6 {
+    color: #0B346C;
+}
+
+p {
+    margin: 0px !important;
 }
 
 canvas {

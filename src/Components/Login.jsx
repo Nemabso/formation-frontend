@@ -10,7 +10,7 @@ export default function Login({ setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
 
 
-    console.log("isAuthenti login :", isAuthenticated, "role login :", role);
+    // console.log("isAuthenti login :", isAuthenticated, "role login :", role);
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
     const [massege, setMassege] = useState("")
@@ -54,7 +54,7 @@ export default function Login({ setUserID }) {
 
 
     return (
-        <div className="page-login img-fluid">
+        <div className="page-login ">
             <div className="login">
                 <Modal className="modal-signup rounded-pill bg-light col-5"
                     ariaHideApp={false} isOpen={showModal} onRequestClose={() => setShowModal(false)}>
@@ -67,6 +67,7 @@ export default function Login({ setUserID }) {
                     <button type="submit" className="submit-button">Login</button>
                 </form>
             </div>
+            <p className="d-none" >{isAuthenticated && role}</p>
         </div>
 
     );

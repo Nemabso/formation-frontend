@@ -1,11 +1,12 @@
 /* le css de la page login une partie de profA et elevelogin est la 😉 */
 
 .page-elevelogin {
-    position: fixed;
-    background-image: url("../assets/images/cooks.jpg");
+    position: absolute;
+    background: url("../assets/images/cooks.jpg") center no-repeat;
     width: 100vw;
-    height: 85vh;
+    min-height: 87vh;
     background-size: cover;
+    background-position: right;
 }
 
 .form-figure {
@@ -15,11 +16,11 @@
 
 .page-login {
     position: absolute;
-    background-image: url("../assets/images/menu.jpg");
-    width: 100vw;
-    height: 85vh;
+    background: url("../assets/hotelrie.jpg") center no-repeat;
+    width: 100%;
+    min-height: 90vh;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-position: left; */
 }
 
 

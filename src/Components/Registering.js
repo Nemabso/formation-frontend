@@ -33,8 +33,8 @@ export default function Registering() {
             .required('Email est requis'),
         password: Yup.string()
             .min(6, 'Le mot de passe doit être au moins 6 caractères')
-            // .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
-            //     'Votre mot de pass Doit contenir 6 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial')
+            .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
+                'Votre mot de pass Doit contenir 6 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial')
             .required('6 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial'),
         confirmPassword: Yup.string()
             .oneOf([Yup.ref('password'), null], 'Le mot de passe doit correspondre')
@@ -77,11 +77,11 @@ export default function Registering() {
             >
                 {formik => (
 
-                    <div className="container row p-4 pt-0 m-auto" style={{ minHeight: "71vh" }}>
-                        <h3 className="p-2 text-center pt-0">Création du compte pour des Profs ou Admin !</h3>
+                    <div className="container row p-4 pt-0 m-auto" style={{ minHeight: "90vh" }}>
+                        <h1 className="p-2 text-center fs-2 pt-0">Création du compte pour des Profs ou Admin !</h1>
                         <div className="col-md-6">
                             <Form>
-                                <label htmlFor="last Name">Nom et prèsnom</label>
+                                <label htmlFor="last Name">Nom et prénom</label>
                                 <ErrorMessage name="lastName" component="div" className="error" />
                                 <Field id="last Name" name="lastName" type="text" placeholder="..." className={`form-control shadow-none`} />
 

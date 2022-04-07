@@ -1,5 +1,4 @@
 import React from 'react';
-import "./nosMission.css";
 import Footer from "../components/Footer";
 import Premier from '../components/Article/Premier';
 import Deuxieme from '../components/Article/Deuxieme';
@@ -10,9 +9,9 @@ import NosValeur from '../components/Article/NosValeur';
 export default function NosMissions() {
     return (
         <>
+            <Troixieme />
             <Zero />
             <NosValeur />
-            <Troixieme />
             <Premier />
             <Deuxieme />
             <Footer />

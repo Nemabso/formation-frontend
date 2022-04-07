@@ -1,48 +1,59 @@
 import React from 'react';
 import "./sixformation.css";
+import quote from "./articleimages/quote.png";
 
 export default function SixForma() {
     return (
         <article className='six-article-forma'>
-            <div className='sixforma-title'>
-                <h2>Quelques exemples de thémes de formation :</h2>
+            <div className='p-4'>
+                <div>
+                    <img src={quote} className='quatre-quote' width={100} height={100} alt="single quote" />
+                </div>
+
+                <div className='six-up'>
+                    <h2>Quelques exemples de thémes de formation :</h2>
+                    <div className='six-underline' />
+                </div>
             </div>
+            {/* <div className='sixforma-title'>
+                <h1>Quelques exemples de thémes de formation :</h1>
+            </div> */}
             <section className='six-sections-forma'>
                 <section className='sixform-secs'>
                     <div className='sixform-titre'>
-                        <h5>Gestion</h5>
+                        <h4>Gestion</h4>
                     </div>
-                    <ul className='pt-3'>
-                        <li><b>Initiation à l'économie d'entreprise, savoir lire un bilan et un compte de résultat</b></li>
-                        <li><b>Définir des indicateurs de gestion et piloter son compte d"exploitation</b></li>
-                        <li><b>La gestion de la marge et la non qualité</b></li>
-                        <li><b>La maitrise de la masse salariale</b></li>
+                    <ul className='pt-3 d-grid gap-2'>
+                        <li><h5 className='fw-bold'>Initiation à l'économie d'entreprise, savoir lire un bilan et un compte de résultat</h5></li>
+                        <li><h5 className='fw-bold'>Définir des indicateurs de gestion et piloter son compte d'exploitation</h5></li>
+                        <li><h5 className='fw-bold'>La gestion de la marge et la non qualité</h5></li>
+                        <li><h5 className='fw-bold'>La maitrise de la masse salariale</h5></li>
                     </ul>
                     <div className='sixform-titre'>
-                        <h5>Hygiène</h5>
+                        <h4>Hygiène</h4>
                     </div>
-                    <ul className='pt-3'>
-                        <li><b>L'HACCP</b></li>
-                        <li><b>Le plan de maitrise sanitaire</b></li>
+                    <ul className='pt-3 d-grid gap-2'>
+                        <li><h5 className='fw-bold'>L'HACCP</h5></li>
+                        <li><h5 className='fw-bold'>Le plan de maitrise sanitaire</h5></li>
                     </ul>
                 </section>
                 <span className='d-none d-lg-block trois-vertical'></span>
                 {/* deux rad */}
                 <section className='sixform-secs'>
                     <div className='sixform-titre'>
-                        <h5>Juridique</h5>
+                        <h4>Juridique</h4>
                     </div>
-                    <ul className='pt-3'>
-                        <li><b>Les droits et devoirs des salariés</b></li>
-                        <li><b>Les baux commerciaux</b></li>
-                        <li><b>Les différentes formes juridiques</b></li>
+                    <ul className='pt-3 d-grid gap-2'>
+                        <li><h5 className='fw-bold'>Les droits et devoirs des salariés</h5></li>
+                        <li><h5 className='fw-bold'>Les baux commerciaux</h5></li>
+                        <li><h5 className='fw-bold'>Les différentes formes juridiques</h5></li>
                     </ul>
                     <div className='sixform-titre'>
-                        <h5>Vente</h5>
+                        <h4>Vente</h4>
                     </div>
-                    <ul className='pt-3'>
-                        <li><b>La vente en BTOB (bâtire son plan d'action commercial, de la prospection à la vente) </b></li>
-                        <li><b>La vente en BTOC (de l'accueil à la fidélisation)</b></li>
+                    <ul className='pt-3 d-grid gap-2'>
+                        <li><h5 className='fw-bold'>La vente en BTOB (bâtir son plan d'action commercial, de la prospection à la vente) </h5></li>
+                        <li><h5 className='fw-bold'>La vente en BTOC (de l'accueil à la fidélisation)</h5></li>
                     </ul>
                 </section>
                 <span className='d-none d-lg-block trois-vertical'></span>
@@ -51,23 +62,23 @@ export default function SixForma() {
                     <div className='sixform-titre'>
                         <h5>Management</h5>
                     </div>
-                    <ul className='pt-3'>
-                        <li><b>Manager et animer une équipe</b></li>
-                        <li><b>La communication</b></li>
-                        <li><b>La gestion des relations confilictuelles</b></li>
-                        <li><b>La gestion du stress</b></li>
-                        <li><b>La gestion du temps</b></li>
-                        <li><b>Piloter le changement</b></li>
-                        <li><b>Le tutorat et l'apprentissage</b></li>
+                    <ul className='pt-3 d-grid gap-2'>
+                        <li><h5 className='fw-bold'>Manager et animer une équipe</h5></li>
+                        <li><h5 className='fw-bold'>La communication</h5></li>
+                        <li><h5 className='fw-bold'>La gestion des relations confilictuelles</h5></li>
+                        <li><h5 className='fw-bold'>La gestion du stress</h5></li>
+                        <li><h5 className='fw-bold'>La gestion du temps</h5></li>
+                        <li><h5 className='fw-bold'>Piloter le changement</h5></li>
+                        <li><h5 className='fw-bold'>Le tutorat et l'apprentissage</h5></li>
                     </ul>
                     <div className='sixform-titre'>
-                        <h5>techniques culinaires</h5>
+                        <h5 className='text-center'>techniques culinaires</h5>
                     </div>
-                    <ul className='pt-3'>
-                        <li><b>Les produits</b></li>
-                        <li><b>Les découpes</b></li>
-                        <li><b>Les cuissons</b></li>
-                        <li><b>Les process de mise en oeuvre et de conservation</b></li>
+                    <ul className='pt-3 d-grid gap-2'>
+                        <li><h5 className='fw-bold'>Les produits</h5></li>
+                        <li><h5 className='fw-bold'>Les découpes</h5></li>
+                        <li><h5 className='fw-bold'>Les cuissons</h5></li>
+                        <li><h5 className='fw-bold'>Les process de mise en oeuvre et de conservation</h5></li>
                     </ul>
                 </section>
             </section>

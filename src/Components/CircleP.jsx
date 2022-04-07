@@ -12,7 +12,7 @@ const Circle = ({ colour, pct }) => {
     const strokePct = ((100 - pct) * circ) / 100;
     return (
         <circle r={r} cx={100} cy={100} fill='transparent' stroke={strokePct !== circ ? colour : ""}
-            strokeWidth={"0.5rem"} strokeDasharray={circ} strokeDashoffset={pct ? strokePct : 0} strokeLinecap='round' ></circle>
+            strokeWidth={"0.7rem"} strokeDasharray={circ} strokeDashoffset={pct ? strokePct : 0} strokeLinecap='round' ></circle>
     )
 };
 

@@ -2,12 +2,14 @@
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .sept-down-text {
     align-items: center;
     padding: 20px;
+    margin-bottom: 85px;
 }
 
 .sept-tire {
@@ -19,19 +21,16 @@
 }
 
 .sept-up-photo {
-    width: 282px;
-    height: 158px;
-}
-
-.sept-down-photo {
-    width: 252px;
-    height: 158px;
+    border-radius: 12px;
+    width: 275px;
+    height: 178px;
 }
 
 .sept-sec-left {
     background: #B8D6F6;
     width: 485px;
-    /* height: 450px; */
+    height: 500px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -39,10 +38,35 @@
 }
 
 .sept-sec-right {
-    padding: 20px;
     width: 703px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+}
+
+.sept-right-a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 15px;
+}
+
+.sept-ensavoirplus {
+    border-radius: 55px;
+    background-color: #ECF0F3;
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 7px 7px 11px 0px #fdfeff, inset -7px -7px 6px 5px #0000000a;
+    justify-content: center;
+}
+
+@media screen and (max-width: 590px) {
+    .sept-right-a {
+        justify-content: center;
+        text-align: center;
+    }
 }

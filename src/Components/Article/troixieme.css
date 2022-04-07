@@ -30,12 +30,12 @@
 
 .trois-sec-right {
     padding: 20px;
-    width: 630px;
+    width: 645px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
-.trois-quote-imag {
+/* .trois-quote-imag {
     width: 100px;
-}
+} */

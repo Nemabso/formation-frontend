@@ -1,0 +1,20 @@
+.part-back {
+    background: url("./imag/team2.jpg") center no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+}
+
+/* .partenair-back-filtre {
+    background: #f9fafbbd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.partenair-sec-down {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 50vh;
+}

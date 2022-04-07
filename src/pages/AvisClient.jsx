@@ -2,7 +2,7 @@ import React from 'react'
 import CircleP from '../components/CircleP';
 import Footer from '../components/Footer';
 import "./avisClients.css";
-import { FcBusinessman } from "react-icons/fc";
+import { GrUser } from "react-icons/gr";
 import { MdPersonSearch, MdDone } from "react-icons/md";
 import { FaThumbsUp } from "react-icons/fa";
 
@@ -25,24 +25,24 @@ export default function AvisClient() {
                 <text x={"50%"} y={"50%"} dominantBaseline={"central"} textAnchor='middle'>hej</text>
             </svg> */}
                 <section className="avis-client-sec-down">
-                    <section className='avis-client-secs'>
-                        <FcBusinessman size={100} />
+                    <div className='avis-client-secs'>
+                        <GrUser fill='#0B346C' size={80} />
                         <h2 className='avis-client-texts'>Satisfaction employeur</h2>
-                        <CircleP className="avis-circle" percentage={98} colour={"#0CBF0D"} />
-                    </section>
-                    <section className='avis-client-secs'>
+                        <CircleP className="avis-circle" percentage={98} colour={"#e8eaeb"} />
+                    </div>
+                    <div className='avis-client-secs'>
                         <div>
-                            <MdDone fill='darkblue' size={50} />
-                            <MdPersonSearch fill='darkblue' size={100} />
+                            <MdDone fill='#0B346C' size={50} />
+                            <MdPersonSearch fill='#0B346C' size={100} />
                         </div>
                         <h2 className='avis-client-texts'>Satisfaction Pôle Emploi</h2>
-                        <CircleP percentage={89} colour={"#0CBF0D"} />
-                    </section>
-                    <section className='avis-client-secs'>
-                        <FaThumbsUp fill='darkblue' size={100} />
+                        <CircleP percentage={89} colour={"#e8eaeb"} />
+                    </div>
+                    <div className='avis-client-secs'>
+                        <FaThumbsUp fill='#0B346C' size={100} />
                         <h2 className='avis-client-texts'>Satisfaits apprenants</h2>
-                        <CircleP percentage={90} colour={"#0CBF0D"} />
-                    </section>
+                        <CircleP percentage={90} colour={"#e8eaeb"} />
+                    </div>
                 </section>
 
             </article>

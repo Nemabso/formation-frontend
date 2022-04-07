@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
 
 body {
     margin: 0;
@@ -8,12 +7,15 @@ body {
 
 .backgroung-hompage {
     background: url("../assets/home.png") center no-repeat;
-    background-size: 100% auto;
+    /* background-size: 100vw 90vh; */
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-position: left;
 }
 
 .home-cen-text {
-    font-family: 'Charm', cursive;
-    /* font-family: 'Oleo Script', cursive; */
+    font-family: 'Libre Baskerville', serif;
+    max-width: 902px;
 }
 
 .home-single-quote {
@@ -27,14 +29,18 @@ body {
     padding-left: 6px;
 }
 
-.homesite-logo {
+/* .homesite-logo {
     width: 180px;
     height: 150px;
     padding: 18px;
-}
+} */
 
 .filter-home {
+    display: grid;
+    align-items: center;
     background: #f9fafbbd;
+    min-height: 75vh;
+    text-align: center;
 }
 
 .carousel-indicators {
@@ -74,7 +80,7 @@ a.circle:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 20px;
+    padding: 10px;
 }
 
 .home-back-circle {
@@ -99,12 +105,22 @@ button.home-circle:hover {
     display: flex;
     gap: 20px;
     padding: 10px;
+    align-items: center;
 }
 
 div.home-parag p {
     margin-top: auto;
     margin-bottom: auto;
-    cursor: pointer;
+    /* cursor: pointer; */
+}
+
+.home-sec-two {
+    min-height: 60vh;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 /* video */
@@ -148,4 +164,9 @@ div.home-parag p {
         justify-content: flex-start;
     }
 
+    .company-markes {
+        width: 66vw;
+        height: 30vh;
+        /* border-radius: 25px; */
+    }
 }
