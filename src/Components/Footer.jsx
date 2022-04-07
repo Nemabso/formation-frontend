@@ -47,7 +47,7 @@ export default function Footer() {
                             <div>
                                 <Link className="d-block p-2" to={'/mentionlegales'}>Mentions légales</Link>
                                 <Link className="d-block p-2" to={'/gestioncookies'}>Confidentialité</Link>
-                                <p className="d-block p-2">Conditions Générales</p>
+                                {/* <p className="d-block p-2">Conditions Générales</p> */}
                             </div>
                         </Col>
 

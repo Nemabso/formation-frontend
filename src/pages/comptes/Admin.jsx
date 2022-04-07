@@ -7,7 +7,7 @@ import { MdManageAccounts } from "react-icons/md";
 import Modal from 'react-bootstrap/Modal';
 import ModalHeader from 'react-bootstrap/esm/ModalHeader';
 import { FaStar } from "react-icons/fa";
-import "./admin.css"
+import "./admin.css";
 
 export default function Admin({ userID }) {
 
@@ -106,15 +106,17 @@ export default function Admin({ userID }) {
         }
     }
     const pourcentHandle = () => {
-        console.log("pourcentage", pourcentA, pourcentB, pourcentC);
-        // if (userID) {
-        //     axios.post("http://localhost:5000/information/pourcentage").then(() => {
-        //         console.log("pourcentag a fixé");
-        //     }).catch(({ response }) => {
-        //         console.log("response de pourcentage", response);
-        //     })
-        // } else {
-        // }
+        // console.log("pourcentage", pourcentA, pourcentB, pourcentC);
+        if (userID) {
+            axios.post("http://localhost:5000/user/pourcentage", {
+                userId: userID, pourcentA: pourcentA, pourcentB: pourcentB, pourcentC: pourcentC
+            }).then(() => {
+                // console.log("pourcentag a fixé");
+                setRefresh((prev) => !prev);
+            }).catch(({ response }) => {
+                console.log("response de pourcentage", response);
+            })
+        }
         if (!userID) {
             alert("vous devez vous connectez pour continuer !")
         }
@@ -214,18 +216,18 @@ export default function Admin({ userID }) {
                 show={showPorcent} onHide={() => setPorcentModal(false)}>
                 <ModalHeader closeButton />
                 <h2 className='p-3'>Changer le pourcentage (page Avis CLIENT) :</h2>
-                <form action="POST" className='admin-pourcent-form'>
+                <div className='admin-pourcent-form'>
                     <div className='d-flex '>
-                        <p>Satisfaction employeur :</p> <input type="number" onChange={(e) => setPourcentA(e.target.value)} />
+                        <p>Satisfaction employeur :</p> <input type="number" accept='number' onChange={(e) => setPourcentA(e.target.value)} />
                     </div>
                     <div className='d-flex '>
-                        <p>Satisfaction Pôle Emploi :</p> <input type="number" onChange={(e) => setPourcentB(e.target.value)} />
+                        <p>Satisfaction Pôle Emploi :</p> <input type="number" accept='number' onChange={(e) => setPourcentB(e.target.value)} />
                     </div>
                     <div className='d-flex '>
-                        <p>Satisfaits apprenants :</p> <input type="number" onChange={(e) => setPourcentC(e.target.value)} />
+                        <p>Satisfaits apprenants :</p> <input type="number" accept='number' onChange={(e) => setPourcentC(e.target.value)} />
                     </div>
                     <button className='btn btn-primary float-end' onClick={() => pourcentHandle()} >OK</button>
-                </form>
+                </div>
             </Modal>
 
             <footer>

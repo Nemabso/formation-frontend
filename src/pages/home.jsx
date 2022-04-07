@@ -29,7 +29,7 @@ export default function Home({ userID, setUserID }) {
     useEffect(() => {
         if (userId) {
             axios.get(`http://localhost:5000/user/login/${userId}`).then((res) => {
-                console.log("user get homeJSX::::", res.data);
+                // console.log("user get homeJSX::::", res.data);
                 const { user } = res.data;
                 setUserID(user._id);
                 setRole(user.role);
