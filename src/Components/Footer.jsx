@@ -24,7 +24,7 @@ export default function Footer() {
                                 <p>Nous trouver :</p>
                                 <Row className='p-2'>
                                     <Col sm={4} xs={4}>
-                                        <a href='https://www.linkedin.com/in/dominiquedura' target={"_blank"}><BsLinkedin /></a>
+                                        <a href='https://www.linkedin.com/in/dominiquedura' rel="noopener noreferrer" target={"_blank"}><BsLinkedin /></a>
                                     </Col>
                                     <Col sm={4} xs={4}  >
                                         <a href='tel:+33688464682' className='text-primary'> <FiPhoneCall /></a>

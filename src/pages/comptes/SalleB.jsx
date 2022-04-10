@@ -31,7 +31,7 @@ export default function SalleB({ userID }) {
         setNumPages(numPages);
     }
     function openImag(breakpoint) {
-        console.log("click open !");
+        // console.log("click open !");
         setFullscreen(breakpoint);
         setShowModal(true)
     }
@@ -44,7 +44,7 @@ export default function SalleB({ userID }) {
 
         if (profID) {
             axios.get(`http://localhost:5000/formation/getsalon-b/${profID}`).then((res) => {
-                console.log("res de salon B", res);
+                // console.log("res de salon B", res);
                 setFavorites(res.data);
             }).catch((err) => {
                 console.log("une error de get Salon B", err);

@@ -7,7 +7,7 @@ export default function SixForma() {
         <article className='six-article-forma'>
             <div className='p-4'>
                 <div>
-                    <img src={quote} className='quatre-quote' width={100} height={100} alt="single quote" />
+                    <img src={quote} className='quatre-quote' width={100} height={100} loading='eager' title='quote' alt="single quote" />
                 </div>
 
                 <div className='six-up'>
@@ -21,10 +21,10 @@ export default function SixForma() {
             <section className='six-sections-forma'>
                 <section className='sixform-secs'>
                     <div className='sixform-titre'>
-                        <h4>Gestion</h4>
+                        <h3 className='fs-4'>Gestion</h3>
                     </div>
                     <ul className='pt-3 d-grid gap-2'>
-                        <li><h5 className='fw-bold'>Initiation à l'économie d'entreprise, savoir lire un bilan et un compte de résultat</h5></li>
+                        <li><h4 className='fs-5 fw-bold'>Initiation à l'économie d'entreprise, savoir lire un bilan et un compte de résultat</h4></li>
                         <li><h5 className='fw-bold'>Définir des indicateurs de gestion et piloter son compte d'exploitation</h5></li>
                         <li><h5 className='fw-bold'>La gestion de la marge et la non qualité</h5></li>
                         <li><h5 className='fw-bold'>La maitrise de la masse salariale</h5></li>

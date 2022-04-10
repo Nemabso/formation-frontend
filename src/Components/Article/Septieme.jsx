@@ -13,7 +13,7 @@ export default function Septieme() {
         <article className='sept-article'>
             <section className='sept-sec-left'>
                 <div className='p-3'>
-                    <h2>Des formations adaptées</h2>
+                    <h1 className='fs-2'>Des formations adaptées</h1>
                 </div>
                 <div className='sept-down-text'>
                     <h2 className='mb-5'> pour tous les niveaux</h2>
@@ -36,30 +36,30 @@ export default function Septieme() {
                 <div className='sept-right-a'>
                     <div style={{ width: "340px" }}>
                         <h2>Pour devenir :</h2>
-                        <h4>Responsable de centre de profit</h4>
+                        <h3 className='fs-4'>Responsable de centre de profit</h3>
                         <h4>Manager dans la restauration </h4>
                         <h4>Maitre d’hôtel, serveur </h4>
                     </div>
-                    <img src={quatre} className='sept-up-photo' width={"282px"} height={"158px"} title='formation' alt="formation" />
+                    <img src={quatre} className='sept-up-photo' width={"282px"} height={"158px"} loading='eager' title='formation' alt="formation" />
                 </div>
                 <div className='sept-right-a'>
                     <div className='d-grid gap-3'>
                         <h4>Vendeur</h4>
-                        <img src={trois} className='sept-up-photo' width={"282px"} height={"158px"} title='vendeur' alt="formation" />
+                        <img src={trois} className='sept-up-photo' width={"282px"} height={"158px"} loading='eager' title='vendeur' alt="formation" />
                     </div>
                     <div className='d-grid gap-3'>
                         <h4>Chargé d’affaires</h4>
-                        <img src={cinq} className='sept-up-photo' width={"282px"} height={"158px"} title='affaires' alt="formation" />
+                        <img src={cinq} className='sept-up-photo' width={"282px"} height={"158px"} loading='eager' title='affaires' alt="formation" />
                     </div>
                 </div>
                 <div className='sept-right-a'>
                     <div className='d-grid gap-3'>
                         <h4>Employé polyvalent <br /> de supermarché </h4>
-                        <img src={pre} className='sept-up-photo' width={"282px"} height={"158px"} title='polyvalant' alt="formation" />
+                        <img src={pre} className='sept-up-photo' width={"282px"} height={"158px"} loading='eager' title='polyvalant' alt="formation" />
                     </div>
                     <div className='d-grid gap-3'>
                         <h4>Employé polyvalent <br /> de restauration </h4>
-                        <img src={deux} className='sept-up-photo' width={"282px"} height={"158px"} title='restauration' alt="formation" />
+                        <img src={deux} className='sept-up-photo' width={"282px"} height={"158px"} loading='eager' title='restauration' alt="formation" />
                     </div>
                 </div>
                 <div className='p-3'>

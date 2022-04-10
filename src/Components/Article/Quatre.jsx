@@ -12,7 +12,7 @@ export default function Quatre() {
         <article className='quatre-article'>
             <div className='quatre-filtre-up'>
                 <div>
-                    <img src={quote} className='quatre-quote' width={100} height={100} alt="single quote" />
+                    <img src={quote} className='quatre-quote' width={100} height={100} loading='eager' title='quote' alt="single quote" />
                 </div>
 
                 <div className='quet-up'>

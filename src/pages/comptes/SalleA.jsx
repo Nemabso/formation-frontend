@@ -41,7 +41,7 @@ export default function SalleA({ userID }) {
 
         if (profID) {
             axios.get(`http://localhost:5000/formation/salle-a-get/${profID}`).then((res) => {
-                console.log("res de salon A", res);
+                // console.log("res de salon A", res);
                 setFavorites(res.data);
             }).catch((err) => {
                 console.log("une error de get Salon A", err);

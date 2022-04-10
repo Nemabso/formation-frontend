@@ -35,8 +35,8 @@ export default function ProfA({ userID, setUserID }) {
         setCodeSalleA(salleAcodeRef.current.value);
         salleAcodeRef.current.value = "";
         const codeData = { codeA: codeSalleA, userId: userId }
-        await axios.post("http://localhost:5000/user/profCodea", codeData).then((res) => {
-            console.log("success code send", res);
+        await axios.post("http://localhost:5000/user/profCodea", codeData).then(() => {
+            // console.log("success code send", res);
             setRefresh((prev) => !prev)
         }).catch(({ response }) => {
             setShowModal(true);
@@ -51,8 +51,8 @@ export default function ProfA({ userID, setUserID }) {
         setCodeSalleB(salleBcodeRef.current.value);
         salleBcodeRef.current.value = "";
         const codeData = { codeB: codeSalleB, userId: userId }
-        await axios.post("http://localhost:5000/user/profCodesalleb", codeData).then((res) => {
-            console.log("success code send", res);
+        await axios.post("http://localhost:5000/user/profCodesalleb", codeData).then(() => {
+            // console.log("success code send", res);
             setRefresh((prev) => !prev)
         }).catch(({ response }) => {
             setShowModal(true);
@@ -78,8 +78,8 @@ export default function ProfA({ userID, setUserID }) {
             formData.append("cours", cours[i])
         }
         await axios.post("http://localhost:5000/formation/upload", formData)
-            .then((res) => {
-                console.log("successfully file post", res.data);
+            .then(() => {
+                // console.log("successfully file post", res.data);
                 setRefresh((prev) => !prev)
                 // window.location.reload();
             })
@@ -92,8 +92,8 @@ export default function ProfA({ userID, setUserID }) {
         // setMassege("Vous allez supprimez cet item ?");
 
         // if (reponse) {
-        axios.delete(`http://localhost:5000/formation/delete/${id}`).then((res) => {
-            console.log("file a supprimé !", res.data);
+        axios.delete(`http://localhost:5000/formation/delete/${id}`).then(() => {
+            // console.log("file a supprimé !", res.data);
             setRefresh((prev) => !prev)
         }).catch((err) => {
             console.log("error de delete!", err);
@@ -104,14 +104,14 @@ export default function ProfA({ userID, setUserID }) {
     const togglePartageA = async (id) => {
         const formD = { userId: userId, formaId: id };
         await axios.put("http://localhost:5000/formation/formation-a", formD).then((res) => {
-            console.log("formation partage A::", res);
+            // console.log("formation partage A::", res);
             setRefresh((prev) => !prev)
         }).catch((err) => console.error(err));
     }
     const togglePartageB = async (id) => {
         const formD = { userId: userId, formaId: id };
         await axios.put("http://localhost:5000/formation/salon-b", formD).then((res) => {
-            console.log("formation partage B::", res);
+            // console.log("formation partage B::", res);
             setRefresh((prev) => !prev)
         }).catch((err) => console.error(err));
     }
@@ -120,7 +120,7 @@ export default function ProfA({ userID, setUserID }) {
         if (userId) {
             axios.get(`http://localhost:5000/formation/upload/${userId}`).then((res) => {
                 const { cours, user } = res.data;
-                console.log("formation :", cours, "user get prof a", user);
+                // console.log("formation :", cours, "user get prof a", user);
                 setImages(cours);
                 // setRole(user.role);
                 setUserID(user._id);

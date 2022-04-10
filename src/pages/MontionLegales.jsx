@@ -1,7 +1,7 @@
 import React from 'react';
 import idoinlogo from "./imag/logoIdoine.png";
 
-export default function () {
+export default function MontionLegales() {
     return (
         <div className='container pt-5 pb-5'>
             <div>
@@ -33,7 +33,7 @@ export default function () {
             </div>
             <div>
                 <h4>Les données à caractère personnel sont traitées par le personnel d’Idoine Transaction Conseil, ou les prestataires habilités, de manière loyale, confidentielle et de façon sécurisée.
-                    Les utilisateurs sont informés que, lors de la visite sur le site, des cookies peuvent s’installer automatiquement sur leur logiciel de navigation. Les règles applicables aux cookies sont accessibles dans <a href="https://www.avocat.fr/politique-de-cookies" target={"_blank"}> <u> la section politique des cookies.</u></a>
+                    Les utilisateurs sont informés que, lors de la visite sur le site, des cookies peuvent s’installer automatiquement sur leur logiciel de navigation. Les règles applicables aux cookies sont accessibles dans <a href="https://www.avocat.fr/politique-de-cookies" rel="noopener noreferrer" target={"_blank"}> <u> la section politique des cookies.</u></a>
                 </h4>
             </div>
             <div>
