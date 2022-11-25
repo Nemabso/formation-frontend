@@ -38,7 +38,7 @@ export default function Footer() {
                                         <a href="tel:votre numero" className='text-primary'> <FiPhoneCall /></a>
                                     </Col>
                                     <Col sm={4} xs={4} >
-                                        <a href="mailto:example@gmail.com?subject= subject !" className='text-primary'><BsFillEnvelopeFill /></a>
+                                        <a href="mailto:dominique.dura@orange.fr" className='text-primary'><BsFillEnvelopeFill /></a>
                                     </Col> */}
                             </div>
                         </Col>
