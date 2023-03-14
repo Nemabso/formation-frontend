@@ -6,7 +6,7 @@ body {
 }
 
 .backgroung-hompage {
-    background: url("../assets/home.png") center no-repeat;
+    background: url("../../assets/home.png") center no-repeat;
     /* background-size: 100vw 90vh; */
     /* background-attachment: fixed; */
     background-size: cover;

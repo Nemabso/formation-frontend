@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CircleP from '../Components/CircleP';
-import Footer from '../Components/Footer';
+import CircleP from '../CircleP';
 import "./avisClients.css";
 import { GrUser } from "react-icons/gr";
 import { MdPersonSearch, MdDone } from "react-icons/md";
@@ -63,9 +62,7 @@ export default function AvisClient() {
                 </section>
 
             </article>
-            <footer>
-                <Footer />
-            </footer>
+
         </>
     )
 }

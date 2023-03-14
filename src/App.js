@@ -1,26 +1,27 @@
 import React, { useContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Error404 from "./Components/Error404";
-import Home from "./pages/Home";
-import Admin from "./pages/comptes/Admin";
-import ProfA from "./pages/comptes/ProfA";
+import Home from "./Components/pages/Home";
+import Admin from "./Components/pages/comptes/Admin";
+import ProfA from "./Components/pages/comptes/ProfA";
 import Navbar from "./Components/Navigation";
 import Login from "./Components/Login";
 import { AuthContext } from "./context/Auth";
 import EleveLog from "./Components/EleveLog";
-import NosFormation from "./pages/NosFormation";
-import NousContacter from "./pages/NousContacter";
-import SalleA from "./pages/comptes/SalleA";
-import SalleB from "./pages/comptes/SalleB";
+import NosFormation from "./Components/pages/NosFormation";
+import NousContacter from "./Components/pages/NousContacter";
+import SalleA from "./Components/pages/comptes/SalleA";
+import SalleB from "./Components/pages/comptes/SalleB";
 import "./App.css"
-import Avis from "./pages/Avis";
-// import QuiSommesNous from "./pages/QuiSommesNous";
-import Financer from "./pages/Financer";
-import NosMissions from "./pages/NosMissions";
-import AvisClient from "./pages/AvisClient";
-import Partenaires from "./pages/Partenaires";
-import GestionCookies from "./pages/GestionCookies";
-import MontionLegales from "./pages/MontionLegales";
+import Avis from "./Components/pages/Avis";
+// import QuiSommesNous from "./Components/pages/QuiSommesNous";
+import Financer from "./Components/pages/Financer";
+import NosMissions from "./Components/pages/NosMissions";
+import AvisClient from "./Components/pages/AvisClient";
+import Partenaires from "./Components/pages/Partenaires";
+import GestionCookies from "./Components/pages/GestionCookies";
+import MontionLegales from "./Components/pages/MontionLegales";
+import Footer from "./Components/Footer";
 export default function App() {
   const [isAuthenticated, setIsAuthenticated, role] = useContext(AuthContext);
   // console.log(setIsAuthenticated);
@@ -60,6 +61,7 @@ export default function App() {
         )}
         <Route path="*" element={<Error404 />}></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

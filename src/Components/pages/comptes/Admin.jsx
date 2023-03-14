@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Footer from '../../Components/Footer';
-import Registering from '../../Components/Registering';
+import Registering from '../../Registering';
 import { BsFillChatSquareDotsFill, BsSpeedometer } from "react-icons/bs";
 import { MdManageAccounts } from "react-icons/md";
 import Modal from 'react-bootstrap/Modal';
@@ -230,9 +229,7 @@ export default function Admin({ userID }) {
                 </div>
             </Modal>
 
-            <footer>
-                <Footer />
-            </footer>
+
         </div>
     )
 }
