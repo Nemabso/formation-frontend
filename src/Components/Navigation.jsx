@@ -50,9 +50,10 @@ export default function Navigation({ setUserID }) {
                                     <Link to="/nosformation" className="nav-item">NOS FORMATIONS</Link>
                                 </li>
                                 <li className="itemCover">
-                                    <Link to="/avisclient" className="nav-item">AVIS CLIENT</Link>
+                                    <p className="nav-item">AVIS</p>
                                     <div className="dropdown rounded">
                                         <Link to="/avisapprenantes"><span className="p-2">Avis apprenants</span></Link>
+                                        <Link to="/avisclient"><span className="p-2">Avis clients</span></Link>
                                         <Link to="/partenaires"><span className="p-2">Partenaires</span></Link>
                                     </div>
                                 </li>
@@ -67,8 +68,7 @@ export default function Navigation({ setUserID }) {
                         ))}
                     </Nav>
                     <span >
-                        {(salleB && (<button className="btn btn-danger mt-3" onClick={logOutEleve} >Déconnexion</button>))}
-                        {(salleA && (<button className="btn btn-danger mt-3" onClick={logOutEleve} >Déconnexion</button>))}
+                        {((salleA || salleB) && (<button className="btn btn-danger mt-3" onClick={logOutEleve} >Déconnexion</button>))}
                         {(role === "formateur" && (
                             <li className="itemCover">
                                 {(role === "formateur" && (<Link className="nav-item menu-button" to="/profa">MON COMPTE</Link>))}
@@ -88,15 +88,13 @@ export default function Navigation({ setUserID }) {
                             </li>
                         ))}
                         {((!isAuthenticated) && (!salleB) && (!salleA) && (
-                            <>
-                                <li className="itemCover">
-                                    <span className="nav-item menu-button">COMPTES</span>
-                                    <div className="comptes-dropdown rounded">
-                                        <Link to="/login">Formateur</Link>
-                                        <Link to="/eleveLogin">Eleve</Link>
-                                    </div>
-                                </li>
-                            </>
+                            <li className="itemCover">
+                                <span className="nav-item menu-button">COMPTES</span>
+                                <div className="comptes-dropdown rounded">
+                                    <Link to="/login">Formateur</Link>
+                                    <Link to="/eleveLogin">Eleve</Link>
+                                </div>
+                            </li>
                         ))}
                     </span>
                 </Navbar.Collapse>

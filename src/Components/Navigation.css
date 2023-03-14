@@ -12,9 +12,8 @@
 }
 
 .nav-item:hover {
+  cursor: pointer;
   color: #B8D6F6;
-  font-size: 17px;
-  /* padding: 10px; */
   background: #ffffffcb;
 }
 
