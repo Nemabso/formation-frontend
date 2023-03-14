@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../components/Footer';
+import Footer from '../Components/Footer';
 import "./partenaires.css";
 import emploi from "./imag/emploi.png";
 import agefos from "./imag/agefos.jpg";

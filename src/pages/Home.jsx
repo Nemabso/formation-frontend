@@ -4,17 +4,17 @@ import Carousel from 'react-bootstrap/Carousel';
 // import { Link } from 'react-router-dom';
 // import vid from '../video/premier.mp4';
 import { Container, Row, Col } from "react-bootstrap";
-import './home.css'
-import Footer from '../components/Footer';
+import './Home.css'
+import Footer from '../Components/Footer';
 import Modal from "react-bootstrap/Modal";
 import ModalHeader from 'react-bootstrap/esm/ModalHeader';
 import quote from "./imag/quote.png";
 import Typical from "react-typical";
 import axios from 'axios';
 import { AuthContext } from '../context/Auth';
-import Premier from '../components/Article/Premier';
-import Quatre from '../components/Article/Quatre';
-import CinqFinance from "../components/Article/CinqFinance";
+import Premier from '../Components/Article/Premier';
+import Quatre from '../Components/Article/Quatre';
+import CinqFinance from "../Components/Article/CinqFinance";
 import logofinance from "./imag/logofinance.png";
 
 export default function Home({ userID, setUserID }) {

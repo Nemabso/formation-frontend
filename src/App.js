@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Error404 from "./components/Error404";
+import Error404 from "./Components/Error404";
 import Home from "./pages/Home";
 import Admin from "./pages/comptes/Admin";
 import ProfA from "./pages/comptes/ProfA";
-import Navbar from "./components/Navigation";
-import Login from "./components/Login";
+import Navbar from "./Components/Navigation";
+import Login from "./Components/Login";
 import { AuthContext } from "./context/Auth";
-import EleveLog from "./components/EleveLog";
+import EleveLog from "./Components/EleveLog";
 import NosFormation from "./pages/NosFormation";
 import NousContacter from "./pages/NousContacter";
 import SalleA from "./pages/comptes/SalleA";

@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import StarRating from '../components/StarRating';
+import StarRating from '../Components/StarRating';
 import Modal from "react-modal";
-import Footer from '../components/Footer';
+import Footer from '../Components/Footer';
 import { FaStar } from "react-icons/fa";
 
 

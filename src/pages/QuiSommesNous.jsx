@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../components/Footer';
+import Footer from '../Components/Footer';
 
 export default function QuiSommesNous() {
     return (

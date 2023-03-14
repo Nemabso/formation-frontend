@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import CircleP from '../components/CircleP';
-import Footer from '../components/Footer';
+import CircleP from '../Components/CircleP';
+import Footer from '../Components/Footer';
 import "./avisClients.css";
 import { GrUser } from "react-icons/gr";
 import { MdPersonSearch, MdDone } from "react-icons/md";

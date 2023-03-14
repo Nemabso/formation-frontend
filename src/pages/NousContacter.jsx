@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 import "./nousContact.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { BsGeoAlt } from "react-icons/bs";

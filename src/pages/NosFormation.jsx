@@ -1,8 +1,8 @@
 import React from 'react'
-import Quatre from '../components/Article/Quatre';
-import Septieme from '../components/Article/Septieme';
-import SixForma from '../components/Article/SixForma';
-import Footer from '../components/Footer';
+import Quatre from '../Components/Article/Quatre';
+import Septieme from '../Components/Article/Septieme';
+import SixForma from '../Components/Article/SixForma';
+import Footer from '../Components/Footer';
 
 export default function NosFormation() {
 
