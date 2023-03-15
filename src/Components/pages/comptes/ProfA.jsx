@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // import { AuthContext } from '../../context/Auth';
 import Modal from "react-modal";
 
-import FilesCard from '../../Components/FilesCard';
+import FilesCard from '../../FilesCard';
 import "./profA.css";
 
 export default function ProfA({ userID, setUserID }) {

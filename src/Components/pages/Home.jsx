@@ -5,16 +5,15 @@ import Carousel from 'react-bootstrap/Carousel';
 // import vid from '../video/premier.mp4';
 import { Container, Row, Col } from "react-bootstrap";
 import './Home.css'
-import Footer from '../Components/Footer';
 import Modal from "react-bootstrap/Modal";
 import ModalHeader from 'react-bootstrap/esm/ModalHeader';
 import quote from "./imag/quote.png";
 import Typical from "react-typical";
 import axios from 'axios';
-import { AuthContext } from '../context/Auth';
-import Premier from '../Components/Article/Premier';
-import Quatre from '../Components/Article/Quatre';
-import CinqFinance from "../Components/Article/CinqFinance";
+import { AuthContext } from '../../context/Auth';
+import Premier from '../Article/Premier';
+import Quatre from '../Article/Quatre';
+import CinqFinance from "../Article/CinqFinance";
 import logofinance from "./imag/logofinance.png";
 
 export default function Home({ userID, setUserID }) {
@@ -178,9 +177,7 @@ export default function Home({ userID, setUserID }) {
             </Modal>
 
             <p className='d-none'>{role && setIsAuthenticated && isAuthenticated}</p>
-            <footer>
-                <Footer />
-            </footer>
+
         </main>
     )
 }

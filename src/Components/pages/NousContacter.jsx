@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Footer from "../Components/Footer";
 import "./nousContact.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { BsGeoAlt } from "react-icons/bs";
@@ -124,9 +123,6 @@ export default function NousContacter() {
                 <h1>{modalMessage}</h1>
                 <button className="btn btn-secondary" onClick={() => setShowModal(false)}>fermer</button>
             </Modal>
-            <footer>
-                <Footer />
-            </footer>
         </>
     );
 

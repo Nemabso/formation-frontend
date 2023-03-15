@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../Components/Footer';
 import "./partenaires.css";
 import emploi from "./imag/emploi.png";
 import agefos from "./imag/agefos.jpg";
@@ -26,9 +25,7 @@ export default function Partenaires() {
                 </section>
 
             </article>
-            <footer>
-                <Footer />
-            </footer>
+
         </div>
     )
 }

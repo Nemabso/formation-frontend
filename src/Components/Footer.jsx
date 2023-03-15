@@ -11,7 +11,7 @@ export default function Footer() {
     const navigate = useNavigate()
 
     return (
-        <>
+        <footer>
             <section className='bg-light p-5'>
                 <Container>
                     <Row>
@@ -61,6 +61,6 @@ export default function Footer() {
                     </Row>
                 </Container>
             </section>
-        </>
+        </footer>
     )
 }

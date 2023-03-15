@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import StarRating from '../Components/StarRating';
+import StarRating from '../StarRating';
 import Modal from "react-modal";
-import Footer from '../Components/Footer';
 import { FaStar } from "react-icons/fa";
 
 
@@ -120,9 +119,7 @@ export default function Blog() {
                     <button className="btn btn-secondary" onClick={() => setShowModal(false)}>fermer</button>
                 </Modal>
             </div>
-            <footer>
-                <Footer />
-            </footer>
+
         </>
     )
 }
