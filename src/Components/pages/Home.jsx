@@ -128,7 +128,7 @@ export default function Home({ userID, setUserID }) {
                 <div className='sec-company p-4'>
                     <h4 className='text-center pb-3 fs-3' style={{ fontFamily: "charm" }} >Ils nous font confiance</h4>
                     <div className='text-center'>
-                        <Carousel fade >
+                        <Carousel>
                             <Carousel.Item interval={2000} >
                                 <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Basilic logo' src="/images/basilic1.svg" alt="basilic" />
                             </Carousel.Item>
