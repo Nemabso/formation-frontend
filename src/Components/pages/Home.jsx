@@ -15,6 +15,7 @@ import Premier from '../Article/Premier';
 import Quatre from '../Article/Quatre';
 import CinqFinance from "../Article/CinqFinance";
 import logofinance from "./imag/logofinance.png";
+import marques from "./Marques";
 
 export default function Home({ userID, setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
@@ -128,43 +129,14 @@ export default function Home({ userID, setUserID }) {
                 <div className='sec-company p-4'>
                     <h4 className='text-center pb-3 fs-3' style={{ fontFamily: "charm" }} >Ils nous font confiance</h4>
                     <div className='text-center'>
-                        <Carousel>
-                            <Carousel.Item interval={2000} >
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Basilic logo' src="/images/basilic1.svg" alt="basilic" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Nankasi logo' src="/images/ninkasi.svg" alt="nankasi" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Original Food' src="/images/originalfood.svg" alt="originalfood" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Buffalo Grill' src="/images/buffalo.svg" alt="buffalo-grill" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Rossi Boisson' src="/images/RossiBoisson.jpg" alt="RossiBoisson" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Minoterie Forest' src="/images/MinoterieForest.svg" alt="Minoterie Forest" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='La Garotte' src="/images/lagarotte.png" alt="lagarotte" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Phood' src="/images/phood.png" alt="phood" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Focaccia' src="/images/focaccia.png" alt="focaccia" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='paul' src="/images/paul.png" alt="paul" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Burger King' src="/images/burger.png" alt="burger" />
-                            </Carousel.Item>
-                            <Carousel.Item interval={2000}>
-                                <img className='company-markes img-fluid' width={200} height={200} loading='eager' title='Alice-resto' src="/images/Alice-restaurant.svg" alt="Alice-restaurant" />
-                            </Carousel.Item>
+                        <Carousel interval={3000}>
+                            {marques.length !== 0 && marques.map((marque) => {
+                                return (
+                                    <Carousel.Item key={marque.title}>
+                                        <img className='company-markes img-fluid' loading='eager' title={marque.title} src={marque.src} alt={marque.alt} />
+                                    </Carousel.Item>
+                                )
+                            })}  
                         </Carousel>
                     </div>
                 </div>
