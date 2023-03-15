@@ -1,22 +1,22 @@
 const marques = [
     {
         title: 'Basilic logo',
-        src: "/images/basilic1.svg",
+        src: "/images/basilic.jpg",
         alt: "basilic"
     },
     {
         title: 'Nankasi logo',
-        src: "/images/ninkasi.svg",
+        src: "/images/ninkasi.jpg",
         alt: "nankasi"
     },
     {
         title: 'Original Food',
-        src: "/images/originalfood.svg",
+        src: "/images/originalfood.jpg",
         alt: "originalfood"
     },
     {
         title: 'Buffalo Grill',
-        src: "/images/buffalo.svg",
+        src: "/images/buffalo-grill.png",
         alt: "buffalo-grill"
     },
     {
@@ -26,22 +26,22 @@ const marques = [
     },
     {
         title: 'Minoterie Forest',
-        src: "/images/MinoterieForest.svg",
+        src: "/images/MinoterieForest.jpg",
         alt: "Minoterie Forest"
     },
     {
-        title: 'La Garotte',
-        src: "/images/lagarotte.png",
-        alt: "lagarotte"
+        title: 'La Grotte',
+        src: "/images/lagrotte.png",
+        alt: "lagrotte"
     },
     {
         title: 'Phood',
-        src: "/images/phood.svg",
+        src: "/images/phood.png",
         alt: "phood"
     },
     {
         title: 'Focaccia',
-        src: "/images/focaccia.svg",
+        src: "/images/focaccia.png",
         alt: "focaccia"
     },
     {
@@ -51,12 +51,12 @@ const marques = [
     },
     {
         title: 'Burger King',
-        src: "/images/burger.png",
+        src: "/images/burgerking.png",
         alt: "burger"
     },
     {
         title: 'Alice-resto',
-        src: "/images/Alice-restaurant.svg",
+        src: "/images/alice.png",
         alt: "Alice-restaurant"
     },
 ]

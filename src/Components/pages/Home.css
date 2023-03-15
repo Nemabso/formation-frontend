@@ -148,9 +148,12 @@ div.home-parag p {
 }
 
 .company-markes {
-    width: 39vw;
-    height: 35vh;
-    /* border-radius: 25px; */
+    max-height: 30vh;
+    max-width: 100%;
+}
+
+.carousel-wrapper {
+    height: 30vh;
 }
 
 .home-text {
@@ -164,9 +167,9 @@ div.home-parag p {
         justify-content: flex-start;
     }
 
-    .company-markes {
+    /* .company-markes {
         width: 66vw;
         height: 30vh;
-        /* border-radius: 25px; */
-    }
+        border-radius: 25px;
+    } */
 }

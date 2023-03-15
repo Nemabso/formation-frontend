@@ -128,17 +128,20 @@ export default function Home({ userID, setUserID }) {
             <section className='p-4'>
                 <div className='sec-company p-4'>
                     <h4 className='text-center pb-3 fs-3' style={{ fontFamily: "charm" }} >Ils nous font confiance</h4>
-                    <div className='text-center'>
-                        <Carousel interval={3000}>
+                    <Row className='text-center'>
+                        {/* <Carousel interval={3000}> */}
+                        <Carousel interval={1000000}>
                             {marques.length !== 0 && marques.map((marque) => {
                                 return (
                                     <Carousel.Item key={marque.title}>
-                                        <img className='company-markes img-fluid' loading='eager' title={marque.title} src={marque.src} alt={marque.alt} />
+                                        <div className='carousel-wrapper d-flex align-items-center justify-content-center'>
+                                            <img className='company-markes' loading='eager' title={marque.title} src={marque.src} alt={marque.alt} />
+                                        </div>
                                     </Carousel.Item>
                                 )
                             })}  
                         </Carousel>
-                    </div>
+                    </Row>
                 </div>
             </section>
             <Modal fullscreen={fullscreen} show={showModal} onHide={() => setShowModal(false)}>
