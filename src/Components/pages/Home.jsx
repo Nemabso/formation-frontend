@@ -20,16 +20,14 @@ import marques from "./Marques";
 export default function Home({ userID, setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
     // console.log(isAuthenticated, setIsAuthenticated, role);
-    const [pagenummber, setPagenummber] = useState("")
+    const [pageNumber, setPageNumber] = useState("")
     const [fullscreen, setFullscreen] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    // console.log("page nummber", pagenummber);
 
     const userId = userID ? userID : sessionStorage.getItem("userId");
     useEffect(() => {
         if (userId) {
             axios.get(`http://localhost:5000/user/login/${userId}`).then((res) => {
-                // console.log("user get homeJSX::::", res.data);
                 const { user } = res.data;
                 setUserID(user._id);
                 setRole(user.role);
@@ -74,7 +72,7 @@ export default function Home({ userID, setUserID }) {
                 <div className='home-parag'>
                     <div>
                         <div className='home-back-circle'>
-                            <button onClick={() => { setPagenummber(1); setFullscreen(true); setShowModal(true) }} className='home-circle' />
+                            <button onClick={() => { setPageNumber(1); setFullscreen(true); setShowModal(true) }} className='home-circle' />
                         </div>
                     </div>
                     <p>Des formations sur mesure</p>
@@ -82,7 +80,7 @@ export default function Home({ userID, setUserID }) {
                 <div className='home-parag'>
                     <div>
                         <div className='home-back-circle'>
-                            <button onClick={() => { setPagenummber(2); setFullscreen(true); setShowModal(true) }} className='home-circle' />
+                            <button onClick={() => { setPageNumber(2); setFullscreen(true); setShowModal(true) }} className='home-circle' />
                         </div>
                     </div>
                     <p>Des professionnels par métier</p>
@@ -90,40 +88,32 @@ export default function Home({ userID, setUserID }) {
                 <div className='home-parag'>
                     <div>
                         <div className='home-back-circle'>
-                            <button onClick={() => { setPagenummber(3); setFullscreen(true); setShowModal(true) }} className='home-circle' />
+                            <button onClick={() => { setPageNumber(3); setFullscreen(true); setShowModal(true) }} className='home-circle' />
                         </div>
                     </div>
                     <p>Une prise en charge du financement possible à 100%</p>
                 </div>
             </section>
             <section className='home-sec-two'>
-                <div>
-                    <Container>
-                        <Row>
-                            <Col sm={6} className="col11" >
-                                <div className="home-video">
-                                    <div className="video">
-                                        {/* <iframe
-                                            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", }}
-                                            src="https://www.youtube.com/embed/BOwd8nsDh5Y" title="YouTube video player"
-                                            frameBorder="0" allowFullScreen
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        ></iframe> */}
-                                        <img src={logofinance} className='img-fluid' title='Qualiopi' loading='eager' width={400} height={400} alt="logofinance" />
-                                    </div>
-                                </div>
-                            </Col>
+                <Row>
+                    <Col xs={12} sm={6} className="d-flex justify-content-center">
+                        {/* <iframe
+                            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", }}
+                            src="https://www.youtube.com/embed/BOwd8nsDh5Y" title="YouTube video player"
+                            frameBorder="0" allowFullScreen
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        ></iframe> */}
+                        <img src={logofinance} className='img-fluid' title='Qualiopi' loading='eager' width={400} height={400} alt="logofinance" />
+                    </Col>
 
-                            <Col sm={6} className='home-text'>
-                                <div className="text-center">
-                                    <p className='fs-5'>Une offre de formation 100% sur mesure</p>
-                                    <p className='fs-5'>IDOINE vous accompagne et vous conseille dans vos projets de formation.</p>
-                                    {/* <a href="###"><div>En savoir plus</div></a> */}
-                                </div>
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
+                    <Col xs={12} sm={6} className='home-text'>
+                        <div className="text-center">
+                            <p className='fs-5'>Une offre de formation 100% sur mesure</p>
+                            <p className='fs-5'>IDOINE vous accompagne et vous conseille dans vos projets de formation.</p>
+                            {/* <a href="###"><div>En savoir plus</div></a> */}
+                        </div>
+                    </Col>
+                </Row>
             </section>
             <section className='p-4'>
                 <div className='sec-company p-4'>
@@ -145,9 +135,9 @@ export default function Home({ userID, setUserID }) {
             </section>
             <Modal fullscreen={fullscreen} show={showModal} onHide={() => setShowModal(false)}>
                 <ModalHeader closeButton />
-                {pagenummber === 1 && <Premier />}
-                {pagenummber === 2 && <Quatre />}
-                {pagenummber === 3 && <CinqFinance />}
+                {pageNumber === 1 && <Premier />}
+                {pageNumber === 2 && <Quatre />}
+                {pageNumber === 3 && <CinqFinance />}
             </Modal>
 
             <p className='d-none'>{role && setIsAuthenticated && isAuthenticated}</p>

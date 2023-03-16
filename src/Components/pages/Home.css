@@ -108,19 +108,13 @@ button.home-circle:hover {
     align-items: center;
 }
 
-div.home-parag p {
-    margin-top: auto;
-    margin-bottom: auto;
-    /* cursor: pointer; */
-}
-
 .home-sec-two {
-    min-height: 60vh;
+    /* min-height: 60vh; */
     padding: 15px;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 /* video */
@@ -166,10 +160,4 @@ div.home-parag p {
         display: block;
         justify-content: flex-start;
     }
-
-    /* .company-markes {
-        width: 66vw;
-        height: 30vh;
-        border-radius: 25px;
-    } */
 }
