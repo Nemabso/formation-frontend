@@ -15,7 +15,7 @@ import 'react-medium-image-zoom/dist/styles.css';
 // import { ModalBody, ModalTitle } from 'react-bootstrap';
 // import ModalHeader from 'react-bootstrap/esm/ModalHeader';
 
-export default function FilesCard({ file, ondeletHandle, partagersalleA, partagersalleB }) {
+export default function FileCard({ file, ondeletHandle, partagersalleA, partagersalleB }) {
     const [showModal, setShowModal] = useState(false);
     const [modalpdfShow, setModalpdfShow] = useState(false);
 

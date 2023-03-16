@@ -20,7 +20,7 @@ export default function Partenaires() {
                         <img src={akto} width={200} title='akto' height={"auto"} alt="akto" />
                     </div>
                     <div>
-                        <img src={agefos} width={200} title='agefos' className='pb-3' height={"auto"} alt="agefos" />
+                        <img src={agefos} width={200} title='agefos' height={"auto"} alt="agefos" />
                     </div>
                 </section>
 

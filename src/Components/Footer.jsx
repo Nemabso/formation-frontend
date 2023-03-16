@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
-// import logo from "../assets/logoSite.jpeg";
 import './footer.css';
 import { BsFillEnvelopeFill, BsLinkedin } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
@@ -12,7 +11,7 @@ export default function Footer() {
 
     return (
         <footer>
-            <section className='bg-light p-5'>
+            <section className='bg-light p-3'>
                 <Container>
                     <Row>
                         <Col xs={12} sm={6} md={3} >
@@ -45,16 +44,16 @@ export default function Footer() {
 
                         <Col sm={6} md={3}>
                             <div>
-                                <Link className="d-block p-2" to={'/mentionlegales'}>Mentions légales</Link>
-                                <Link className="d-block p-2" to={'/gestioncookies'}>Confidentialité</Link>
+                                <Link className="d-block p-2" to={'/mention-legales'}>Mentions légales</Link>
+                                <Link className="d-block p-2" to={'/gestion-cookies'}>Confidentialité</Link>
                                 {/* <p className="d-block p-2">Conditions Générales</p> */}
                             </div>
                         </Col>
 
                         <Col sm={6} md={3}>
                             {/* <div className="d-block "> */}
-                            <Link className="d-block p-2" to={'/nosformation'}>Nos formations</Link>
-                            <Link className="d-block p-2" to={'/notremission'}>Notre mission</Link>
+                            <Link className="d-block p-2" to={'/nos-formations'}>Nos formations</Link>
+                            <Link className="d-block p-2" to={'/notre-mission'}>Notre mission</Link>
                             <Link className="d-block p-2" to={'/financer'}>Financer votre formation</Link>
                             {/* </div> */}
                         </Col>

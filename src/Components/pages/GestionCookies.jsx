@@ -9,7 +9,7 @@ export default function GestionCookies() {
                 <h1>Qui sommes-nous ?</h1>
                 <h2 className='fs-5'>Le site IDOINEFORMATION.FR est la propriété de la SAS Idoine Transaction Conseil inscrit numéro de Siret 879238723RCS.Lyon</h2>
                 <h4>Adresse de courrier électronique : <u> dominique.idoine@orange.fr</u></h4>
-                <h4>Pour plus d’informations, consultez <Link to={"/mentionlegales"}><u> les mentions légales du site.</u></Link></h4>
+                <h4>Pour plus d’informations, consultez <Link to={"/mention-legales"}><u> les mentions légales du site.</u></Link></h4>
             </div>
 
             <div>

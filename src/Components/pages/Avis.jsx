@@ -23,12 +23,10 @@ export default function Blog() {
         e.preventDefault();
 
         await axios.post(`http://localhost:5000/user/avis`, { data: avis, rating: rating }).then((res) => {
-            // console.log("avis a ete cree !", res);
             setMassege(res.data.message);
             setShowModal(true);
             setRefresh((prev) => !prev);
         }).catch(({ response }) => {
-            // console.log("probleme avis !", response);
             setMassege(response.data.message);
             setShowModal(true);
         })
@@ -37,15 +35,11 @@ export default function Blog() {
 
     useEffect(() => {
         axios.get(`http://localhost:5000/user/recupereravis`).then((res) => {
-            // console.log("here is get d'avis !!!", res);
             setGetAvis(res.data);
         }).catch(({ response }) => {
             console.log("problem de get avis", response);
         })
     }, [refresh]);
-
-    // console.log("aviss", avis);
-    // console.log("rating", rating);
 
     return (
         <>

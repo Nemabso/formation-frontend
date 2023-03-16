@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // import { AuthContext } from '../../context/Auth';
 import Modal from "react-modal";
 
-import FilesCard from '../../FilesCard';
+import FileCard from '../../FileCard';
 import "./profA.css";
 
 export default function ProfA({ userID, setUserID }) {
@@ -51,7 +51,7 @@ export default function ProfA({ userID, setUserID }) {
         setCodeSalleB(salleBcodeRef.current.value);
         salleBcodeRef.current.value = "";
         const codeData = { codeB: codeSalleB, userId: userId }
-        await axios.post("http://localhost:5000/user/profCodesalleb", codeData).then(() => {
+        await axios.post("http://localhost:5000/user/profCodesalle-b", codeData).then(() => {
             // console.log("success code send", res);
             setRefresh((prev) => !prev)
         }).catch(({ response }) => {
@@ -175,7 +175,7 @@ export default function ProfA({ userID, setUserID }) {
                 {!images.length ? null : images.map((elem, index) => {
                     return (
                         <div key={index} >
-                            <FilesCard file={elem} partagersalleA={togglePartageA} partagersalleB={togglePartageB} ondeletHandle={ondeletHandle} />
+                            <FileCard file={elem} partagersalleA={togglePartageA} partagersalleB={togglePartageB} ondeletHandle={ondeletHandle} />
                         </div>
                     )
                 })}

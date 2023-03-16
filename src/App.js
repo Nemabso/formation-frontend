@@ -20,7 +20,7 @@ import NosMissions from "./Components/pages/NosMissions";
 import AvisClient from "./Components/pages/AvisClient";
 import Partenaires from "./Components/pages/Partenaires";
 import GestionCookies from "./Components/pages/GestionCookies";
-import MontionLegales from "./Components/pages/MontionLegales";
+import MentionsLegales from "./Components/pages/MentionsLegales";
 import Footer from "./Components/Footer";
 export default function App() {
   const [isAuthenticated, setIsAuthenticated, role] = useContext(AuthContext);
@@ -34,21 +34,21 @@ export default function App() {
       <Navbar userID={userID} setUserID={setUserID} />
       <Routes>
         <Route exact path="/" element={<Home userID={userID} setUserID={setUserID} />} />
-        <Route exact path="/avisapprenantes" element={<Avis />} />
-        <Route exact path="/avisclient" element={<AvisClient />} />
+        <Route exact path="/avis-apprenants" element={<Avis />} />
+        <Route exact path="/avis-clients" element={<AvisClient />} />
         <Route exact path="/partenaires" element={<Partenaires />} />
 
         <Route path="/contact" element={<NousContacter userID={userID} setUserID={setUserID} />} />
         {/* <Route path="/quisommesnous" element={<QuiSommesNous />} /> */}
-        <Route exact path="/eleveLogin" element={<EleveLog />} />
-        <Route exact path="/nosformation" element={<NosFormation />} />
+        <Route exact path="/connexion/eleve" element={<EleveLog />} />
+        <Route exact path="/nos-formations" element={<NosFormation />} />
         <Route exact path="/financer" element={<Financer />} />
-        <Route exact path="/notremission" element={<NosMissions />} />
-        <Route exact path="/gestioncookies" element={<GestionCookies />} />
-        <Route exact path="/mentionlegales" element={<MontionLegales />} />
+        <Route exact path="/notre-mission" element={<NosMissions />} />
+        <Route exact path="/gestion-cookies" element={<GestionCookies />} />
+        <Route exact path="/mention-legales" element={<MentionsLegales />} />
 
-        <Route exact path="/sallea" element={<SalleA userID={userID} />} />
-        <Route exact path="/salleb" element={<SalleB userID={userID} />} />
+        <Route exact path="/salle-a" element={<SalleA userID={userID} />} />
+        <Route exact path="/salle-b" element={<SalleB userID={userID} />} />
 
         {(!isAuthenticated &&
           <Route exact path="/login" element={<Login userID={userID} setUserID={setUserID} />} />

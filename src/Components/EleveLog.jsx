@@ -43,11 +43,11 @@ export default function EleveLog() {
             console.log("code recu de eleve code", res.data);
             if (res.data.salonA) {
                 sessionStorage.setItem("salonAID", res.data.salonA);
-                return navigate("/sallea");
+                return navigate("/salle-a");
             }
             if (res.data.salonB) {
                 sessionStorage.setItem("salonBID", res.data.salonB);
-                return navigate("/salleb");
+                return navigate("/salle-b");
             }
         }).catch(({ response }) => {
             console.log("res de back", response);
@@ -59,10 +59,10 @@ export default function EleveLog() {
         //     setMassege("Le mot de pass n'est pas correct !")
         // }
         // if (matchA) {
-        //     return navigate("/sallea")
+        //     return navigate("/salle-a")
         // }
         // if (matchB) {
-        //     return navigate("/salleb")
+        //     return navigate("/salle-b")
         // }
     }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import idoinlogo from "./imag/logoIdoine.png";
 
-export default function MontionLegales() {
+export default function MentionsLegales() {
     return (
         <div className='container pt-5 pb-5'>
             <div>

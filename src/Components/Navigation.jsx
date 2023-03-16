@@ -21,9 +21,8 @@ export default function Navigation({ setUserID }) {
     const logOutEleve = () => {
         sessionStorage.removeItem("salonBID");
         sessionStorage.removeItem("salonAID");
-        navigate(`/eleveLogin`)
+        navigate(`/connexion/eleve`)
     }
-    // console.log("isAutenticated Navbar", isAuthenticated);
     return (
         <header>
             <Navbar collapseOnSelect expand="lg" className="customNav container" >
@@ -40,20 +39,20 @@ export default function Navigation({ setUserID }) {
                                     <Link to="/" className="nav-item">ACCUEIL</Link>
                                 </li>
                                 <li className="itemCover">
-                                    <Link to="/notremission" className="nav-item">NOTRE MISSION</Link>
+                                    <Link to="/notre-mission" className="nav-item">NOTRE MISSION</Link>
                                     <div className="dropdown rounded">
                                         <Link to="/financer"><span className="p-2"> Financer votre formation</span></Link>
                                     </div>
                                 </li>
 
                                 <li className="itemCover">
-                                    <Link to="/nosformation" className="nav-item">NOS FORMATIONS</Link>
+                                    <Link to="/nos-formations" className="nav-item">NOS FORMATIONS</Link>
                                 </li>
                                 <li className="itemCover">
                                     <p className="nav-item">AVIS</p>
                                     <div className="dropdown rounded">
-                                        <Link to="/avisapprenantes"><span className="p-2">Avis apprenants</span></Link>
-                                        <Link to="/avisclient"><span className="p-2">Avis clients</span></Link>
+                                        <Link to="/avis-apprenants"><span className="p-2">Avis apprenants</span></Link>
+                                        <Link to="/avis-clients"><span className="p-2">Avis clients</span></Link>
                                         <Link to="/partenaires"><span className="p-2">Partenaires</span></Link>
                                     </div>
                                 </li>
@@ -73,8 +72,8 @@ export default function Navigation({ setUserID }) {
                             <li className="itemCover">
                                 {(role === "formateur" && (<Link className="nav-item menu-button" to="/profa">MON COMPTE</Link>))}
                                 <div className="dropdown rounded" style={{ backgroundColor: "#9c9fa1ad" }}>
-                                    <Link to="/sallea" >Salle A</Link>
-                                    <Link to="/salleb" >Salle B</Link>
+                                    <Link to="/salle-a" >Salle A</Link>
+                                    <Link to="/salle-b" >Salle B</Link>
                                     <button className="btn btn-danger mt-3" onClick={handleLogout} >Déconnexion</button>
                                 </div>
                             </li>
@@ -92,7 +91,7 @@ export default function Navigation({ setUserID }) {
                                 <span className="nav-item menu-button">COMPTES</span>
                                 <div className="comptes-dropdown rounded">
                                     <Link to="/login">Formateur</Link>
-                                    <Link to="/eleveLogin">Eleve</Link>
+                                    <Link to="/connexion/eleve">Eleve</Link>
                                 </div>
                             </li>
                         ))}

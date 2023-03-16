@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./nousContact.css";
+import "./nousContacter.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { BsGeoAlt } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
@@ -17,7 +17,6 @@ export default function NousContacter() {
     const [participants, setParticipants] = useState("");
     const [theme, setTheme] = useState("");
 
-
     const [showModal, setShowModal] = useState(false);
     const [modalMessage, setmodalMessage] = useState("");
     const [recaptcha, setRecaptcha] = useState("");
@@ -32,7 +31,6 @@ export default function NousContacter() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(name, email, message, departement, phone);
         await axios.post("http://localhost:5000/user/contactus", {
             name: name, phone: phone, email: email, message: message, captcha: recaptcha,
             departement: departement, statu: statu, participants: participants, theme: theme
@@ -125,6 +123,4 @@ export default function NousContacter() {
             </Modal>
         </>
     );
-
-
 }

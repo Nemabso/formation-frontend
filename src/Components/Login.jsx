@@ -9,8 +9,6 @@ const baseURL = "http://localhost:5000";
 export default function Login({ setUserID }) {
     const [isAuthenticated, setIsAuthenticated, role, setRole] = useContext(AuthContext);
 
-
-    // console.log("isAuthenti login :", isAuthenticated, "role login :", role);
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
     const [massege, setMassege] = useState("")
@@ -30,7 +28,6 @@ export default function Login({ setUserID }) {
         try {
             await axios({ method: "post", baseURL: baseURL, url: "/user/login", data: { email: user.email, password: user.password } })
                 .then((res) => {
-                    // console.log("res data :", res.data);
                     const { user, token } = res.data;
                     setRole(user.role);
                     setUserID(user._id);
@@ -46,7 +43,6 @@ export default function Login({ setUserID }) {
                     }
                 })
         } catch ({ response }) {
-            console.log("here is response !", response.data)
             setShowModal(true);
             setMassege(response.data.message);
         }

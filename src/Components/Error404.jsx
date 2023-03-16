@@ -35,7 +35,7 @@ export default function Error404() {
 
             <h1>La Page que vous cherchez n'existe pas ! </h1>
             <br />
-            <a href="/"><b> Retournez sur la page home !</b> </a>
+            <a href="/"><b>Retourner à l'accueil</b></a>
             <div>
                 <img src={logoSite} width={200} height={200} title="IDOINE FORMATION" alt="logo site IDOINE" />
             </div>

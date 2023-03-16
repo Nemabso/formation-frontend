@@ -3,8 +3,7 @@ import { FaStar } from "react-icons/fa"
 
 export default function StarRating({ rating, setRating }) {
 
-    const [hoveer, setHoveer] = useState(null);
-    // console.log("rating", rating);
+    const [hover, setHover] = useState(null);
     return (
         <div>
             <p>Évaluez-nous!</p>
@@ -14,10 +13,10 @@ export default function StarRating({ rating, setRating }) {
                     <label key={i}>
                         <input className='d-none' type="radio" name="rating" value={ratingValue} onClick={() => setRating(ratingValue)} />
                         <FaStar size={30} className='star'
-                            color={ratingValue <= (hoveer || rating) ? "#ffc107" : "#e4e5e9"}
-                            onMouseEnter={() => setHoveer(ratingValue)}
-                            onMouseLeave={() => setHoveer(null)}
-                            style={{ cursor: " pointer", transition: "color 200ms" }} />
+                            color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+                            onMouseEnter={() => setHover(ratingValue)}
+                            onMouseLeave={() => setHover(null)}
+                            style={{ cursor: "pointer", transition: "color 200ms" }} />
                     </label>)
             })}
 
