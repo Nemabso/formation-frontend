@@ -133,7 +133,7 @@ export default function Home({ userID, setUserID }) {
                     </Row>
                 </div>
             </section>
-            <Modal fullscreen={fullscreen} show={showModal} onHide={() => setShowModal(false)}>
+            <Modal className='m' fullscreen={fullscreen} show={showModal} onHide={() => setShowModal(false)}>
                 <ModalHeader closeButton />
                 {pageNumber === 1 && <Premier />}
                 {pageNumber === 2 && <NosExpertises />}

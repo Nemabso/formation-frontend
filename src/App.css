@@ -71,10 +71,16 @@ canvas {
     height: 150px;
 }
 
+.modal-fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .modal-fullscreen .modal-content {
     min-width: 50%;
+    max-width: 90%;
     height: auto;
-    top: 15%;
 }
 
 /* Add Animation */
