@@ -1,0 +1,33 @@
+.expertises-article {
+    background: url("./articleimages/expertises.png") no-repeat;
+    background-size: cover;
+    background-position: 70%;
+    position: relative;
+}
+
+.expertises-content {
+    background-color: #f9fafbb0;
+    z-index: 10;
+    padding: 2em;
+}
+
+.expertises-top {
+    display: flex;
+    justify-content: center;
+}
+
+.expertises-title {
+    margin-left: 1em;
+    min-width: 40%;
+}
+
+.expertises-title>hr {
+    border: 2px solid #ccd1d5;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 830px) {
+    .expertises-quote {
+        margin-left: 2%;
+    }
+}

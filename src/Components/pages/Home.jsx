@@ -12,7 +12,7 @@ import Typical from "react-typical";
 import axios from 'axios';
 import { AuthContext } from '../../context/Auth';
 import Premier from '../Article/Premier';
-import Quatre from '../Article/Quatre';
+import NosExpertises from '../Article/NosExpertises';
 import CinqFinance from "../Article/CinqFinance";
 import logofinance from "./imag/logofinance.png";
 import marques from "./Marques";
@@ -136,7 +136,7 @@ export default function Home({ userID, setUserID }) {
             <Modal fullscreen={fullscreen} show={showModal} onHide={() => setShowModal(false)}>
                 <ModalHeader closeButton />
                 {pageNumber === 1 && <Premier />}
-                {pageNumber === 2 && <Quatre />}
+                {pageNumber === 2 && <NosExpertises />}
                 {pageNumber === 3 && <CinqFinance />}
             </Modal>
 

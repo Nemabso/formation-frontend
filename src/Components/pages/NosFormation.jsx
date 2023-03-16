@@ -1,5 +1,5 @@
 import React from 'react'
-import Quatre from '../Article/Quatre';
+import NosExpertises from '../Article/NosExpertises';
 import Septieme from '../Article/Septieme';
 import SixForma from '../Article/SixForma';
 
@@ -8,7 +8,7 @@ export default function NosFormation() {
     return (
         <>
             <Septieme />
-            <Quatre />
+            <NosExpertises />
             <SixForma />
         </>
 
