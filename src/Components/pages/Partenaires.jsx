@@ -6,13 +6,10 @@ import akto from "./imag/akto.png";
 
 export default function Partenaires() {
     return (
-        <div>
-            <article>
-                <div className='part-back'>
-                </div>
-
-                <h1 className='text-center p-4'><b style={{ color: " #B8D6F6" }}> NOS </b>PARTENAIRES</h1>
-                <section className="partenair-sec-down">
+        <div className="partenaires-background">
+            <section className="partenaires-content">
+                <h1 className='text-center p-4'>NOS PARTENAIRES</h1>
+                <div className="partenaires-logos">
                     <div>
                         <img src={emploi} width={200} title='emploi' height={"auto"} alt="emploi" />
                     </div>
@@ -22,10 +19,8 @@ export default function Partenaires() {
                     <div>
                         <img src={agefos} width={200} title='agefos' height={"auto"} alt="agefos" />
                     </div>
-                </section>
-
-            </article>
-
+                </div>
+            </section>
         </div>
     )
 }
