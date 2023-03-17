@@ -4,9 +4,9 @@ import { GiBookmarklet } from "react-icons/gi";
 import quote from "./articleimages/quote.png";
 import { FcIdea } from "react-icons/fc";
 import { CgFileDocument } from "react-icons/cg";
-import "./premier.css";
+import "./services.css";
 
-export default function premier() {
+export default function Services() {
     return (
         <article className='premier-article'>
             <section className=''>

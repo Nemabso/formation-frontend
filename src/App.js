@@ -16,7 +16,7 @@ import "./App.css"
 import Avis from "./Components/pages/Avis";
 // import QuiSommesNous from "./Components/pages/QuiSommesNous";
 import Financer from "./Components/pages/Financer";
-import NosMissions from "./Components/pages/NosMissions";
+import NotreMission from "./Components/pages/NotreMission";
 import AvisClient from "./Components/pages/AvisClient";
 import Partenaires from "./Components/pages/Partenaires";
 import GestionCookies from "./Components/pages/GestionCookies";
@@ -43,7 +43,7 @@ export default function App() {
         <Route exact path="/connexion/eleve" element={<EleveLog />} />
         <Route exact path="/nos-formations" element={<NosFormation />} />
         <Route exact path="/financer" element={<Financer />} />
-        <Route exact path="/notre-mission" element={<NosMissions />} />
+        <Route exact path="/notre-mission" element={<NotreMission />} />
         <Route exact path="/gestion-cookies" element={<GestionCookies />} />
         <Route exact path="/mention-legales" element={<MentionsLegales />} />
 

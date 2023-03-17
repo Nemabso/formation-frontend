@@ -3,19 +3,9 @@
     padding: 20px;
 }
 
-/* .nosval-title {
-    border-radius: 55px;
-    background-color: #ECF0F3;
-    width: 250px;
-    padding: 20px;
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 7px 7px 11px 0px #00000033, inset -7px -7px 6px 5px #fdfeff;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-} */
+.nosval-title {
+    margin-left: 3%;
+}
 
 .nosval-vertical {
     background: #0B346C;

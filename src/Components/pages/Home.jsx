@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 // import { Link } from 'react-router-dom';
 // import vid from '../video/premier.mp4';
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import './Home.css'
 import Modal from "react-bootstrap/Modal";
 import ModalHeader from 'react-bootstrap/esm/ModalHeader';
@@ -11,9 +11,9 @@ import quote from "./imag/quote.png";
 import Typical from "react-typical";
 import axios from 'axios';
 import { AuthContext } from '../../context/Auth';
-import Premier from '../Article/Premier';
+import Services from '../Article/Services';
 import NosExpertises from '../Article/NosExpertises';
-import CinqFinance from "../Article/CinqFinance";
+import ArticleFinancer from "../Article/ArtcileFinancer";
 import logofinance from "./imag/logofinance.png";
 import marques from "./Marques";
 
@@ -135,9 +135,9 @@ export default function Home({ userID, setUserID }) {
             </section>
             <Modal className='m' fullscreen={fullscreen} show={showModal} onHide={() => setShowModal(false)}>
                 <ModalHeader closeButton />
-                {pageNumber === 1 && <Premier />}
+                {pageNumber === 1 && <Services />}
                 {pageNumber === 2 && <NosExpertises />}
-                {pageNumber === 3 && <CinqFinance />}
+                {pageNumber === 3 && <ArticleFinancer />}
             </Modal>
 
             <p className='d-none'>{role && setIsAuthenticated && isAuthenticated}</p>

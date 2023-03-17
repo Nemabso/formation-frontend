@@ -1,5 +1,5 @@
 import React from 'react';
-import "./sept.css";
+import "./lesFormations.css";
 import pre from "./articleimages/forma1.png";
 import deux from "./articleimages/forma2.png";
 import trois from "./articleimages/forma3.png";
@@ -8,24 +8,23 @@ import cinq from "./articleimages/forma5.jpg";
 import { Link } from 'react-router-dom';
 import Typical from "react-typical";
 
-export default function Septieme() {
+export default function LesFormations() {
     return (
         <article className='sept-article'>
             <section className='sept-sec-left'>
                 <div className='p-3'>
-                    <h1 className='fs-2'>Des formations adaptées</h1>
+                    <h1 className='fs-2'>Des formations adaptées pour tous les niveaux :</h1>
                 </div>
                 <div className='sept-down-text'>
-                    <h2 className='mb-5'> pour tous les niveaux</h2>
-                    <div className='d-flex gap-3 align-items-center'>
+                    <div className='d-flex gap-3 align-items-center mb-3'>
                         <div><div className='sept-tire' /></div>
                         <h3>Jeunes diplomés</h3>
                     </div>
-                    <div className='d-flex gap-3 align-items-center'>
+                    <div className='d-flex gap-3 align-items-center mb-3'>
                         <div><div className='sept-tire' /></div>
                         <h3>Sans qualification</h3>
                     </div>
-                    <div className='d-flex gap-3 align-items-center'>
+                    <div className='d-flex gap-3 align-items-center mb-3'>
                         <div><div className='sept-tire' /></div>
                         <h3>Confirmés</h3>
                     </div>

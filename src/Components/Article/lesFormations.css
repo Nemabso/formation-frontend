@@ -8,8 +8,6 @@
 
 .sept-down-text {
     align-items: center;
-    padding: 20px;
-    margin-bottom: 85px;
 }
 
 .sept-tire {
@@ -29,11 +27,10 @@
 .sept-sec-left {
     background: #B8D6F6;
     width: 485px;
-    height: 500px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 

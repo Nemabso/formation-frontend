@@ -1,8 +1,8 @@
 import React from 'react';
 import imagArticle from "./articleimages/article1.png";
-import "./deuxieme.css";
+import "./demarchePedago.css";
 
-export default function deuxieme() {
+export default function DemarchePedago() {
     return (
         <article className='deuxiem-article'>
             <section className='deux-sec-left col-lg-6'>

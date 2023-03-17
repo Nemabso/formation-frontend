@@ -1,11 +1,11 @@
 import React from 'react'
-import CinqFinance from '../Article/CinqFinance'
+import ArticleFinancer from '../Article/ArtcileFinancer'
 
 export default function Financer() {
     return (
 
         <div>
-            <CinqFinance />
+            <ArticleFinancer />
         </div>
     )
 }

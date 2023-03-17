@@ -1,9 +1,9 @@
 import React from 'react';
-import "./nosValu.css";
+import "./nosValeurs.css";
 import flesh from "./articleimages/flesh.png";
 import quote from "./articleimages/quote.png";
 
-export default function NosValeur() {
+export default function NosValeurs() {
     return (
         <article className='nosvaleur'>
             <div className='nosval-title'>

@@ -1,9 +1,9 @@
 import React from 'react';
 import teamimage from "./articleimages/team.png";
 import quote from "./articleimages/quote.png"
-import "./troixieme.css";
+import "./motiver.css";
 
-export default function Troixieme() {
+export default function Motiver() {
     return (
         // du a changement d'avis de cliant a chaque fois left or right a été mis au contraire !
 

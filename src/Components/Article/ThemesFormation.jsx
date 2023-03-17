@@ -1,8 +1,8 @@
 import React from 'react';
-import "./sixformation.css";
+import "./themesFormation.css";
 import quote from "./articleimages/quote.png";
 
-export default function SixForma() {
+export default function ThemesFormation() {
     return (
         <article className='six-article-forma'>
             <div className='p-4'>

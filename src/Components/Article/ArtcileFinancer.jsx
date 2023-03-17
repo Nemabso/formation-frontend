@@ -1,14 +1,14 @@
 import React from 'react';
 import imaFinance from "./articleimages/financer.png";
 import logoFinance from "./articleimages/logofinance.png";
-import "./cinqFi.css";
+import "./financer.css";
 
-export default function CinqFinance() {
+export default function ArticleFinancer() {
     return (
         <article className='cinqieme-article'>
             <section className='cinq-sec-left'>
                 <div className='p-3 d-grid gap-3'>
-                    <h2 className='fs-3'>  Vous souhaitez former vos équipes avant l’ouverture d’un établissement ou durant son exploitation ?</h2>
+                    <h2 className='fs-3'>Vous souhaitez former vos équipes avant l’ouverture d’un établissement ou durant son exploitation ?</h2>
                     <div className='finance-line' />
                     <h3 className='fs-4'>Nous vous proposons des solutions de formation adaptées, alternant  apprentissages théoriques et pratiques.</h3>
                 </div>

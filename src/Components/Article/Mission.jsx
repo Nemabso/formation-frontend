@@ -1,9 +1,9 @@
 import React from 'react';
-import "./zero.css";
+import "./mission.css";
 import imagmission from "./articleimages/mission.png";
 import quote from "./articleimages/quote.png";
 
-export default function Zero() {
+export default function Mission() {
     return (
         <article className='article-zero '>
             <section className='zero-sec'>
