@@ -15,10 +15,10 @@ export default function Satisfaction() {
     useEffect(() => {
         axios.get("http://localhost:5000/review")
             .then((res) => {
-                console.log(res)
+                setNoteEmployeur(res.data.reduce((sum, avis) => sum + avis.rate, 0) / res.data.length * 20);
             })
             .catch((err) => {
-            
+                console.log(err);
             })
     }, [])
 
@@ -42,7 +42,7 @@ export default function Satisfaction() {
                     <div className='avis-client-secs'>
                         <GrUser fill='#0B346C' size={80} />
                         <h2 className='avis-client-texts'>Satisfaction des employeurs</h2>
-                        <CircleP className="avis-circle" percentage={0} colour={"#e8eaeb"} />
+                        <CircleP className="avis-circle" percentage={noteEmployeur} colour={"#e8eaeb"} />
                     </div>
                     <div className='avis-client-secs'>
                         <div>
