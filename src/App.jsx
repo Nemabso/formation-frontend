@@ -13,11 +13,11 @@ import NousContacter from "./Components/pages/NousContacter";
 import SalleA from "./Components/pages/comptes/SalleA";
 import SalleB from "./Components/pages/comptes/SalleB";
 import "./App.css"
-import Avis from "./Components/pages/Avis";
+import AvisForm from "./Components/pages/AvisForm";
 // import QuiSommesNous from "./Components/pages/QuiSommesNous";
 import Financer from "./Components/pages/Financer";
 import NotreMission from "./Components/pages/NotreMission";
-import AvisClient from "./Components/pages/AvisClient";
+import Satisfaction from "./Components/pages/Satisfaction";
 import Partenaires from "./Components/pages/Partenaires";
 import GestionCookies from "./Components/pages/GestionCookies";
 import MentionsLegales from "./Components/pages/MentionsLegales";
@@ -35,8 +35,8 @@ export default function App() {
       <main className='app-main'>
         <Routes>
           <Route exact path="/" element={<Home userID={userID} setUserID={setUserID} />} />
-          <Route exact path="/avis-apprenants" element={<Avis />} />
-          <Route exact path="/avis-clients" element={<AvisClient />} />
+          <Route exact path="/avis" element={<AvisForm />} />
+          <Route exact path="/satisfaction" element={<Satisfaction />} />
           <Route exact path="/partenaires" element={<Partenaires />} />
 
           <Route path="/contact" element={<NousContacter userID={userID} setUserID={setUserID} />} />

@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import CircleP from '../CircleP';
-import "./avisClients.css";
+import "./satisfaction.css";
 import { GrUser } from "react-icons/gr";
 import { MdPersonSearch, MdDone } from "react-icons/md";
 import { FaThumbsUp } from "react-icons/fa";
 import axios from 'axios';
 
 
-export default function AvisClient() {
-    const [pourA, setPourA] = useState(null);
-    const [pourB, setPourB] = useState(null);
-    const [pourC, setPourC] = useState(null);
+export default function Satisfaction() {
+    const [noteEmployeur, setNoteEmployeur] = useState(0);
+    const [notePoleEmploi, setNotePoleEmploi] = useState(0);
+    const [noteApprenant, setNoteApprenant] = useState(0);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/user/getpourcent").then((res) => {
-            const user = res.data.user;
-            setPourA(user.pourcentA)
-            setPourB(user.pourcentB)
-            setPourC(user.pourcentC)
-        }).catch((err) => {
-            console.log("error get pourcent :", err);
-            console.error(err)
-        })
+        axios.get("http://localhost:5000/review")
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((err) => {
+            
+            })
     }, [])
 
     return (
@@ -29,7 +27,7 @@ export default function AvisClient() {
             <article className='avis-clients'>
                 <section className='avis-back-handshake'>
                     <div className='avis-back-filtre'>
-                        <h1>STATISTIQUES DE RÉUSSITE</h1>
+                        <h1>STATISTIQUES DE SATISFACTION</h1>
                     </div>
                 </section>
 
@@ -43,8 +41,8 @@ export default function AvisClient() {
                 <section className="avis-client-sec-down">
                     <div className='avis-client-secs'>
                         <GrUser fill='#0B346C' size={80} />
-                        <h2 className='avis-client-texts'>Satisfaction employeur</h2>
-                        <CircleP className="avis-circle" percentage={pourA} colour={"#e8eaeb"} />
+                        <h2 className='avis-client-texts'>Satisfaction des employeurs</h2>
+                        <CircleP className="avis-circle" percentage={0} colour={"#e8eaeb"} />
                     </div>
                     <div className='avis-client-secs'>
                         <div>
@@ -52,12 +50,12 @@ export default function AvisClient() {
                             <MdPersonSearch fill='#0B346C' size={100} />
                         </div>
                         <h2 className='avis-client-texts'>Satisfaction Pôle Emploi</h2>
-                        <CircleP percentage={pourB} colour={"#e8eaeb"} />
+                        <CircleP percentage={0} colour={"#e8eaeb"} />
                     </div>
                     <div className='avis-client-secs'>
                         <FaThumbsUp fill='#0B346C' size={100} />
-                        <h2 className='avis-client-texts'>Satisfaits apprenants</h2>
-                        <CircleP percentage={pourC} colour={"#e8eaeb"} />
+                        <h2 className='avis-client-texts'>Satisfacation des apprenants</h2>
+                        <CircleP percentage={0} colour={"#e8eaeb"} />
                     </div>
                 </section>
 

@@ -13,7 +13,7 @@ export default function Motiver() {
                     <div><img src={quote} className='trois-quote-imag' width={80} height={90} title='single quote' loading='eager' alt="single quote" /></div>
                     <h1 className='ps-3 fs-1'> Motiver pour réussir </h1>
                 </div>
-                <img src={teamimage} className='trois-imag' width={100} height={90} title='pedagogique' loading='eager' alt="pedagogique" />
+                <img src={teamimage} className='trois-imag' title='pedagogique' loading='eager' alt="pedagogique" />
             </section>
             <span className='d-none d-lg-block trois-vertical'></span>
             <section className='trois-sec-right'>

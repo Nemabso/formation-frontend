@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { FaStar } from "react-icons/fa";
 
 
-export default function Blog() {
+export default function AvisForm() {
     const [rating, setRating] = useState(1);
     const [refresh, setRefresh] = useState(false);
     const [getAvis, setGetAvis] = useState([]);

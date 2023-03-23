@@ -27,7 +27,7 @@ export default function Navigation({ setUserID }) {
         <header>
             <Navbar collapseOnSelect expand="lg" className="customNav container" >
                 <Navbar.Brand >
-                    <img src="./images/sitelogo.svg" width={100} height={70} loading="eager" title="site logo" alt="sitelogonavbar" />
+                    <img src="./images/sitelogo.svg" width={100} height={70} loading="eager" title="Accueil Idoine Formation" onClick={() => navigate("/")} alt="sitelogonavbar" className="nav-logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"><b>Menu</b></ Navbar.Toggle>
 
@@ -39,9 +39,10 @@ export default function Navigation({ setUserID }) {
                                     <Link to="/" className="nav-item">ACCUEIL</Link>
                                 </li>
                                 <li className="itemCover">
-                                    <Link to="/notre-mission" className="nav-item">NOTRE MISSION</Link>
+                                    <p className="nav-item">ACCOMPAGNEMENT</p>
                                     <div className="dropdown rounded">
-                                        <Link to="/financer"><span className="p-2"> Financer votre formation</span></Link>
+                                        <Link to="/notre-mission"><span className="p-2">Notre mission</span></Link>
+                                        <Link to="/financer"><span className="p-2">Financer votre formation</span></Link>
                                     </div>
                                 </li>
 
@@ -51,9 +52,9 @@ export default function Navigation({ setUserID }) {
                                 <li className="itemCover">
                                     <p className="nav-item">AVIS</p>
                                     <div className="dropdown rounded">
-                                        <Link to="/avis-apprenants"><span className="p-2">Avis apprenants</span></Link>
-                                        <Link to="/avis-clients"><span className="p-2">Avis clients</span></Link>
+                                        <Link to="/satisfaction"><span className="p-2">Satisfaction</span></Link>
                                         <Link to="/partenaires"><span className="p-2">Partenaires</span></Link>
+                                        <Link to="/avis"><span className="p-2">Laisser un avis</span></Link>
                                     </div>
                                 </li>
 

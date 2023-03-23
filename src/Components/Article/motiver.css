@@ -5,7 +5,6 @@
 }
 
 .troisieme-article {
-    min-height: 101vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

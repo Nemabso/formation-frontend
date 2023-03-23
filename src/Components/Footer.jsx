@@ -15,7 +15,7 @@ export default function Footer() {
                 <Container>
                     <Row>
                         <Col xs={12} sm={6} md={3} >
-                            <img src="./images/sitelogo.svg" loading='lazy' width={200} height={200} title='logo-footer' onClick={() => navigate("/")} className="img-fluid footer-icon " alt="logo"></img>
+                            <img src="./images/sitelogo.svg" loading='lazy' width={200} height={200} title='Accueil Idoine Formation' onClick={() => navigate("/")} className="img-fluid footer-icon " alt="logo"></img>
                         </Col>
 
                         <Col sm={6} md={3} >
