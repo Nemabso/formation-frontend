@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import StarRating from '../StarRating';
 import Modal from "react-modal";
 import { FaStar } from "react-icons/fa";
-
+import { Col, Row } from 'react-bootstrap';
 
 export default function AvisForm() {
     const [rating, setRating] = useState(1);
@@ -22,10 +22,8 @@ export default function AvisForm() {
     const submitHandle = async (e) => {
         e.preventDefault();
 
-        await axios.post(`http://localhost:5000/user/avis`, { data: avis, rating: rating }).then((res) => {
-            setMassege(res.data.message);
-            setShowModal(true);
-            setRefresh((prev) => !prev);
+        await axios.post(``, {}).then((res) => {
+            
         }).catch(({ response }) => {
             setMassege(response.data.message);
             setShowModal(true);
@@ -43,17 +41,14 @@ export default function AvisForm() {
 
     return (
         <>
-            <h1 className='p-3 text-center' style={{ fontFamily: "charm" }} >Les avis des apprenants </h1>
-            <div className='row m-auto ' style={{ minHeight: "101vh" }}>
-                <div className='p-3 col-md-6'>
-                    <form onSubmit={submitHandle} className='container p-3 rounded bg-light' style={{ height: "612px" }}>
+            <h1 className='p-3 text-center'>Laissez nos votre avis !</h1>
+            <Row className='d-flex justify-content-center'>
+                <Col className='p-3'>
+                    <form onSubmit={submitHandle} className='container p-3 rounded bg-light'>
                         <div className='p-4'>
                             <div className="mb-3">
                                 <label htmlFor="lname" className="form-label">Nom</label>
                                 <input type="text" className="form-control" name='nom' id="lname" onChange={handleChanges} placeholder="votre nom ...*" required />
-                                {/* <div className="valid-feedback">
-                            Looks good!
-                        </div> */}
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="societe" className="form-label">Societé </label>
@@ -77,34 +72,8 @@ export default function AvisForm() {
                             </div>
                         </div>
                     </form>
-                </div>
-
-                <div className='col-md-6 m-auto'>
-                    {getAvis && getAvis.map((avis, index) => {
-                        return (
-                            <article key={index} className=' p-3 '>
-                                <div className="border">
-                                    {/* <div className="card-header bg-transparent border-light"></div> */}
-                                    <div className='d-flex p-3 gap-2 align-items-center' style={{ width: "300px" }}>
-                                        <p className=''><strong> Avis client</strong> </p>
-                                        <div className="bg-transparent mb-1">{[...Array(5)].map((star, i) => {
-                                            const ratingValue = i + 1;
-                                            return (<FaStar size={20} key={i} color={ratingValue <= (avis.ratAvis) ? "#ffc107" : "#e4e5e9"} />)
-                                        })}
-                                        </div>
-                                        <p><strong> {avis.ratAvis}/5</strong></p>
-                                    </div>
-                                    <div className="">
-                                        {/* <h6 className="card-title">{avis.nom}</h6> */}
-                                        <p className="p-2">{avis.descriptions}</p>
-                                        <p className='float-end pe-3' >le {avis.createdOn.split("T").slice(0, 1)} par<b> {avis.nom}</b></p>
-                                    </div>
-                                </div>
-                            </article>
-                        )
-                    })}
-                </div>
-            </div>
+                </Col>
+            </Row>
 
             <div>
                 <Modal className="modal-signup rounded-pill bg-light col-5"
